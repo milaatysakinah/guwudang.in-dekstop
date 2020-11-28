@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Net.Http;
 using System.Windows.Controls;
+using System.Windows;
 using guwudang.Register;
+using guwudang;
+using Velacro.Basic;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
+using Velacro.Api;
+using guwudang.utils;
 
 namespace guwudang.Login {
-
+    
     public partial class LoginPage : MyPage {
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
@@ -17,13 +22,20 @@ namespace guwudang.Login {
         private IMyTextBox emailTxtBox;
         private IMyTextBox passwordTxtBox;
         private IMyTextBlock loginStatusTxtBlock;
+        private MyPage registerPage;
+        private MyPage dummyPage;
+        private Frame mainFrame;
 
-        public LoginPage() {
+        public LoginPage(Frame mainFrame) {
             InitializeComponent();
             this.KeepAlive = true;
             setController(new LoginController(this));
+            this.mainFrame = mainFrame;
             initUIBuilders();
             initUIElements();
+
+            registerPage = new RegisterPage(mainFrame);
+            dummyPage = new Dummy();
         }
 
         private void initUIBuilders(){
@@ -38,7 +50,7 @@ namespace guwudang.Login {
                 .addOnClick(this, "onLoginButtonClick");
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
             passwordTxtBox = txtBoxBuilder.activate(this, "password_txt");
-            loginStatusTxtBlock = txtBlockBuilder.activate(this, "loginStatus");
+            loginStatusTxtBlock = txtBlockBuilder.activate(this, "status_field");
         }
 
         public void onLoginButtonClick() {
@@ -49,8 +61,30 @@ namespace guwudang.Login {
         public void setLoginStatus(string _status){
             this.Dispatcher.Invoke(() =>
             {
-                loginButton.setText(_status);
+                loginStatusTxtBlock.setText(_status);
             });
+        }
+
+        private void register_btn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            mainFrame.Navigate(registerPage);
+
+        }
+
+        private void loginButton_btn_Click(object sender, RoutedEventArgs e)
+        {
+            getController().callMethod("login",
+                emailTxtBox.getText(),
+                passwordTxtBox.getText());
+        }
+
+        public void changeToDashboard(String nothing)
+        {
+            User user = new User();
+            Console.WriteLine(user.getToken());
+
+            if (user.getToken() != null)
+                mainFrame.Navigate(new Dummy());
         }
     }
 }

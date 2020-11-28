@@ -1,4 +1,5 @@
-﻿using System;
+﻿using guwudang.utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -14,7 +15,7 @@ namespace guwudang.Login {
         }
 
         public async void login(string _email, string _password) {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
 
             var req = request
@@ -24,9 +25,19 @@ namespace guwudang.Login {
                 .setEndpoint("api/login/")
                 .setRequestMethod(HttpMethod.Post);
             client.setOnSuccessRequest(setViewLoginStatus);
+            client.setOnFailedRequest(setViewLoginStatus);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            Console.WriteLine(response.getJObject()["access_token"]);
-            client.setAuthorizationToken(response.getJObject()["access_token"].ToString());
+
+            if(response.getHttpResponseMessage().ReasonPhrase.Equals("OK"))
+            {
+                Console.WriteLine(response.getJObject()["token"]);
+                client.setAuthorizationToken(response.getJObject()["token"].ToString());
+                User user = new User();
+                user.setToken(response.getJObject()["token"].ToString());
+                getView().callMethod("changeToDashboard", "1");
+            }
+
+            
         }
 
         private void setViewLoginStatus(HttpResponseBundle _response){

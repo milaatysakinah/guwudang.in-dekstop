@@ -6,9 +6,8 @@
       xmlns:local="clr-namespace:guwudang"
       xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       xmlns:lineChart="clr-namespace:Velacro.Chart.LineChart;assembly=Velacro"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="600"
-      Title="LoginPage">
+      mc:Ignorable="d"
+      Title="LoginPage" Width="626.394" Height="423">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -16,8 +15,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Width="238" Margin="181,0,181,77"   />
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="194,0,194,46" Click="loginButton_btn_Click"   />
         <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="23" TextWrapping="Wrap" Text="Email"  Width="238" />
         <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="Password"  Width="238" Margin="181,172,181,116"/>
+        <Button x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register" Margin="194,0,194,80" Click="register_btn_Click"   />
+        <TextBlock Name="status_field" HorizontalAlignment="Left" Margin="280,105,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.204,-2.812"/>
     </Grid>
 </basic1:MyPage>
