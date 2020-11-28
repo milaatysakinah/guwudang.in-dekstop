@@ -1,20 +1,20 @@
-﻿TestWPPL
+﻿guwudang
 
 
 winexe
 C#
 .cs
-C:\Users\ajied\source\repos\TestWPPL\TestWPPL\obj\Debug\
-TestWPPL
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\
+guwudang
 none
 false
 DEBUG;TRACE
-C:\Users\ajied\source\repos\TestWPPL\TestWPPL\App.xaml
-41460117551
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\App.xaml
+5-1848410966
 
-12-829098384
-18-930754286
-Dashboard\Dashboard.xaml;Login\LoginPage.xaml;MainWindow.xaml;Register\RegisterPage.xaml;
+14-1725045896
+1852726336
+Dashboard\Dashboard.xaml;Login\LoginPage.xaml;MainWindow.xaml;Dummy.xaml;Register\RegisterPage.xaml;
 
 True
 

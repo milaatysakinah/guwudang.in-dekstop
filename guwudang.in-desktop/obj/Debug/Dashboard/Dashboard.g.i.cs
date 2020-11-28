@@ -62,7 +62,7 @@ namespace guwudang.Dashboard {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TestWPPL;component/dashboard/dashboard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/guwudang;component/dashboard/dashboard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Dashboard\Dashboard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

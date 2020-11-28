@@ -11,9 +11,16 @@ namespace guwudang {
         private MyPage dashboardPage;
         public MainWindow() {
             InitializeComponent();
-            registerPage = new RegisterPage();
-            loginPage = new LoginPage();
+            registerPage = new RegisterPage(mainFrame);
+            loginPage = new LoginPage(mainFrame);
             dashboardPage = new Dashboard.Dashboard();
+
+            mainFrame.Navigate(loginPage);
+        }
+
+        public void changeFrame(MyPage nextPage)
+        {
+            mainFrame.Navigate(nextPage);
         }
 
         private void loginButton_btn_Click(object sender, RoutedEventArgs e){
