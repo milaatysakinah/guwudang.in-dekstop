@@ -11,10 +11,12 @@ namespace guwudang.Register {
     /// Interaction logic for RegisterPage.xaml
     /// </summary>
     public partial class RegisterPage : MyPage {
-        public RegisterPage() {
+        private Frame mainFrame;
+        public RegisterPage(Frame mainFrame) {
             InitializeComponent();
             this.KeepAlive = true;
             setController(new RegisterController(this));
+            this.mainFrame = mainFrame;
             initUIBuilders();
             initUIElements();
         }
@@ -43,7 +45,7 @@ namespace guwudang.Register {
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
             passwordTxtBox = txtBoxBuilder.activate(this, "password_txt");
             passwordcTxtBox = txtBoxBuilder.activate(this, "passwordc_txt");
-            registerStatusTxtBlock = txtBlockBuilder.activate(this, "registerStatus");
+            registerStatusTxtBlock = txtBlockBuilder.activate(this, "status_field");
         }
 
         public void onRegisterButtonClick() {
@@ -56,9 +58,19 @@ namespace guwudang.Register {
 
         public void setRegisterStatus(string _status) {
             this.Dispatcher.Invoke(() => {
-                registerButton.setText(_status);
+                registerStatusTxtBlock.setText(_status);
             });
 
+        }
+
+        public void toDummy()
+        {
+            mainFrame.Navigate(new Dummy());
+        }
+
+        private void back_btn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            mainFrame.Navigate(new LoginPage(mainFrame));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using guwudang.utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -14,21 +15,29 @@ namespace guwudang.Register {
             string _email, 
             string _password, 
             string _passwordc) {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
 
-            string token = "";
-            var req = request
-                .buildHttpRequest()
-                .addParameters("name", _name)
-                .addParameters("email", _email)
-                .addParameters("password", _password)
-                .addParameters("password_confirmation", _passwordc)
-                .setEndpoint("api/register/")
-                .setRequestMethod(HttpMethod.Post);
-            client.setOnSuccessRequest(setViewRegisterStatus);
-            var response = await client.sendRequest(request.getApiRequestBundle());
+                string token = "";
+                var req = request
+                    .buildHttpRequest()
+                    .addParameters("username", _name)
+                    .addParameters("email", _email)
+                    .addParameters("password", _password)
+                    .addParameters("password_confirmation", _passwordc)
+                    .setEndpoint("api/register/")
+                    .setRequestMethod(HttpMethod.Post);
+                client.setOnSuccessRequest(setViewRegisterStatus);
+                client.setOnFailedRequest(setViewRegisterStatus);
+                var response = await client.sendRequest(request.getApiRequestBundle());
 
+            if (response.getHttpResponseMessage().ReasonPhrase.Equals("Created"))
+            {
+                User user = new User();
+                user.setToken(response.getJObject()["token"].ToString());
+                getView().callMethod("toDummy", null);
+            }
+            
         }
 
         private void setViewRegisterStatus(HttpResponseBundle _response) {
