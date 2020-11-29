@@ -79,6 +79,11 @@
     <Compile Include="Dummy.cs">
       <DependentUpon>Dummy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Product\ProductController.cs" />
+    <Compile Include="Product\ProductPage.xaml.cs">
+      <DependentUpon>ProductPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Register\RegisterController.cs" />
     <Compile Include="Register\RegisterPage.xaml.cs">
@@ -109,6 +114,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Dummy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Product\ProductPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
