@@ -20,8 +20,8 @@
         <TextBox Name="email_txt" Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Email" Width="176" Margin="212,127,212,-120" Grid.ColumnSpan="2"/>
         <TextBox Name="password_txt"  Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Password" Width="176" Margin="212,155,212,-148" Grid.ColumnSpan="2"/>
         <TextBox Name="passwordc_txt" Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text="Password Confirmation" Width="176" Margin="212,183,212,-176" Grid.ColumnSpan="2"/>
-        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Width="176" Margin="212,217,212,-217" Grid.ColumnSpan="2"/>
-        <Button Name="back_btn"  Grid.Row="0" Grid.Column="0" Content="Back" Width="176" Margin="212,260,212,-260" Grid.ColumnSpan="2"/>
+        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Width="176" Margin="212,240,212,-217" Grid.ColumnSpan="2"/>
+        <Button Name="back_btn"  Grid.Row="0" Grid.Column="0" Content="Back" Width="176" Margin="212,284,212,-260" Grid.ColumnSpan="2"/>
         <TextBlock Name="status_field" HorizontalAlignment="Left" Margin="276,72,0,-38" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Width="53"/>
     </Grid>
 </basic:MyPage>
