@@ -79,7 +79,12 @@
     <Compile Include="Dummy.cs">
       <DependentUpon>Dummy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Partner.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Partner\PartnerController.cs" />
+    <Compile Include="Partner\PartnerPage.xaml.cs">
+      <DependentUpon>PartnerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Product\ProductController.cs" />
     <Compile Include="Product\ProductPage.xaml.cs">
       <DependentUpon>ProductPage.xaml</DependentUpon>
@@ -114,6 +119,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Dummy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Partner\PartnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
