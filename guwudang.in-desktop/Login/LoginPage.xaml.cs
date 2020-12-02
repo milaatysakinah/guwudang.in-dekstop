@@ -61,7 +61,7 @@ namespace guwudang.Login {
         public void setLoginStatus(string _status){
             this.Dispatcher.Invoke(() =>
             {
-                loginStatusTxtBlock.setText(_status);
+                //loginStatusTxtBlock.setText(_status);
             });
         }
 

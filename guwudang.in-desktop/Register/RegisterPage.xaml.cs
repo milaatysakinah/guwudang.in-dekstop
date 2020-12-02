@@ -67,7 +67,7 @@ namespace guwudang.Register {
 
         public void setRegisterStatus(string _status) {
             this.Dispatcher.Invoke(() => {
-                registerStatusTxtBlock.setText(_status);
+                //registerStatusTxtBlock.setText(_status);
             });
 
         }

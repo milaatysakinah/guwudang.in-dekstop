@@ -10,7 +10,7 @@ namespace guwudang.Invoice
     /// <summary>
     /// Interaction logic for ProductPage.xaml
     /// </summary>
-    public partial class InvoicePage : MyPage
+    public partial class ListInvoicePage : MyPage
     {
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
@@ -19,7 +19,7 @@ namespace guwudang.Invoice
         private IMyButton deleteInvoiceButton;
         private IMyTextBox searchInvoiceTxtBox;
 
-        public void ListInvoicePage()
+        public ListInvoicePage()
         {
             InitializeComponent();
             this.KeepAlive = true;

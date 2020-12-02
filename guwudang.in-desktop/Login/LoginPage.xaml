@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <Canvas HorizontalAlignment="Left" Height="360" VerticalAlignment="Top" Width="640">
             <Canvas.Background>
-                <ImageBrush ImageSource="D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
+                <ImageBrush ImageSource="D:\Data App\xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
             </Canvas.Background>
             <TextBlock Canvas.Left="327" TextWrapping="Wrap" Canvas.Top="67" RenderTransformOrigin="-0.22,0.278" Height="19"><Run Text="Login"/><LineBreak/><Run/></TextBlock>
         </Canvas>
