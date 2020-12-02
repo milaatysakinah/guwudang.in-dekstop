@@ -64,3 +64,19 @@ D:\Data App\xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwud
 D:\Data App\xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.in-desktop.csproj.CopyComplete
 D:\Data App\xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.exe
 D:\Data App\xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.pdb
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Invoice\ListInvoicePage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Partner\PartnerPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Product\ProductPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\ShowProductDetail\ShowProductDetail.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Invoice\ListInvoicePage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Partner\PartnerPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Product\ProductPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\ShowProductDetail\ShowProductDetail.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Sidebar.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Sidebar.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesignColors.dll
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesignColors.pdb
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\App.baml

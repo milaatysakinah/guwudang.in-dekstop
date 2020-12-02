@@ -12,17 +12,23 @@ namespace guwudang.Register {
 
         public async void register(
             string _name, 
-            string _email, 
+            string _email,
+            string _phoneNumber,
+            string _address,
+            string _companyName,
             string _password, 
             string _passwordc) {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
 
-                string token = "";
+                //string token = "";
                 var req = request
                     .buildHttpRequest()
                     .addParameters("username", _name)
                     .addParameters("email", _email)
+                    .addParameters("phoneNumber", _phoneNumber)
+                    .addParameters("address", _address)
+                    .addParameters("companyName", _companyName)
                     .addParameters("password", _password)
                     .addParameters("password_confirmation", _passwordc)
                     .setEndpoint("api/register/")

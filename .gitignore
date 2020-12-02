@@ -355,3 +355,8 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+.vs/guwudang.in-desktop/v16/Server/sqlite3/storage.ide-shm
+.vs/guwudang.in-desktop/v16/Server/sqlite3/storage.ide-wal
+guwudang.in-desktop/obj/Debug/guwudang_MarkupCompile.cache
+guwudang.in-desktop/obj/Debug/guwudang_MarkupCompile.lref
+guwudang.in-desktop/obj/Debug/guwudang.in-desktop.csprojAssemblyReference.cache

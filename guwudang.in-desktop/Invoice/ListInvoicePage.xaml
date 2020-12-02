@@ -1,30 +1,29 @@
-﻿<basic:MyPage x:Class="guwudang.Partner.PartnerPage"
+﻿<basic:MyPage x:Class="guwudang.Invoice.ListInvoicePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:guwudang.Partner"
+      xmlns:local="clr-namespace:guwudang.Invoice"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="700"
-      Title="PartnerPage"
-      Margin="0,0,25,0">
+      d:DesignHeight="450" d:DesignWidth="600"
+      Title="InvoicePage">
 
-    <Grid>
+    <Grid Margin="8,0,-8,0">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Content="My Partner" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" ></Label>
-        <Button Name = "newPartnerBtn" Width="75" Height="20" Margin="0,0,260,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <Button Name = "deletePartnerBtn" Width="75" Height="20" Margin="0,0,160,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <TextBox Name = "searchPartnerTxt" Width="125" Height="20" Margin="0,0,10,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Label Content="My Invoice" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" ></Label>
+        <Button Name = "newInvoiceBtn" Width="75" Height="20" Margin="0,0,260,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Button Name = "deleteInvoiceBtn" Width="75" Height="20" Margin="0,0,160,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox Name = "searchInvoiceTxt" Width="125" Height="20" Margin="0,0,10,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
         <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,25,10,0" Padding="0">
-
-            <ListView Margin="10,10,10,10" Name="lvPartner" ItemsSource="{Binding}" BorderThickness="0">
+            <ListView Name = "lvListInvoice" Margin="10,10,10,10"  ItemsSource="{Binding}" BorderThickness="0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn>
@@ -34,8 +33,10 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding name}"  Header="Company Name"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding phone_number}"  Header="Phone Number"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding id}"  Header="Invoice ID"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding status}"  Header="Status"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding total}"  Header="Amount"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding created_at}"  Header="Date"/>
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>

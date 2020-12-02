@@ -7,7 +7,7 @@
       xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       xmlns:lineChart="clr-namespace:Velacro.Chart.LineChart;assembly=Velacro"
       mc:Ignorable="d"
-      Title="LoginPage" Width="626.394" Height="423">
+      Title="LoginPage" Width="640" Height="360">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -15,10 +15,20 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="194,0,194,46" Click="loginButton_btn_Click"   />
-        <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="23" TextWrapping="Wrap" Text="Email"  Width="238" />
-        <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="Password"  Width="238" Margin="181,172,181,116"/>
-        <Button x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register" Margin="194,0,194,80" Click="register_btn_Click"   />
-        <TextBlock Name="status_field" HorizontalAlignment="Left" Margin="280,105,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.204,-2.812"/>
+        <Canvas HorizontalAlignment="Left" Height="360" VerticalAlignment="Top" Width="640">
+            <Canvas.Background>
+                <ImageBrush ImageSource="D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
+            </Canvas.Background>
+            <TextBlock Canvas.Left="327" TextWrapping="Wrap" Canvas.Top="67" RenderTransformOrigin="-0.22,0.278" Height="19"><Run Text="Login"/><LineBreak/><Run/></TextBlock>
+        </Canvas>
+        <Canvas Background ="White" Canvas.Left="205" Canvas.Top="84" Margin="215,104,179,34">
+
+        </Canvas>
+        <TextBlock Canvas.Left="38" TextWrapping="Wrap" Text="Don't Have an Account ?" Canvas.Top="77" Margin="230,218,275,126"/>
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="243,0,199,70" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49"   />
+        <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="kucing1@gmail.com" Margin="240,141,202,197" />
+        <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="kucing1" Margin="238,175,204,163"/>
+        <Button x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register" Margin="365,0,190,120" Height="28" Click="register_btn_Click"    />
+
     </Grid>
 </basic1:MyPage>
