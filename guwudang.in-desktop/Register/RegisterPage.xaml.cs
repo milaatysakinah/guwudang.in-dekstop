@@ -34,6 +34,9 @@ namespace guwudang.Register {
         private IMyButton registerButton;
         private IMyTextBox emailTxtBox;
         private IMyTextBox nameTxtBox;
+        private IMyTextBox phoneNumberTxtBox;
+        private IMyTextBox addressTxtBox;
+        private IMyTextBox companyNameTxtBox;
         private IMyTextBox passwordTxtBox;
         private IMyTextBox passwordcTxtBox;
         private IMyTextBlock registerStatusTxtBlock;
@@ -43,6 +46,9 @@ namespace guwudang.Register {
                 .addOnClick(this, "onRegisterButtonClick");
             nameTxtBox = txtBoxBuilder.activate(this, "name_txt");
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
+            phoneNumberTxtBox = txtBoxBuilder.activate(this, "phone_number_txt");
+            addressTxtBox = txtBoxBuilder.activate(this, "address_txt");
+            companyNameTxtBox = txtBoxBuilder.activate(this, "company_name_txt");
             passwordTxtBox = txtBoxBuilder.activate(this, "password_txt");
             passwordcTxtBox = txtBoxBuilder.activate(this, "passwordc_txt");
             registerStatusTxtBlock = txtBlockBuilder.activate(this, "status_field");
@@ -51,7 +57,10 @@ namespace guwudang.Register {
         public void onRegisterButtonClick() {
             getController().callMethod("register",  
                 nameTxtBox.getText(), 
-                emailTxtBox.getText(), 
+                emailTxtBox.getText(),
+                phoneNumberTxtBox.getText(),
+                addressTxtBox.getText(),
+                companyNameTxtBox.getText(),
                 passwordTxtBox.getText(), 
                 passwordcTxtBox.getText());
         }

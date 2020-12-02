@@ -52,7 +52,7 @@ namespace TestWPPL.ShowProductDetail {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TestWPPL;component/showproductdetail/showproductdetail.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/guwudang;component/showproductdetail/showproductdetail.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ShowProductDetail\ShowProductDetail.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

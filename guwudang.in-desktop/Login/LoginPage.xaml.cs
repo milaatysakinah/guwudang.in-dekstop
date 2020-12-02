@@ -84,7 +84,7 @@ namespace guwudang.Login {
             Console.WriteLine(user.getToken());
 
             if (user.getToken() != null)
-                mainFrame.Navigate(new Dummy());
+                mainFrame.Navigate(new Sidebar());
         }
     }
 }

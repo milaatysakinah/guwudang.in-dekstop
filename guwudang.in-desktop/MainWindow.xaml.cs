@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using guwudang.Login;
 using guwudang.Register;
+using guwudang.Invoice;
 using Velacro.DataStructures;
 using Velacro.UIElements.Basic;
 
@@ -9,11 +10,13 @@ namespace guwudang {
         private MyPage loginPage;
         private MyPage registerPage;
         private MyPage dashboardPage;
+
         public MainWindow() {
             InitializeComponent();
             registerPage = new RegisterPage(mainFrame);
             loginPage = new LoginPage(mainFrame);
             dashboardPage = new Dashboard.Dashboard();
+            
 
             mainFrame.Navigate(loginPage);
         }

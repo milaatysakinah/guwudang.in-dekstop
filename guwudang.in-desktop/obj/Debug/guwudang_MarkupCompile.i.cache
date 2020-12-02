@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\App.xaml
-5-1848410966
+101549120327
 
-14-1725045896
-1852726336
-Dashboard\Dashboard.xaml;Login\LoginPage.xaml;MainWindow.xaml;Dummy.xaml;Register\RegisterPage.xaml;
+25-447656212
+201798986022
+Dashboard\Dashboard.xaml;Invoice\ListInvoicePage.xaml;Login\LoginPage.xaml;MainWindow.xaml;Dummy.xaml;Partner\PartnerPage.xaml;Product\ProductPage.xaml;Register\RegisterPage.xaml;ShowProductDetail\ShowProductDetail.xaml;Sidebar.xaml;
 
 True
 
