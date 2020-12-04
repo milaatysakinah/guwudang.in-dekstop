@@ -81,5 +81,6 @@ namespace guwudang.Register {
         {
             mainFrame.Navigate(new LoginPage(mainFrame));
         }
+
     }
 }

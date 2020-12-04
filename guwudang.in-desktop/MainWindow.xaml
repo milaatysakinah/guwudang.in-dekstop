@@ -7,6 +7,6 @@
         xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="360" Width="640">
-    <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Width="640" Margin="0,-25,-6,0"/>
+        Title="MainWindow" Height="430" Width="710">
+    <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" Width="710" Margin="0,-25,-6,0"/>
 </basic1:MyWindow>

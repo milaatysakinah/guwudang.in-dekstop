@@ -10,7 +10,7 @@
       Title="PartnerPage"
       Margin="0,0,25,0">
 
-    <Grid>
+    <Grid Margin="1,0,-1,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
@@ -18,11 +18,11 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Content="My Partner" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" ></Label>
-        <Button Name = "newPartnerBtn" Width="75" Height="20" Margin="0,0,260,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <Button Name = "deletePartnerBtn" Width="75" Height="20" Margin="0,0,160,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <TextBox Name = "searchPartnerTxt" Width="125" Height="20" Margin="0,0,10,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Button Name = "newPartnerBtn" Width="75" Height="26" Margin="0,7,337,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Button Name = "deletePartnerBtn" Width="75" Height="26" Margin="0,7,237,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox Name = "searchPartnerTxt" Width="125" Height="20" Margin="0,10,87,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
 
-        <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,25,10,0" Padding="0">
+        <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,42,10,-17" Padding="0">
 
             <ListView Margin="10,10,10,10" Name="lvPartner" ItemsSource="{Binding}" BorderThickness="0">
                 <ListView.View>
