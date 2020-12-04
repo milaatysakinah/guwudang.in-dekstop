@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Controls;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
@@ -18,6 +20,7 @@ namespace guwudang.Invoice
         private IMyButton newInvoiceButton;
         private IMyButton deleteInvoiceButton;
         private IMyTextBox searchInvoiceTxtBox;
+        private List<string> selectedItemsID = new List<string>();
 
         public ListInvoicePage()
         {
@@ -41,7 +44,8 @@ namespace guwudang.Invoice
         private void InitUIElements()
         {
             newInvoiceButton = buttonBuilder.activate(this, "newInvoiceBtn").addOnClick(this, "");
-            deleteInvoiceButton = buttonBuilder.activate(this, "deleteInvoiceBtn").addOnClick(this, "");
+            //deleteInvoiceButton = buttonBuilder.activate(this, "deleteInvoiceBtn").addOnClick(this, "");
+            searchInvoiceTxtBox = txtBoxBuilder.activate(this, "searchInvoiceTxt");
         }
 
         private void getInvoice()
@@ -53,11 +57,42 @@ namespace guwudang.Invoice
         {
             this.Dispatcher.Invoke(() =>
             {
-                //lvListInvoice.ItemsSource = invoice;
+                lvListInvoice.ItemsSource = invoice;
             });
         }
 
+        public void backToLogin()
+        {
+            new MainWindow().Show();
+            this.KeepAlive = false;
+        }
 
+        private void search_btn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            getController().callMethod("searchInvoice", searchInvoiceTxtBox.getText());
+        }
+
+        private void deleteInvoiceBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            //Console.WriteLine(i);
+            getController().callMethod("deleteInvoice", selectedItemsID);
+            
+        }
+
+        private void chkSelected_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            CheckBox chk = (CheckBox)sender;
+            string newVal = chk.Tag.ToString();
+
+            if(chk.IsChecked.HasValue && chk.IsChecked.Value)
+            {
+                selectedItemsID.Add(newVal);
+            }
+            else
+            {
+                selectedItemsID.Remove(newVal);
+            }
+        }
     }
 
     //public class Product
