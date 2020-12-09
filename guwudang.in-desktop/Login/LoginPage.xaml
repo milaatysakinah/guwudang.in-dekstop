@@ -7,7 +7,7 @@
       xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       xmlns:lineChart="clr-namespace:Velacro.Chart.LineChart;assembly=Velacro"
       mc:Ignorable="d"
-      Title="LoginPage" Width="710" Height="430">
+      Title="LoginPage" Width="1920" Height="1080">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -15,20 +15,43 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Canvas HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="710">
+        <Canvas HorizontalAlignment="Left" Height="1070" VerticalAlignment="Top" Width="2136" Margin="-216,0,0,-615">
             <Canvas.Background>
-                <ImageBrush ImageSource="D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
+                <ImageBrush ImageSource="C:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
             </Canvas.Background>
-            <TextBlock Canvas.Left="250" TextWrapping="Wrap" Canvas.Top="73" RenderTransformOrigin="-0.22,0.278" Height="19"><Run Text="Login"/><LineBreak/><Run/></TextBlock>
-        </Canvas>
-        <Canvas Background ="White" Canvas.Left="205" Canvas.Top="84" Margin="211,104,183,34">
 
+            <TextBlock Canvas.Left="250" TextWrapping="Wrap" Canvas.Top="73" RenderTransformOrigin="-0.22,0.278" Height="19"><Run Text="Login"/><LineBreak/><Run/></TextBlock>
+            <TextBlock Canvas.Left="813" TextWrapping="Wrap" Canvas.Top="101" Height="166" Width="714" FontFamily="Montserrat" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59"><Run Text="Welcome"/><LineBreak/><Run Text="to Guwudang.in"/></TextBlock>
         </Canvas>
-        <TextBlock Canvas.Left="38" TextWrapping="Wrap" Text="Don't Have an Account ?" Canvas.Top="77" Margin="242,287,263,121"/>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="239,0,203,70" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49"   />
-        <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="kucing1@gmail.com" Margin="238,176,204,232" />
-        <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="kucing1" Margin="242,226,200,182"/>
-        <Button x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register" Margin="383,0,194,120" Height="28" Click="register_btn_Click"    />
+
+        <Border CornerRadius="35" BorderThickness="20" Margin="690,383,694,-483" >
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFFFFF" Offset="0.0"/>
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFFFF" Offset="0.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <TextBlock HorizontalAlignment="Left" Margin="62,51,0,0" TextWrapping="Wrap" Text="Sign In With Email" VerticalAlignment="Top" Height="55" Width="392" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
+
+            </Grid>
+        </Border>
+
+        <TextBlock Canvas.Left="38" TextWrapping="Wrap" Text="Don't Have an Account ?" Canvas.Top="77" Margin="740,673,739,-265"/>
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="730,0,732,-395" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49" Height="54"   />
+        <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="26" TextWrapping="Wrap" Text="kucing1@gmail.com" Margin="740,562,739,-131" TextDecorations="Underline" />
+        <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="kucing1" Margin="740,613,739,-190"/>
+        <Button x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register" Margin="892,0,927,-261" Height="28" Click="register_btn_Click"    />
 
     </Grid>
 </basic1:MyPage>

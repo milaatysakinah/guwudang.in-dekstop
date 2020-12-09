@@ -6,13 +6,19 @@
         xmlns:local="clr-namespace:guwudang"
         xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
         mc:Ignorable="d"
-        Title="SidebarWindow" Height="430" Width="710">
+        Title="SidebarWindow" Height="1080" Width="1920">
     <Grid Margin="0,15,0,0">
-        <Frame Name="secondFrame" NavigationUIVisibility="Hidden" Margin="114,10,16,10"/>
-        <Button Name="dashboard_btn" Content="Dashboard" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="102" Click="dashboard_btn_Click" Height="31" />
-        <Button Name="product_btn" Content="Product" HorizontalAlignment="Left" Margin="6,45,0,0" VerticalAlignment="Top" Width="102" Click="product_btn_Click" Height="28" />
-        <Button Name="partner_btn" Content="Partner" HorizontalAlignment="Left" Margin="6,79,0,0" VerticalAlignment="Top" Width="102" Click="partner_btn_Click" Height="28" />
-        <Button Name="invoice_btn" Content="Invoice" HorizontalAlignment="Left" Margin="6,113,0,0" VerticalAlignment="Top" Width="102" Click="invoice_btn_Click" Height="28" />
-        <Button Name="logout_btn" Content="Log Out" HorizontalAlignment="Left" Margin="6,146,0,0" VerticalAlignment="Top" Width="102" Click="logout_btn_Click" Height="30" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="359*"/>
+            <RowDefinition Height="706*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Left" Height="1079" Margin="0,-14,0,0" VerticalAlignment="Top" Width="410" Grid.RowSpan="2" Background="#FF1F6CB0"/>
+        <Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="410,172,0,10" Grid.RowSpan="2"/>
+        <Button x:Name="dashboard_btn" Content="Dashboard" HorizontalAlignment="Left" Margin="68,15,0,0" VerticalAlignment="Top" Width="102" Click="dashboard_btn_Click" Height="31" />
+        <Button x:Name="product_btn" Content="Product" HorizontalAlignment="Left" Margin="68,50,0,0" VerticalAlignment="Top" Width="102" Click="product_btn_Click" Height="28" />
+        <Button x:Name="partner_btn" Content="Partner" HorizontalAlignment="Left" Margin="68,84,0,0" VerticalAlignment="Top" Width="102" Click="partner_btn_Click" Height="28" />
+        <Button x:Name="invoice_btn" Content="Invoice" HorizontalAlignment="Left" Margin="68,118,0,0" VerticalAlignment="Top" Width="102" Click="invoice_btn_Click" Height="28" />
+        <Button x:Name="logout_btn" Content="Log Out" HorizontalAlignment="Left" Margin="68,151,0,0" VerticalAlignment="Top" Width="102" Click="logout_btn_Click" Height="30" />
+        <Grid HorizontalAlignment="Left" Height="162" Margin="410,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1"/>
     </Grid>
 </basic1:MyPage>
