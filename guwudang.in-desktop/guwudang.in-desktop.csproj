@@ -80,9 +80,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Account\AccountPage.xaml.cs">
+      <DependentUpon>AccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Account\AccountPageController.cs" />
     <Compile Include="Dashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Experiment\MyRectangle.cs" />
     <Compile Include="Invoice\InvoiceController.cs" />
     <Compile Include="Invoice\ListInvoicePage.xaml.cs">
       <DependentUpon>ListInvoicePage.xaml</DependentUpon>
@@ -91,6 +96,7 @@
     <Compile Include="Dummy.cs">
       <DependentUpon>Dummy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Invoice.cs" />
     <Compile Include="Model\Partner.cs" />
     <Compile Include="Model\Product.cs" />
@@ -114,6 +120,10 @@
     <Compile Include="Sidebar.cs">
       <DependentUpon>Sidebar.xaml</DependentUpon>
     </Compile>
+    <Page Include="Account\AccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dashboard\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
