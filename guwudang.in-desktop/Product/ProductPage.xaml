@@ -6,8 +6,8 @@
       xmlns:local="clr-namespace:guwudang.Product"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d" 
-      d:DesignHeight="430" d:DesignWidth="710"
-      Title="ProductPage">
+      d:DesignHeight="450" d:DesignWidth="700"
+      Title="ProductPage" >
 
     <Grid Width="710" Height="430">
 
@@ -21,16 +21,18 @@
         <Button Name = "newProductBtn" Width="75" Height="33" Margin="0,12,405,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         <Button Name = "deleteProductBtn" Width="75" Height="33" Margin="0,12,305,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         <TextBox Name = "searchProductTxt" Width="125" Height="20" Margin="0,16,153,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
-
+        <Button Name="search_btn" Content="Search" HorizontalAlignment="Left" Margin="570,11,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="search_btn_Click"/>
         <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,61,10,-36" Padding="0">
 
-            <ListView Margin="10,10,10,10" Name="lvProduct" ItemsSource="{Binding}" BorderThickness="0" >
+            <ListView Margin="10,10,10,10" Name="lvProduct" ItemsSource="{Binding}" BorderThickness="0"
+                      SelectionChanged="lvProduct_SelectionChanged" >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox Tag="{Binding id}"/>
+                                    <CheckBox Tag="{Binding id}"
+                                              IsChecked="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Path=IsSelected}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

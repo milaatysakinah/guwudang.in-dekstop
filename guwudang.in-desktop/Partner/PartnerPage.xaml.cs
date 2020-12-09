@@ -3,6 +3,8 @@ using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
+using System.Windows;
+using System.Windows.Controls;
 
 
 namespace guwudang.Partner
@@ -20,6 +22,7 @@ namespace guwudang.Partner
         private IMyTextBox searchPartnerTxtBox;
         private IMyTextBox passwordTxtBox;
         private IMyTextBlock loginStatusTxtBlock;
+        private List<string> listPartnerID = new List<string>();
 
         public PartnerPage()
         {
@@ -43,7 +46,8 @@ namespace guwudang.Partner
         private void initUIElements()
         {
             newPartnerButton = buttonBuilder.activate(this, "newPartnerBtn").addOnClick(this, "");
-            deletePartnerButton = buttonBuilder.activate(this, "deletePartnerBtn").addOnClick(this, "");
+            deletePartnerButton = buttonBuilder.activate(this, "deletePartnerBtn").addOnClick(this, "onClickBtnDelete");
+            searchPartnerTxtBox = txtBoxBuilder.activate(this, "searchPartnerTxt");
         }
 
         private void getPartner()
@@ -59,6 +63,66 @@ namespace guwudang.Partner
             });
         }
 
+        private void search_btn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            getController().callMethod("searchPartner", searchPartnerTxtBox.getText());
+        }
+
+        private void lvPartner_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (guwudang.Model.Partner item in e.RemovedItems)
+            {
+                listPartnerID.Remove(item.id);
+            }
+
+            foreach (guwudang.Model.Partner item in e.AddedItems)
+            {
+                listPartnerID.Add(item.id);
+            }
+        }
+
+        public void onClickBtnDelete()
+        {
+            string txt = "Konfirmasi";
+            string msgtext;
+            if (listPartnerID.Count > 0)
+            {
+                msgtext = "Apakah Anda yakin ingin menghapus " + listPartnerID.Count + " data tersebut ? ";
+            }
+            else
+            {
+                msgtext = "Anda belum memilih data untuk dihapus.";
+            }
+
+            MessageBoxButton button = MessageBoxButton.YesNo;
+            MessageBoxResult result = MessageBox.Show(msgtext, txt, button);
+
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    if (listPartnerID.Count > 0) { delPartner(); }
+                    break;
+                case MessageBoxResult.No:
+                    // No Action
+                    break;
+            }
+        }
+
+        private void delPartner()
+        {
+            //foreach (string item in listProductID)
+            //{
+            //    getController().callMethod("deleteProduct", item);
+            //}
+            getController().callMethod("deletePartner", listPartnerID);
+            //getProduct();
+        }
+
+        public void backToLogin()
+        {
+            new MainWindow().Show();
+            this.KeepAlive = false;
+        }
 
     }
 

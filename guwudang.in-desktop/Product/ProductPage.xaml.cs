@@ -3,6 +3,8 @@ using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
+using System.Windows.Controls;
+using System.Windows;
 
 
 namespace guwudang.Product
@@ -17,9 +19,11 @@ namespace guwudang.Product
         private BuilderTextBlock txtBlockBuilder;
         private IMyButton newProductButton;
         private IMyButton deleteProductButton;
+        private IMyButton searchProductButton;
         private IMyTextBox searchProductTxtBox;
         private IMyTextBox passwordTxtBox;
         private IMyTextBlock loginStatusTxtBlock;
+        private List<string> listProductID = new List<string>();
 
         public ProductPage()
         {
@@ -43,7 +47,8 @@ namespace guwudang.Product
         private void initUIElements()
         {
             newProductButton = buttonBuilder.activate(this, "newProductBtn").addOnClick(this, "");
-            deleteProductButton = buttonBuilder.activate(this, "deleteProductBtn").addOnClick(this, "");
+            deleteProductButton = buttonBuilder.activate(this, "deleteProductBtn").addOnClick(this, "onClickBtnDelete");
+            searchProductTxtBox = txtBoxBuilder.activate(this, "searchProductTxt");
         }
 
         private void getProduct()
@@ -57,6 +62,67 @@ namespace guwudang.Product
             {
                 lvProduct.ItemsSource = products;
             });
+        }
+
+        private void search_btn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            getController().callMethod("searchProduct", searchProductTxtBox.getText());
+        }
+
+        private void lvProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (guwudang.Model.Product item in e.RemovedItems)
+            {
+                listProductID.Remove(item.id);
+            }
+
+            foreach (guwudang.Model.Product item in e.AddedItems)
+            {
+                listProductID.Add(item.id);
+            }
+        }
+
+        public void onClickBtnDelete()
+        {
+            string txt = "Konfirmasi";
+            string msgtext;
+            if (listProductID.Count > 0)
+            {
+                msgtext = "Apakah Anda yakin ingin menghapus " + listProductID.Count + " data tersebut ? ";
+            }
+            else
+            {
+                msgtext = "Anda belum memilih data untuk dihapus.";
+            }
+
+            MessageBoxButton button = MessageBoxButton.YesNo;
+            MessageBoxResult result = MessageBox.Show(msgtext, txt, button);
+
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    if (listProductID.Count > 0) { delProduct(); }
+                    break;
+                case MessageBoxResult.No:
+                    // No Action
+                    break;
+            }
+        }
+
+        private void delProduct()
+        {
+            //foreach (string item in listProductID)
+            //{
+            //    getController().callMethod("deleteProduct", item);
+            //}
+            getController().callMethod("deleteProduct", listProductID);
+            //getProduct();
+        }
+
+        public void backToLogin()
+        {
+            new MainWindow().Show();
+            this.KeepAlive = false;
         }
 
 
