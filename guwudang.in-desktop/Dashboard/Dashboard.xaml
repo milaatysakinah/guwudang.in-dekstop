@@ -19,12 +19,13 @@
                             <ColumnDefinition Width="100" />
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Title}" />
-                        <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}" />
-                        <Button Name="button_btn" Grid.Column="2" Click="ButtonBase_OnClick" Content="Delete"></Button>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Frame Name="frame1" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="448" Margin="44,26,0,0"/>
+        <Frame Name="frame2" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="257" Margin="519,26,0,0"/>
+        <Frame Name="frame3" Content="Frame" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" Width="674" Margin="0,164,0,0"/>
+        <Frame Name="frame4" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="257" Margin="519,238,0,0"/>
     </Grid>
 </basic:MyPage>

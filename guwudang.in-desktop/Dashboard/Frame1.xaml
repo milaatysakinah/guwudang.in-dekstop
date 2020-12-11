@@ -1,0 +1,22 @@
+﻿<basic:MyPage x:Class="guwudang.Dashboard.Frame1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:guwudang.Dashboard"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"        
+      mc:Ignorable="d" 
+      d:DesignHeight="189" d:DesignWidth="448"
+      Title="Page1">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="32,131,0,0" TextWrapping="Wrap" Text="Total Customers
+                   " VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846" Width="89"/>
+        <TextBlock HorizontalAlignment="Left" Margin="169,131,0,0" TextWrapping="Wrap" Text="Total Invoice Created" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842"/>
+        <TextBlock HorizontalAlignment="Left" Margin="328,131,0,0" TextWrapping="Wrap" Text="Total Shipping" VerticalAlignment="Top"/>
+        <TextBlock Name="totalCustomers_txt" HorizontalAlignment="Left" Margin="49,105,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846"/>
+        <TextBlock Name="totalInvoice_txt" HorizontalAlignment="Left" Margin="199,107,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842"/>
+        <TextBlock Name="totalShipping_txt" HorizontalAlignment="Left" Margin="342,108,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+    </Grid>
+</basic:MyPage>

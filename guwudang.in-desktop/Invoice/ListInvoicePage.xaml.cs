@@ -83,7 +83,7 @@ namespace guwudang.Invoice
         {
             CheckBox chk = (CheckBox)sender;
             string newVal = chk.Tag.ToString();
-
+            Console.WriteLine("Clicked");
             if(chk.IsChecked.HasValue && chk.IsChecked.Value)
             {
                 selectedItemsID.Add(newVal);

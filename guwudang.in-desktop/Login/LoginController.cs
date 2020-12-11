@@ -24,8 +24,8 @@ namespace guwudang.Login {
                 .addParameters("password", _password)
                 .setEndpoint("api/login/")
                 .setRequestMethod(HttpMethod.Post);
-            client.setOnSuccessRequest(setViewLoginStatus);
-            client.setOnFailedRequest(setViewLoginStatus);
+            //client.setOnSuccessRequest(setViewLoginStatus);
+            //client.setOnFailedRequest(setViewLoginStatus);
             var response = await client.sendRequest(request.getApiRequestBundle());
 
             if(response.getHttpResponseMessage().ReasonPhrase.Equals("OK"))

@@ -18,7 +18,8 @@
         <Button x:Name="product_btn" Content="Product" HorizontalAlignment="Left" Margin="68,50,0,0" VerticalAlignment="Top" Width="102" Click="product_btn_Click" Height="28" />
         <Button x:Name="partner_btn" Content="Partner" HorizontalAlignment="Left" Margin="68,84,0,0" VerticalAlignment="Top" Width="102" Click="partner_btn_Click" Height="28" />
         <Button x:Name="invoice_btn" Content="Invoice" HorizontalAlignment="Left" Margin="68,118,0,0" VerticalAlignment="Top" Width="102" Click="invoice_btn_Click" Height="28" />
-        <Button x:Name="logout_btn" Content="Log Out" HorizontalAlignment="Left" Margin="68,151,0,0" VerticalAlignment="Top" Width="102" Click="logout_btn_Click" Height="30" />
+        <Button x:Name="logout_btn" Content="Log Out" HorizontalAlignment="Left" Margin="68,183,0,0" VerticalAlignment="Top" Width="102" Click="logout_btn_Click" Height="30" />
         <Grid HorizontalAlignment="Left" Height="162" Margin="410,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1"/>
+        <Button x:Name="account_btn" Content="Invoice" HorizontalAlignment="Left" Margin="68,150,0,0" VerticalAlignment="Top" Width="102" Height="28" />
     </Grid>
 </basic1:MyPage>

@@ -74,7 +74,7 @@ namespace guwudang.Register {
 
         public void toDummy()
         {
-            mainFrame.Navigate(new Dummy());
+            mainFrame.Navigate(new Dashboard.Dashboard());
         }
 
         private void back_btn_Click(object sender, System.Windows.RoutedEventArgs e)

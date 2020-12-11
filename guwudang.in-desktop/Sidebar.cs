@@ -1,6 +1,7 @@
 ﻿using guwudang.Invoice;
 using guwudang.Partner;
 using guwudang.Product;
+using guwudang.Dashboard;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace guwudang
         {
             InitializeComponent();
 
-            listDashboardPage = new Dummy();
+            listDashboardPage = new Dashboard.Dashboard();
             listInvoicePage = new ListInvoicePage();
             listPartnerPage = new PartnerPage();
             listProductPage = new ProductPage();
@@ -63,6 +64,11 @@ namespace guwudang
         private void logout_btn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void account_btn_Click(object sender, RoutedEventArgs e)
+        {
+            secondFrame.Navigate(listInvoicePage);
         }
     }
 }
