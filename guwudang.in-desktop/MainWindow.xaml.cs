@@ -15,7 +15,7 @@ namespace guwudang {
             InitializeComponent();
             registerPage = new RegisterPage(mainFrame);
             loginPage = new LoginPage(mainFrame);
-            dashboardPage = new Dashboard.Dashboard();
+            //dashboardPage = new Dashboard.Dashboard();
             
 
             mainFrame.Navigate(loginPage);
@@ -32,10 +32,6 @@ namespace guwudang {
 
         private void registerButton_btn_Click(object sender, RoutedEventArgs e){
             mainFrame.Navigate(registerPage);
-        }
-
-        private void dashboardButton_btn_Click(object sender, RoutedEventArgs e){
-            mainFrame.Navigate(dashboardPage);
         }
     }
 }

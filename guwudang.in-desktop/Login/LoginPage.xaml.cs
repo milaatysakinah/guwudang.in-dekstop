@@ -23,7 +23,7 @@ namespace guwudang.Login {
         private IMyTextBox passwordTxtBox;
         private IMyTextBlock loginStatusTxtBlock;
         private MyPage registerPage;
-        private MyPage dummyPage;
+        private MyPage dashboardPage;
         private Frame mainFrame;
 
         public LoginPage(Frame mainFrame) {
@@ -35,7 +35,7 @@ namespace guwudang.Login {
             initUIElements();
 
             registerPage = new RegisterPage(mainFrame);
-            dummyPage = new Dummy();
+            //dashboardPage = new Dashboard.Dashboard();
         }
 
         private void initUIBuilders(){
@@ -81,7 +81,7 @@ namespace guwudang.Login {
         public void changeToDashboard(String nothing)
         {
             User user = new User();
-            Console.WriteLine(user.getToken());
+            Console.WriteLine("Login" + user.getToken());
 
             if (user.getToken() != null)
                 mainFrame.Navigate(new Sidebar());
