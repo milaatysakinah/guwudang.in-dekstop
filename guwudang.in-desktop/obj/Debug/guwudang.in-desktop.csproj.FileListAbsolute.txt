@@ -90,3 +90,6 @@ D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Fram
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame2.baml
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame3.baml
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame4.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MessagingToolkit.QRCode.dll
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\QRGenerator\QRGeneratorPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\QRGenerator\QRGeneratorPage.baml
