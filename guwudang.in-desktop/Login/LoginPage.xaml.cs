@@ -8,6 +8,7 @@ using Velacro.Basic;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
+using Velacro.UIElements.PasswordBox;
 using Velacro.UIElements.TextBox;
 using Velacro.Api;
 using guwudang.utils;
@@ -18,9 +19,10 @@ namespace guwudang.Login {
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
         private BuilderTextBlock txtBlockBuilder;
+        private BuilderPasswordBox builderPasswordBox;
         private IMyButton loginButton;
         private IMyTextBox emailTxtBox;
-        private IMyTextBox passwordTxtBox;
+        private IMyPasswordBox passwordTxtBox;
         private IMyTextBlock loginStatusTxtBlock;
         private MyPage registerPage;
         private MyPage dashboardPage;
@@ -41,6 +43,7 @@ namespace guwudang.Login {
         private void initUIBuilders(){
             buttonBuilder = new BuilderButton();
             txtBoxBuilder = new BuilderTextBox();
+            builderPasswordBox = new BuilderPasswordBox();
             txtBlockBuilder = new BuilderTextBlock();
         }
 
@@ -49,12 +52,12 @@ namespace guwudang.Login {
                 .activate(this, "loginButton_btn")
                 .addOnClick(this, "onLoginButtonClick");
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
-            passwordTxtBox = txtBoxBuilder.activate(this, "password_txt");
+            passwordTxtBox = builderPasswordBox.activate(this, "password_txt");
             loginStatusTxtBlock = txtBlockBuilder.activate(this, "status_field");
         }
 
         public void onLoginButtonClick() {
-            getController().callMethod("login", email_txt.Text, password_txt.Text);
+            getController().callMethod("login", email_txt.Text, password_txt.Password);
         }
 
 
@@ -75,7 +78,7 @@ namespace guwudang.Login {
         {
             getController().callMethod("login",
                 emailTxtBox.getText(),
-                passwordTxtBox.getText());
+                passwordTxtBox.getPassword());
         }
 
         public void changeToDashboard(String nothing)
@@ -86,5 +89,7 @@ namespace guwudang.Login {
             if (user.getToken() != null)
                 mainFrame.Navigate(new Sidebar());
         }
+
+    
     }
 }
