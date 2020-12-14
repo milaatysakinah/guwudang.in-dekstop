@@ -13,6 +13,7 @@ namespace guwudang.Model
         public string username { get; set; }
         public string company_name { get; set; }
         public string profile_picture { get; set; }
+        public string phone_number { get; set; }
         public string password { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }

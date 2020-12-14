@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
+using guwudang.Account;
 
 namespace guwudang
 {
@@ -29,6 +30,7 @@ namespace guwudang
         private MyPage listPartnerPage;
         private MyPage listProductPage;
         private MyPage listAccountPage;
+
 
         public Sidebar()
         {
@@ -65,6 +67,8 @@ namespace guwudang
 
         private void logout_btn_Click(object sender, RoutedEventArgs e)
         {
+            //utils.User user = new utils.User();
+            //user.setToken(null);
 
         }
 
