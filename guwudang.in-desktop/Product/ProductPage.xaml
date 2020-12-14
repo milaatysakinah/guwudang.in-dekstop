@@ -9,19 +9,19 @@
       d:DesignHeight="450" d:DesignWidth="700"
       Title="ProductPage" >
 
-    <Grid Width="710" Height="430">
-
+    <!--<Grid Width="710" Height="430">-->
+    <Grid Margin="1,0,-1,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Content="My Product" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" ></Label>
+        <Label Content="My Product" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" ></Label>
         <Button Name = "newProductBtn" Width="75" Height="33" Margin="0,12,405,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         <Button Name = "deleteProductBtn" Width="75" Height="33" Margin="0,12,305,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         <TextBox Name = "searchProductTxt" Width="125" Height="20" Margin="0,16,153,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <Button Name="search_btn" Content="Search" HorizontalAlignment="Left" Margin="570,11,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="search_btn_Click"/>
+        <Button Name="search_btn" Content="Search" HorizontalAlignment="Right" Margin="0,11,50,0" VerticalAlignment="Top" Width="75" Height="33" Click="search_btn_Click"/>
         <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,61,10,-36" Padding="0">
 
             <ListView Margin="10,10,10,10" Name="lvProduct" ItemsSource="{Binding}" BorderThickness="0"
@@ -44,6 +44,13 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Content="Detail"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="CreateQR" Tag="{Binding id}"  Content="Create QR" Click="onClickCreateQR"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

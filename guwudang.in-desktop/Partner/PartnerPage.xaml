@@ -16,12 +16,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Content="My Partner" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" ></Label>
-        <Button Name = "newPartnerBtn" Width="75" Height="26" Margin="0,7,337,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <Button Name = "deletePartnerBtn" Width="75" Height="26" Margin="0,7,237,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <TextBox Name = "searchPartnerTxt" Width="125" Height="20" Margin="0,10,87,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        <Button Name="search_btn" Content="Search" HorizontalAlignment="Left" Margin="80,2,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="search_btn_Click"/>
-        <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,42,10,-17" Padding="0">
+        <Label Content="My Partner" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" ></Label>
+        <Button Name = "newPartnerBtn"  Width="75" Height="33" Margin="0,12,405,0" Content="New" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Button Name = "deletePartnerBtn" Width="75" Height="33" Margin="0,12,305,0" Content="Delete" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBox Name = "searchPartnerTxt" Width="125" Height="20" Margin="0,16,153,0"  HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Button Name="search_btn" Content="Search" HorizontalAlignment="Right" Margin="0,11,50,0" VerticalAlignment="Top" Width="75" Height="33" Click="search_btn_Click"/>
+        <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,61,10,-36" Padding="0">
 
             <ListView Margin="10,10,10,10" Name="lvPartner" ItemsSource="{Binding}" BorderThickness="0"
                       SelectionChanged="lvPartner_SelectionChanged" >

@@ -36,7 +36,7 @@ namespace guwudang
             listDashboardPage = new Dashboard.Dashboard();
             listInvoicePage = new ListInvoicePage();
             listPartnerPage = new PartnerPage();
-            listProductPage = new ProductPage();
+            listProductPage = new ProductPage(secondFrame);
 
             secondFrame.Navigate(listDashboardPage);
         }

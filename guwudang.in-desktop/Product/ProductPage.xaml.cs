@@ -14,6 +14,8 @@ namespace guwudang.Product
     /// </summary>
     public partial class ProductPage : MyPage
     {
+        private Frame secondFrame;
+        private MyPage QRGen;
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
         private BuilderTextBlock txtBlockBuilder;
@@ -25,10 +27,11 @@ namespace guwudang.Product
         private IMyTextBlock loginStatusTxtBlock;
         private List<string> listProductID = new List<string>();
 
-        public ProductPage()
+        public ProductPage(Frame secondFrame)
         {
             InitializeComponent();
             this.KeepAlive = true;
+            this.secondFrame = secondFrame;
             //List<Product> items = new List<Product>();
             //items.Add(new Product() { id = "1", product_type_id = "1", user_id = "1", product_name = "Baju Badut", price = "120000", units = "24", description = "Ini Deskripsi product 1", product_picture = "/img/", created_at = "", updated_at = "" });
             //lvProduct.ItemsSource = items;
@@ -117,6 +120,13 @@ namespace guwudang.Product
             //}
             getController().callMethod("deleteProduct", listProductID);
             //getProduct();
+        }
+
+        public void onClickCreateQR(object sender, System.Windows.RoutedEventArgs e)
+        {
+            string id = (string)((Button)sender).Tag;
+            QRGen = new QRGenerator.QRGeneratorPage(id);
+            secondFrame.Navigate(QRGen);
         }
 
         public void backToLogin()
