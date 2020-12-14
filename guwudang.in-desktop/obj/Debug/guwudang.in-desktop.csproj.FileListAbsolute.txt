@@ -80,3 +80,13 @@ D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesign
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\App.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Account\AccountPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame1.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame2.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame3.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame4.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Account\AccountPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame1.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame2.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame3.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Dashboard\Frame4.baml

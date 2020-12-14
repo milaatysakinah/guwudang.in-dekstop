@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
+using guwudang.Account;
 
 namespace guwudang
 {
@@ -28,6 +29,7 @@ namespace guwudang
         private MyPage listInvoicePage;
         private MyPage listPartnerPage;
         private MyPage listProductPage;
+        private MyPage accountPage;
 
         public Sidebar()
         {
@@ -36,7 +38,8 @@ namespace guwudang
             listDashboardPage = new Dashboard.Dashboard();
             listInvoicePage = new ListInvoicePage();
             listPartnerPage = new PartnerPage();
-            listProductPage = new ProductPage(secondFrame);
+             listProductPage = new ProductPage(secondFrame);
+            accountPage = new AccountPage();
 
             secondFrame.Navigate(listDashboardPage);
         }
@@ -63,12 +66,14 @@ namespace guwudang
 
         private void logout_btn_Click(object sender, RoutedEventArgs e)
         {
+            //utils.User user = new utils.User();
+            //user.setToken(null);
 
         }
 
         private void account_btn_Click(object sender, RoutedEventArgs e)
         {
-            secondFrame.Navigate(listInvoicePage);
+            secondFrame.Navigate(accountPage);
         }
     }
 }
