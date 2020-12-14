@@ -18,7 +18,7 @@
             </Canvas.Background>
         </Canvas>
 
-        <Border CornerRadius="35" BorderThickness="20" Margin="690,383,694,-483" >
+        <Border CornerRadius="35" BorderThickness="20" Margin="293,32,518,-592" >
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Border.Effect>
@@ -31,26 +31,30 @@
 
 
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="38*"/>
+                </Grid.RowDefinitions>
                 <Grid.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="#FFFFFF" Offset="0.0"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-                <TextBlock HorizontalAlignment="Left" Margin="62,51,0,0" TextWrapping="Wrap" Text="Sign In With Email" VerticalAlignment="Top" Height="55" Width="392" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
+                <TextBlock HorizontalAlignment="Left" Margin="50,30,0,0" TextWrapping="Wrap" Text="Sign Up" VerticalAlignment="Top" Height="55" Width="392" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="40" Foreground="#FF070D59"/>
 
             </Grid>
         </Border>
 
-        <TextBox Name ="company_name_txt" Height="28" Canvas.Left="42" TextWrapping="Wrap" Text="Company Name" Canvas.Top="216" Margin="179,266,160,138"/>
-        <TextBox Name="address_txt" Height="38" Canvas.Left="43" TextWrapping="Wrap" Text="Address" Canvas.Top="167" Margin="178,218,160,176"/>
-        <TextBox Name="phone_number_txt" Canvas.Left="203" TextWrapping="Wrap" Text="Phone Number" Canvas.Top="84" Margin="364,137,160,265"/>
-        <TextBox Name="name_txt" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" TextWrapping="Wrap" Text="Name" Width="371" Margin="179,96,160,303"/>
-        <TextBox Name="email_txt" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Email" Margin="177,137,359,265"/>
-        <TextBox Name="password_txt"  Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Password" Margin="177,182,359,224"/>
-        <TextBox Name="passwordc_txt" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Password Confirmation" Margin="364,183,160,223"/>
-        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Margin="185,311,169,94" Height="Auto"/>
-        <Button Name="back_btn"  Grid.Row="0" Grid.Column="0" Content="Back" Margin="400,345,231,58" Height="Auto" Click="back_btn_Click"/>
-        <TextBlock Name="status_field" HorizontalAlignment="Left" Margin="195,59,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.045,0.512" Height="16"/>
+        <TextBox Name ="company_name_txt" Height="28" Canvas.Left="42" TextWrapping="Wrap" Text="Company Name" Canvas.Top="216" Margin="108,-120,231,532"/>
+        <TextBox Name="address_txt" Height="38" Canvas.Left="43" TextWrapping="Wrap" Text="Address" Canvas.Top="167" Margin="107,-168,231,570"/>
+        <TextBox Name="phone_number_txt" Canvas.Left="203" TextWrapping="Wrap" Text="Phone Number" Canvas.Top="84" Margin="293,-86,231,489"/>
+        <TextBox Name="name_txt" Grid.Row="0" HorizontalAlignment="Center" Grid.Column="0" TextWrapping="Wrap" Text="Name" Width="371" Margin="713,-294,836,693"/>
+        <TextBox Name="email_txt" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Email" Margin="106,-253,430,655"/>
+        <TextBox Name="password_txt"  Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Password" Margin="106,-208,430,614"/>
+        <TextBox Name="passwordc_txt" Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="Password Confirmation" Margin="293,-207,231,613"/>
+        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Margin="1967,68,-1613,337" Height="Auto"/>
+        <Button Name="back_btn"  Grid.Row="0" Grid.Column="0" Content="Back" Margin="2182,102,-1551,301" Height="Auto" Click="back_btn_Click"/>
+        <TextBlock Name="status_field" HorizontalAlignment="Left" Margin="124,-331,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.045,0.512" Height="16"/>
 
     </Grid>
 </basic:MyPage>

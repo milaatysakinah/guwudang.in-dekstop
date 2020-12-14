@@ -28,6 +28,7 @@ namespace guwudang
         private MyPage listInvoicePage;
         private MyPage listPartnerPage;
         private MyPage listProductPage;
+        private MyPage listAccountPage;
 
         public Sidebar()
         {
@@ -37,6 +38,7 @@ namespace guwudang
             listInvoicePage = new ListInvoicePage();
             listPartnerPage = new PartnerPage();
             listProductPage = new ProductPage(secondFrame);
+            listAccountPage = new Account.AccountPage();
 
             secondFrame.Navigate(listDashboardPage);
         }
@@ -68,7 +70,7 @@ namespace guwudang
 
         private void account_btn_Click(object sender, RoutedEventArgs e)
         {
-            secondFrame.Navigate(listInvoicePage);
+            secondFrame.Navigate(listAccountPage);
         }
     }
 }
