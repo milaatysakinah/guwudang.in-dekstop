@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:guwudang"
       xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       xmlns:lineChart="clr-namespace:Velacro.Chart.LineChart;assembly=Velacro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d"
       Title="LoginPage" Width="1920" Height="1080">
     <Grid>
@@ -17,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Canvas HorizontalAlignment="Left" Height="1070" VerticalAlignment="Top" Width="2136" Margin="-216,0,0,-615">
             <Canvas.Background>
-                <ImageBrush ImageSource="/login_bg2@2x.png"/>
+                <ImageBrush ImageSource="C:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
             </Canvas.Background>
 
             <TextBlock Canvas.Left="250" TextWrapping="Wrap" Canvas.Top="73" RenderTransformOrigin="-0.22,0.278" Height="19"><Run Text="Login"/><LineBreak/><Run/></TextBlock>
@@ -47,11 +48,18 @@
             </Grid>
         </Border>
 
-        <TextBlock Canvas.Left="38" TextWrapping="Wrap" Text="Don't Have an Account ?" Canvas.Top="77" Margin="740,673,739,-265"/>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Margin="730,0,732,-395" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49" Height="54"   />
-        <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="26" TextWrapping="Wrap" Text="kucing1@gmail.com" Margin="740,562,739,-131" TextDecorations="Underline" />
-        <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="kucing1" Margin="740,613,739,-190"/>
-        <Button x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register" Margin="892,0,927,-261" Height="28" Click="register_btn_Click"    />
+        <TextBlock Canvas.Left="38" TextWrapping="Wrap" Text="Don't Have an Account ?" Canvas.Top="77" Margin="740,731,739,-304" FontSize="20" FontFamily="Montserrat"/>
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="LOGIN" Margin="730,0,732,-395" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49" Height="54" FontSize="30" FontWeight="Bold"   />
+
+        <Rectangle Text="LOGIN" Name="rectangle1" Stroke="Black" RadiusX="24.5" RadiusY="24.5" Margin="730,822,732,-395" Fill="#FF1F6CB0" >
+        </Rectangle>
+
+        <Border CornerRadius="28" BorderThickness="1" BorderBrush="#707070" Margin="730,547,728,-141" Height="59" Width="459"/>
+        <TextBox materialDesign:HintAssist.Hint="Username" Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="42" TextWrapping="Wrap" Margin="756,562,757,-136" IsEnabled="True" FontFamily="Montserrat" FontSize="20" SelectionOpacity="-1" AllowDrop="True" FontWeight="Medium" IsUndoEnabled="False" />
+        <Border CornerRadius="28" BorderThickness="1" BorderBrush="#707070" Margin="732,643,732,-227" Height="59"/>
+        <PasswordBox  Name="password_txt" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.Foreground="#1F6CB0" materialDesign:TextFieldAssist.UnderlineBrush="#1F6CB0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="756,657,757,-221" FontFamily="Montserrat" FontSize="20" FontWeight="Medium" />
+
+        <Button Background="Transparent" x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register here" Margin="980,0,781,-277" Height="35" Click="register_btn_Click" BorderBrush="{x:Null}" Foreground="#FF070D59" FontWeight="Bold" FontSize="20"    />
 
     </Grid>
 </basic1:MyPage>

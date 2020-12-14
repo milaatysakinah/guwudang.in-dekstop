@@ -36,10 +36,10 @@ namespace guwudang.Dashboard {
         {
             InitializeComponent();
 
-            frame_1 = new Frame1();
-            frame_2 = new Frame2();
-            frame_3 = new Frame3();
-            frame_4 = new Frame4();
+            //frame_1 = new Frame1();
+            //frame_2 = new Frame2();
+            //frame_3 = new Frame3();
+            //frame_4 = new Frame4();
             initialize();
         }
 
