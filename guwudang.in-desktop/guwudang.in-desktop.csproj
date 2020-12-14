@@ -55,9 +55,13 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=3.2.0.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.3.2.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -87,6 +91,19 @@
     <Compile Include="Dashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\DashboardController.cs" />
+    <Compile Include="Dashboard\Frame1.xaml.cs">
+      <DependentUpon>Frame1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Frame2.xaml.cs">
+      <DependentUpon>Frame2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Frame3.xaml.cs">
+      <DependentUpon>Frame3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Frame4.xaml.cs">
+      <DependentUpon>Frame4.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Experiment\MyRectangle.cs" />
     <Compile Include="Invoice\InvoiceController.cs" />
     <Compile Include="Invoice\ListInvoicePage.xaml.cs">
@@ -98,8 +115,10 @@
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Invoice.cs" />
+    <Compile Include="Model\OrderItem.cs" />
     <Compile Include="Model\Partner.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\WeeklyOrder.cs" />
     <Compile Include="Partner\PartnerController.cs" />
     <Compile Include="Partner\PartnerPage.xaml.cs">
       <DependentUpon>PartnerPage.xaml</DependentUpon>
@@ -109,6 +128,10 @@
       <DependentUpon>ProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="QRGenerator\ConvertImage.cs" />
+    <Compile Include="QRGenerator\QRGeneratorPage.xaml.cs">
+      <DependentUpon>QRGeneratorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register\RegisterController.cs" />
     <Compile Include="Register\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -127,6 +150,22 @@
     <Page Include="Dashboard\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dashboard\Frame1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dashboard\Frame2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dashboard\Frame3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dashboard\Frame4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Invoice\ListInvoicePage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +201,10 @@
     <Page Include="Product\ProductPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QRGenerator\QRGeneratorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Register\RegisterPage.xaml">
       <SubType>Designer</SubType>
