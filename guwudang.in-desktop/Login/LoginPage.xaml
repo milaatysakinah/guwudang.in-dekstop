@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Canvas HorizontalAlignment="Left" Height="1070" VerticalAlignment="Top" Width="2136" Margin="-216,0,0,-615">
             <Canvas.Background>
-                <ImageBrush ImageSource="C:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
+                <ImageBrush ImageSource="/login_bg2@2x.png" />
             </Canvas.Background>
             <TextBlock Canvas.Left="813" TextWrapping="Wrap" Canvas.Top="101" Height="166" Width="714" FontFamily="Montserrat" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59"><Run Text="Welcome"/><LineBreak/><Run Text="to Guwudang.in"/></TextBlock>
         </Canvas>
