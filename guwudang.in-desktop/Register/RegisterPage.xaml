@@ -14,7 +14,8 @@
         </Grid.RowDefinitions>
         <Canvas HorizontalAlignment="Left" Height="1070" VerticalAlignment="Top" Width="2136" Margin="-216,10,0,-641">
             <Canvas.Background>
-                <ImageBrush ImageSource="C:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\login_bg2@2x.png"/>
+                <ImageBrush ImageSource="/login_bg2@2x.png" />
+
             </Canvas.Background>
         </Canvas>
 

@@ -41,8 +41,25 @@ namespace guwudang
             listPartnerPage = new PartnerPage();
             listProductPage = new ProductPage(secondFrame);
             listAccountPage = new Account.AccountPage();
+            setController(new SidebarController(this));
+
+            lblDate.Content = DateTime.Now.ToString("dddd , dd MMM yyyy");
 
             secondFrame.Navigate(listDashboardPage);
+            getAccountPage();
+        }
+
+        private void getAccountPage()
+        {
+            getController().callMethod("getAccountData");
+        }
+
+        public void setAccountPage(Model.Account account)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                lblUsername.Content = "Welcome, " + account.username;
+            });
         }
 
         private void dashboard_btn_Click(object sender, RoutedEventArgs e)
