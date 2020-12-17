@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:guwudang"
         xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"        
         mc:Ignorable="d"
         Title="SidebarWindow" Height="1080" Width="1920">
     <Grid Margin="0,15,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="359*"/>
-            <RowDefinition Height="706*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Left" Height="1079" Margin="0,-14,0,0" VerticalAlignment="Top" Width="410" Grid.RowSpan="2" Background="#FF1F6CB0"/>
         <Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="410,172,0,10" Grid.RowSpan="2"/>
@@ -25,5 +30,62 @@
             <Image Source="/logout_ico.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Image>
         </Grid>
         <Button x:Name="account_btn" Content="Account" HorizontalAlignment="Left" Margin="68,150,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="account_btn_Click" />
+
+        <Grid HorizontalAlignment="Right" Height="1079" Margin="0,-14,1510,0" VerticalAlignment="Top" Width="410" Background="#FF1F6CB0" Grid.ColumnSpan="2">
+
+            <StackPanel HorizontalAlignment="Right" Width="410">
+                <Grid Height="150" Background="#FF1F6CB0">
+                    <Canvas Height="96" VerticalAlignment="Top" Margin="47,52,47,0">
+                        <Canvas.Background>
+                            <ImageBrush ImageSource="Group 211.png"/>
+                        </Canvas.Background>
+                    </Canvas>
+                </Grid>
+
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" Margin="0,100,0,0" Height="67">
+                    <ListViewItem Height="60" Selected="dashboard_btn_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ViewDashboard" Width="32" Height="60" Margin="30 0 0 0" VerticalAlignment="Center"/>
+                            <TextBlock Text="Dashboard" VerticalAlignment="Center" Margin="20 10 0 10" Height="30" Width="213" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" Margin="0,70,0,0" Height="176">
+
+                    <ListViewItem Height="70" Selected="product_btn_Click">
+                        <StackPanel Orientation="Horizontal" Height="60">
+                            <materialDesign:PackIcon Kind="LayersTriple" Width="32" Height="45" Margin="40,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.595,0.314"/>
+                            <TextBlock Text="My Products" VerticalAlignment="Center" Margin="20,10,0,0" Height="37" Width="213" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="70" Selected="invoice_btn_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Receipt" Width="30" Height="42" Margin="40,10,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="Invoice" VerticalAlignment="Center" Margin="20,10,0,0" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                </ListView>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" Margin="0,50,0,0" Height="141">
+                    <ListViewItem Height="70" Selected="partner_btn_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="AccountSupervisor" Width="38" Height="51" Margin="40,10,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="Partners" VerticalAlignment="Center" Margin="20,10,0,0" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="70" Selected="account_btn_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Account" Width="38" Height="51" Margin="40,10,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="Account" VerticalAlignment="Center" Margin="20,10,0,0" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Left" Margin="40,356,0,0" TextWrapping="Wrap" Text="Product" VerticalAlignment="Top" Height="26" Width="112" FontFamily="Montserrat" FontSize="20" FontWeight="SemiBold" Foreground="#FFC9C9C9" RenderTransformOrigin="0.532,0.44"/>
+            <TextBlock HorizontalAlignment="Left" Margin="40,580,0,0" TextWrapping="Wrap" Text="Business" VerticalAlignment="Top" Height="26" Width="112" FontFamily="Montserrat" FontSize="20" FontWeight="SemiBold" Foreground="#FFC9C9C9" RenderTransformOrigin="0.532,0.44"/>
+        </Grid>
+        <Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="10,153,-5,-1" Grid.Column="1" Grid.RowSpan="2"/>
+        <Grid HorizontalAlignment="Left" Height="162" Margin="5,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1" Grid.Column="1"/>
+
     </Grid>
 </basic1:MyPage>

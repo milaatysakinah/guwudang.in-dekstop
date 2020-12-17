@@ -27,11 +27,10 @@ namespace guwudang.Product
         private IMyTextBlock loginStatusTxtBlock;
         private List<string> listProductID = new List<string>();
 
-        public ProductPage(Frame secondFrame)
+        public ProductPage()
         {
             InitializeComponent();
             this.KeepAlive = true;
-            this.secondFrame = secondFrame;
             //List<Product> items = new List<Product>();
             //items.Add(new Product() { id = "1", product_type_id = "1", user_id = "1", product_name = "Baju Badut", price = "120000", units = "24", description = "Ini Deskripsi product 1", product_picture = "/img/", created_at = "", updated_at = "" });
             //lvProduct.ItemsSource = items;

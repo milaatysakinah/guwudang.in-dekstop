@@ -4,7 +4,7 @@ using System.Net.Http;
 using guwudang.Model;
 using System.Collections.Generic;
 using guwudang.utils;
-
+using System;
 
 namespace guwudang.Product
 {
@@ -18,7 +18,7 @@ namespace guwudang.Product
         {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchProductByUserID/?id=:id";
+            
 
             User user = new User();
             string token = user.getToken();
@@ -28,10 +28,19 @@ namespace guwudang.Product
                 .buildHttpRequest()
                 .setEndpoint("api/authUser")
                 .setRequestMethod(HttpMethod.Get);
-
-            var response1 = await client.sendRequest(request.getApiRequestBundle());
+            client.setOnSuccessRequest(setSuccessAuthorization);
             client.setOnFailedRequest(setFailedAuthorization);
-            id = response1.getJObject()["user"]["id"].ToString();
+            var response1 = await client.sendRequest(request.getApiRequestBundle());
+            
+            Console.WriteLine(response1.getHttpResponseMessage().Content);
+           
+            
+        }
+
+        public async void nextProduct(string id)
+        {
+            string _endpoint = "api/searchProductByUserID/?id=:id";
+
             _endpoint = _endpoint.Replace(":id", id);
             //Console.WriteLine(_endpoint);
 
@@ -94,6 +103,15 @@ namespace guwudang.Product
             if (_response.getHttpResponseMessage().Content != null)
             {
                 getView().callMethod("backToLogin");
+            }
+        }
+
+        private void setSuccessAuthorization(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                id = _response.getJObject()["user"]["id"].ToString();
+                nextProduct(id);
             }
         }
     }

@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
 using guwudang.Account;
+using Velacro.DataStructures;
+using guwudang.utils;
 
 namespace guwudang
 {
@@ -25,11 +27,7 @@ namespace guwudang
     /// </summary>
     public partial class Sidebar : MyPage
     {
-        private MyPage listDashboardPage;
-        private MyPage listInvoicePage;
-        private MyPage listPartnerPage;
-        private MyPage listProductPage;
-        private MyPage listAccountPage;
+        private static MyDictionary<string, MyPage> pages;
 
 
         public Sidebar()
@@ -60,26 +58,28 @@ namespace guwudang
             {
                 lblUsername.Content = "Welcome, " + account.username;
             });
+            secondFrame.Navigate(PageManagement.getPage(EPages.listDashboardPage));
         }
 
-        private void dashboard_btn_Click(object sender, RoutedEventArgs e)
-        {
-            secondFrame.Navigate(listDashboardPage);   
+        private void dashboard_btn_Click(object sender, RoutedEventArgs e) { 
+        
+            Console.WriteLine("CLICK");
+            secondFrame.Navigate(PageManagement.getPage(EPages.listDashboardPage));
         }
 
         private void product_btn_Click(object sender, RoutedEventArgs e)
         {
-            secondFrame.Navigate(listProductPage);
+            secondFrame.Navigate(PageManagement.getPage(EPages.listProductPage));
         }
 
         private void partner_btn_Click(object sender, RoutedEventArgs e)
         {
-            secondFrame.Navigate(listPartnerPage);
+            secondFrame.Navigate(PageManagement.getPage(EPages.listPartnerPage));
         }
 
         private void invoice_btn_Click(object sender, RoutedEventArgs e)
         {
-            secondFrame.Navigate(listInvoicePage);
+            secondFrame.Navigate(PageManagement.getPage(EPages.listInvoicePage));
         }
 
         private void logout_btn_Click(object sender, RoutedEventArgs e)
@@ -91,7 +91,7 @@ namespace guwudang
 
         private void account_btn_Click(object sender, RoutedEventArgs e)
         {
-            secondFrame.Navigate(listAccountPage);
+            secondFrame.Navigate(PageManagement.getPage(EPages.listAccountPage));
         }
     }
 }

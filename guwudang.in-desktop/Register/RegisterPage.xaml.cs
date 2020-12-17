@@ -5,6 +5,7 @@ using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
+using Velacro.UIElements.PasswordBox;
 
 namespace guwudang.Register {
     /// <summary>
@@ -24,11 +25,13 @@ namespace guwudang.Register {
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
         private BuilderTextBlock txtBlockBuilder;
-        
+        private BuilderPasswordBox builderPasswordBox;
+
         private void initUIBuilders() {
             buttonBuilder = new BuilderButton();
             txtBoxBuilder = new BuilderTextBox();
             txtBlockBuilder = new BuilderTextBlock();
+            builderPasswordBox = new BuilderPasswordBox();
         }
 
         private IMyButton registerButton;
@@ -37,8 +40,8 @@ namespace guwudang.Register {
         private IMyTextBox phoneNumberTxtBox;
         private IMyTextBox addressTxtBox;
         private IMyTextBox companyNameTxtBox;
-        private IMyTextBox passwordTxtBox;
-        private IMyTextBox passwordcTxtBox;
+        private IMyPasswordBox passwordTxtBox;
+        private IMyPasswordBox passwordcTxtBox;
         private IMyTextBlock registerStatusTxtBlock;
 
         private void initUIElements() {
@@ -49,8 +52,8 @@ namespace guwudang.Register {
             phoneNumberTxtBox = txtBoxBuilder.activate(this, "phone_number_txt");
             addressTxtBox = txtBoxBuilder.activate(this, "address_txt");
             companyNameTxtBox = txtBoxBuilder.activate(this, "company_name_txt");
-            passwordTxtBox = txtBoxBuilder.activate(this, "password_txt");
-            passwordcTxtBox = txtBoxBuilder.activate(this, "passwordc_txt");
+            passwordTxtBox = builderPasswordBox.activate(this, "password_txt");
+            passwordcTxtBox = builderPasswordBox.activate(this, "passwordc_txt");
             registerStatusTxtBlock = txtBlockBuilder.activate(this, "status_field");
         }
 
@@ -61,8 +64,8 @@ namespace guwudang.Register {
                 phoneNumberTxtBox.getText(),
                 addressTxtBox.getText(),
                 companyNameTxtBox.getText(),
-                passwordTxtBox.getText(), 
-                passwordcTxtBox.getText());
+                passwordTxtBox.getPassword(), 
+                passwordcTxtBox.getPassword());
         }
 
         public void setRegisterStatus(string _status) {

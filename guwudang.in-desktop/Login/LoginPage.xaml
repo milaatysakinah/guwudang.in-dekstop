@@ -23,7 +23,7 @@
             <TextBlock Canvas.Left="813" TextWrapping="Wrap" Canvas.Top="101" Height="166" Width="714" FontFamily="Montserrat" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59"><Run Text="Welcome"/><LineBreak/><Run Text="to Guwudang.in"/></TextBlock>
         </Canvas>
 
-        <Border CornerRadius="35" BorderThickness="20" Margin="690,383,694,-483" >
+        <Border CornerRadius="35" BorderThickness="20" Margin="690,374,694,-474" >
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
             </Border.Effect>
@@ -49,14 +49,14 @@
         <TextBlock Canvas.Left="38" TextWrapping="Wrap" Text="Don't Have an Account ?" Canvas.Top="77" Margin="740,731,739,-304" FontSize="20" FontFamily="Montserrat"/>
         <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="LOGIN" Margin="730,0,732,-395" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49" Height="54" FontSize="30" FontWeight="Bold"   />
 
-        
+
 
         <Border CornerRadius="28" BorderThickness="1" BorderBrush="#707070" Margin="730,547,728,-141" Height="59" Width="459"/>
-        <TextBox materialDesign:HintAssist.Hint="Username" Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="42" TextWrapping="Wrap" Margin="756,562,757,-136" IsEnabled="True" FontFamily="Montserrat" FontSize="20" SelectionOpacity="-1" AllowDrop="True" FontWeight="Medium" IsUndoEnabled="False" />
+        <TextBox materialDesign:HintAssist.Hint="Username" Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="46" TextWrapping="Wrap" Margin="758,570,755,-132" IsEnabled="True" FontFamily="Montserrat" FontSize="20" SelectionOpacity="-1" AllowDrop="True" FontWeight="Medium" IsUndoEnabled="False" />
         <Border CornerRadius="28" BorderThickness="1" BorderBrush="#707070" Margin="732,643,732,-227" Height="59"/>
-        <PasswordBox  Name="password_txt" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.Foreground="#1F6CB0" materialDesign:TextFieldAssist.UnderlineBrush="#1F6CB0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="756,657,757,-221" FontFamily="Montserrat" FontSize="20" FontWeight="Medium" />
+        <PasswordBox  Name="password_txt" materialDesign:HintAssist.Hint="Password" materialDesign:HintAssist.Foreground="#1F6CB0" materialDesign:TextFieldAssist.UnderlineBrush="#1F6CB0" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="756,648,757,-212" FontFamily="Montserrat" FontSize="20" FontWeight="Medium" />
 
-        <Button Background="Transparent" x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register here" Margin="980,0,781,-277" Height="35" Click="register_btn_Click" BorderBrush="{x:Null}" Foreground="#FF070D59" FontWeight="Bold" FontSize="20"    />
+        <Button Background="Transparent" x:Name="register_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Register here" Margin="980,0,781,-275" Height="35" Click="register_btn_Click" BorderBrush="{x:Null}" Foreground="#FF070D59" FontWeight="Bold" FontSize="20"    />
 
     </Grid>
 </basic1:MyPage>

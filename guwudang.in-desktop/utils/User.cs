@@ -13,6 +13,7 @@ namespace guwudang.utils
         public void initializeToken(String token)
         {
             setToken(token); 
+
         }
 
         public void setToken(String parameter)

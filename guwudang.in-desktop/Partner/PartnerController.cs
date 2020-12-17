@@ -4,7 +4,7 @@ using System.Net.Http;
 using guwudang.Model;
 using guwudang.utils;
 using System.Collections.Generic;
-
+using System;
 
 namespace guwudang.Partner
 {
@@ -34,6 +34,7 @@ namespace guwudang.Partner
 
             var response1 = await client.sendRequest(request.getApiRequestBundle());
             client.setOnFailedRequest(setFailedAuthorization);
+            Console.WriteLine(response1.getHttpResponseMessage().Content);
             id = response1.getJObject()["user"]["id"].ToString();
             _endpoint = _endpoint.Replace(":id", id);
             //Console.WriteLine(_endpoint);
