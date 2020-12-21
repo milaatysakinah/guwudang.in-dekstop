@@ -104,6 +104,18 @@
       <DependentUpon>AccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Account\AccountPageController.cs" />
+    <Compile Include="CreateInvoice\CreateInvoiceController.cs" />
+    <Compile Include="CreateInvoice\CreateInvoicePage.xaml.cs">
+      <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePartner\CreatePartnerController.cs" />
+    <Compile Include="CreatePartner\CreatePartnerPage.xaml.cs">
+      <DependentUpon>CreatePartnerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProduct\CreateProductController.cs" />
+    <Compile Include="CreateProduct\CreateProductPage.xaml.cs">
+      <DependentUpon>CreateProductPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -134,6 +146,8 @@
     <Compile Include="Model\OrderItem.cs" />
     <Compile Include="Model\Partner.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\StatusInvoice.cs" />
+    <Compile Include="Model\TransType.cs" />
     <Compile Include="Model\WeeklyOrder.cs" />
     <Compile Include="Partner\PartnerController.cs" />
     <Compile Include="Partner\PartnerPage.xaml.cs">
@@ -155,6 +169,7 @@
     <Compile Include="ShowProductDetail\ShowProductDetail.xaml.cs">
       <DependentUpon>ShowProductDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SidebarController.cs" />
     <Compile Include="utils\EPages.cs" />
     <Compile Include="utils\PageManagement.cs" />
     <Compile Include="utils\User.cs" />
@@ -164,6 +179,18 @@
     <Page Include="Account\AccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateInvoice\CreateInvoicePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CreatePartner\CreatePartnerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CreateProduct\CreateProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Dashboard\Dashboard.xaml">
       <SubType>Designer</SubType>
@@ -269,6 +296,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Group 211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logout_ico.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

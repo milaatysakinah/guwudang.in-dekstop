@@ -28,22 +28,24 @@ namespace guwudang
     public partial class Sidebar : MyPage
     {
         private static MyDictionary<string, MyPage> pages;
+        public static Frame secFrame;
 
 
         public Sidebar()
         {
             InitializeComponent();
 
-            listDashboardPage = new Dashboard.Dashboard();
-            listInvoicePage = new ListInvoicePage();
-            listPartnerPage = new PartnerPage();
-            listProductPage = new ProductPage(secondFrame);
-            listAccountPage = new Account.AccountPage();
+            //listDashboardPage = new Dashboard.Dashboard();
+            //listInvoicePage = new ListInvoicePage();
+            //listPartnerPage = new PartnerPage();
+            //listProductPage = new ProductPage(secondFrame);
+            //listAccountPage = new Account.AccountPage();
             setController(new SidebarController(this));
 
             lblDate.Content = DateTime.Now.ToString("dddd , dd MMM yyyy");
+            secFrame = secondFrame;
 
-            secondFrame.Navigate(listDashboardPage);
+            //secondFrame.Navigate(listDashboardPage);
             getAccountPage();
         }
 
@@ -58,11 +60,12 @@ namespace guwudang
             {
                 lblUsername.Content = "Welcome, " + account.username;
             });
-            secondFrame.Navigate(PageManagement.getPage(EPages.listDashboardPage));
+            //secondFrame.Navigate(PageManagement.getPage(EPages.listDashboardPage));
         }
 
-        private void dashboard_btn_Click(object sender, RoutedEventArgs e) { 
-        
+        private void dashboard_btn_Click(object sender, RoutedEventArgs e)
+        {
+
             Console.WriteLine("CLICK");
             secondFrame.Navigate(PageManagement.getPage(EPages.listDashboardPage));
         }

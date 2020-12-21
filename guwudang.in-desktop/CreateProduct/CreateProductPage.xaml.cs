@@ -5,7 +5,6 @@ using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
 using System.Windows.Controls;
 using System.Windows;
-using System.Collections.ObjectModel;
 
 namespace guwudang.CreateProduct 
 {

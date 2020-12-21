@@ -35,6 +35,13 @@ namespace guwudang.Invoice
             getInvoice();
         }
 
+        public void onClickDetailInvoice(object sender, System.Windows.RoutedEventArgs e)
+        {
+            string id = (string)((Button)sender).Tag;
+            //DetailInvoice.DetailInvoicePage detail = new DetailInvoice.DetailInvoicePage(id);
+            //Sidebar.secFrame.Navigate(detail);
+        }
+
         private void InitUIBuilders()
         {
             buttonBuilder = new BuilderButton();
@@ -43,9 +50,15 @@ namespace guwudang.Invoice
 
         private void InitUIElements()
         {
-            newInvoiceButton = buttonBuilder.activate(this, "newInvoiceBtn").addOnClick(this, "");
+            newInvoiceButton = buttonBuilder.activate(this, "newInvoiceBtn").addOnClick(this, "onClick_newInvoice");
             //deleteInvoiceButton = buttonBuilder.activate(this, "deleteInvoiceBtn").addOnClick(this, "");
             searchInvoiceTxtBox = txtBoxBuilder.activate(this, "searchInvoiceTxt");
+        }
+
+        public void onClick_newInvoice()
+        {
+            //Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.newInvoicePage));
+            Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.newInvoicePage));
         }
 
         private void getInvoice()
@@ -76,7 +89,7 @@ namespace guwudang.Invoice
         {
             //Console.WriteLine(i);
             getController().callMethod("deleteInvoice", selectedItemsID);
-            
+
         }
 
         private void chkSelected_Checked(object sender, System.Windows.RoutedEventArgs e)
@@ -84,7 +97,7 @@ namespace guwudang.Invoice
             CheckBox chk = (CheckBox)sender;
             string newVal = chk.Tag.ToString();
             Console.WriteLine("Clicked");
-            if(chk.IsChecked.HasValue && chk.IsChecked.Value)
+            if (chk.IsChecked.HasValue && chk.IsChecked.Value)
             {
                 selectedItemsID.Add(newVal);
             }
