@@ -35,6 +35,7 @@ namespace guwudang.Login {
             this.mainFrame = mainFrame;
             initUIBuilders();
             initUIElements();
+            email_txt.Focus();
 
             registerPage = new RegisterPage(mainFrame);
             //dashboardPage = new Dashboard.Dashboard();

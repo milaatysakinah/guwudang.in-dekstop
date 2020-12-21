@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Velacro.Api;
+using Velacro.Basic;
+using System.Net.Http;
+using guwudang.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using guwudang.utils;
+using System;
 namespace guwudang.CreatePartner
 {
     class CreatePartnerController : MyController

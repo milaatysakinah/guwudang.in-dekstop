@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Velacro.Api;
+﻿using Velacro.Api;
 using Velacro.Basic;
-using guwudang.Model.Product;
+using System.Net.Http;
+using guwudang.Model;
+using System.Collections.Generic;
+using guwudang.utils;
+using System;
 
 namespace guwudang.CreateProduct
 {

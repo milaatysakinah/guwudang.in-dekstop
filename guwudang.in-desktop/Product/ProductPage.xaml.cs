@@ -37,6 +37,7 @@ namespace guwudang.Product
             setController(new ProductController(this));
             initUIBuilders();
             initUIElements();
+            this.secondFrame = Sidebar.secFrame;
             getProduct();
         }
 

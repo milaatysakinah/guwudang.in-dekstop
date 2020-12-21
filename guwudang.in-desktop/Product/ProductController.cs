@@ -18,7 +18,7 @@ namespace guwudang.Product
         {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
-            
+
 
             User user = new User();
             string token = user.getToken();
@@ -31,10 +31,10 @@ namespace guwudang.Product
             client.setOnSuccessRequest(setSuccessAuthorization);
             client.setOnFailedRequest(setFailedAuthorization);
             var response1 = await client.sendRequest(request.getApiRequestBundle());
-            
+
             Console.WriteLine(response1.getHttpResponseMessage().Content);
-           
-            
+
+
         }
 
         public async void nextProduct(string id)
@@ -84,7 +84,7 @@ namespace guwudang.Product
                     .buildHttpRequest()
                     .setEndpoint(_endpoint)
                     .setRequestMethod(HttpMethod.Delete);
-                var response =  client.sendRequest(request.getApiRequestBundle());
+                var response = client.sendRequest(request.getApiRequestBundle());
             }
             product();
         }

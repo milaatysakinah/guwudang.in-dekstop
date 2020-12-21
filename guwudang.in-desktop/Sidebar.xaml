@@ -18,18 +18,18 @@
             <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Left" Height="1079" Margin="0,-14,0,0" VerticalAlignment="Top" Width="410" Grid.RowSpan="2" Background="#FF1F6CB0"/>
-        <Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="410,172,0,10" Grid.RowSpan="2"/>
-        <Button x:Name="dashboard_btn" Content="Dashboard" HorizontalAlignment="Left" Margin="68,15,0,0" VerticalAlignment="Top" Width="102" Click="dashboard_btn_Click" Height="31" />
+        <!--<Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="410,172,0,10" Grid.RowSpan="2"/>-->
+        <!--<Button x:Name="dashboard_btn" Content="Dashboard" HorizontalAlignment="Left" Margin="68,15,0,0" VerticalAlignment="Top" Width="102" Click="dashboard_btn_Click" Height="31" />
         <Button x:Name="product_btn" Content="Product" HorizontalAlignment="Left" Margin="68,50,0,0" VerticalAlignment="Top" Width="102" Click="product_btn_Click" Height="28" />
         <Button x:Name="partner_btn" Content="Partner" HorizontalAlignment="Left" Margin="68,84,0,0" VerticalAlignment="Top" Width="102" Click="partner_btn_Click" Height="28" />
         <Button x:Name="invoice_btn" Content="Invoice" HorizontalAlignment="Left" Margin="68,118,0,0" VerticalAlignment="Top" Width="102" Click="invoice_btn_Click" Height="28" />
-        <Button x:Name="logout_btn" Content="Log Out" HorizontalAlignment="Left" Margin="68,183,0,0" VerticalAlignment="Top" Width="102" Click="logout_btn_Click" Height="30" />
-        <Grid HorizontalAlignment="Left" Height="162" Margin="410,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1">
-            <Label Name="lblUsername" Content="Username" FontFamily="Montserrat" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" Width="auto" Height="auto" Margin="20,0,0,0"></Label>
+        <Button x:Name="logout_btn" Content="Log Out" HorizontalAlignment="Left" Margin="68,183,0,0" VerticalAlignment="Top" Width="102" Click="logout_btn_Click" Height="30" />-->
+        <!--<Grid HorizontalAlignment="Left" Height="162" Margin="410,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1">-->
+        <!--<Label Name="lblUsername" Content="Username" FontFamily="Montserrat" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" Width="auto" Height="auto" Margin="20,0,0,0"></Label>
             <Label Name="lblDate" Content="date" FontFamily="Montserrat" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Medium" Width="auto" Height="auto" Margin="20,75,0,0"></Label>
-            <Image Source="/logout_ico.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Image>
-        </Grid>
-        <Button x:Name="account_btn" Content="Account" HorizontalAlignment="Left" Margin="68,150,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="account_btn_Click" />
+            <Image Source="/logout_ico.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Image>-->
+        <!--</Grid>-->
+        <!--<Button x:Name="account_btn" Content="Account" HorizontalAlignment="Left" Margin="68,150,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="account_btn_Click" />-->
 
         <Grid HorizontalAlignment="Right" Height="1079" Margin="0,-14,1510,0" VerticalAlignment="Top" Width="410" Background="#FF1F6CB0" Grid.ColumnSpan="2">
 
@@ -85,7 +85,11 @@
             <TextBlock HorizontalAlignment="Left" Margin="40,580,0,0" TextWrapping="Wrap" Text="Business" VerticalAlignment="Top" Height="26" Width="112" FontFamily="Montserrat" FontSize="20" FontWeight="SemiBold" Foreground="#FFC9C9C9" RenderTransformOrigin="0.532,0.44"/>
         </Grid>
         <Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="10,153,-5,-1" Grid.Column="1" Grid.RowSpan="2"/>
-        <Grid HorizontalAlignment="Left" Height="162" Margin="5,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1" Grid.Column="1"/>
+        <Grid HorizontalAlignment="Left" Height="162" Margin="5,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1" Grid.Column="1">
+            <Label Name="lblUsername" Content="Username" FontFamily="Montserrat" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" Width="auto" Height="auto" Margin="20,0,0,0"></Label>
+            <Label Name="lblDate" Content="date" FontFamily="Montserrat" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Medium" Width="auto" Height="auto" Margin="20,75,0,0"></Label>
+            <Image Source="/logout_ico.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Image>
+        </Grid>
 
     </Grid>
 </basic1:MyPage>
