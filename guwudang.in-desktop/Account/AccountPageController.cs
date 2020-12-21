@@ -7,9 +7,13 @@ using Velacro.Api;
 using Velacro.Basic;
 using System.Net.Http;
 using guwudang.Model;
+#pragma warning disable CS0105 // The using directive for 'System.Collections.Generic' appeared previously in this namespace
 using System.Collections.Generic;
+#pragma warning restore CS0105 // The using directive for 'System.Collections.Generic' appeared previously in this namespace
 using guwudang.utils;
+#pragma warning disable CS0105 // The using directive for 'System' appeared previously in this namespace
 using System;
+#pragma warning restore CS0105 // The using directive for 'System' appeared previously in this namespace
 using System.Windows.Controls;
 
 namespace guwudang.Account
