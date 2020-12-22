@@ -1,0 +1,28 @@
+﻿<basic:MyPage xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro" 
+      x:Class="guwudang.DetailInvoice.DetailInvoice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:guwudang.DetailInvoice"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DetailInvoice">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="143,87,0,0" TextWrapping="Wrap" Text="Patner Name" VerticalAlignment="Top" Width="81"/>
+        <TextBlock HorizontalAlignment="Left" Height="19" Margin="596,87,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Width="81"/>
+        <TextBlock Name="name" HorizontalAlignment="Left" Height="28" Margin="143,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+        <TextBlock Name="status" HorizontalAlignment="Left" Height="28" Margin="596,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
+        <ListView Name="lvDetailorder" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="113" Margin="108,171,0,0" VerticalAlignment="Top" Width="612">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding product_picture}"  Header="Gambar"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding product_name}"  Header="Nama Product"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding total}" Header="Stock"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding price}"  Header="Price"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</basic:MyPage>
