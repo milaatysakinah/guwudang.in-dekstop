@@ -10,21 +10,40 @@ using guwudang.Model;
 
 namespace guwudang.DetailPartner
 {
-    class DetailPartnerC : MyController
+    public class DetailPartnerC : MyController
     {
         public DetailPartnerC(IMyView _myView) : base(_myView)
         {
 
         }
 
-        public async void partner()
+        public async void partner(string id)
         {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
+            string _endpoint = "api/partner/1?id=:idUser";
+
+            utils.User user = new utils.User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
+            var reqAccount = request
+               .buildHttpRequest()
+               .setEndpoint("api/authUser")
+               .setRequestMethod(HttpMethod.Get);
+
+            var response1 = await client.sendRequest(request.getApiRequestBundle());
+            client.setOnFailedRequest(setFailedAuthorization);
+            // Console.WriteLine(response1.getHttpResponseMessage().Content);
+            string _idUser = response1.getJObject()["user"]["id"].ToString();
+
+            _endpoint = _endpoint.Replace(":idUser", _idUser);
+            _endpoint = _endpoint.Replace(":id", id);
+
 
             var req = request
                 .buildHttpRequest()
-                .setEndpoint("api/partner/1")
+                .setEndpoint(_endpoint)
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setDetailPartner);
             var response = await client.sendRequest(request.getApiRequestBundle());
@@ -38,6 +57,14 @@ namespace guwudang.DetailPartner
                 //Console.WriteLine(_response.getJObject());
                 //Console.WriteLine(_response.getParsedObject<RootModelDetailPartner>().partner);
                getView().callMethod("setDetailPartner", _response.getParsedObject<guwudang.Model.Partner>());
+            }
+        }
+
+        private void setFailedAuthorization(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                getView().callMethod("backToLogin");
             }
         }
     }

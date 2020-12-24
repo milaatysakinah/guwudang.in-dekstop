@@ -32,8 +32,8 @@ namespace guwudang.Detail
             initUIBuilders();
             initUIElements();
             this.id = id; // gunakan id ini biar gak static kirim via parameter di method getDetail dan getProductDetail mu yaaa
-            getDetail();
-            getProduct_detail();
+            getDetail(id);
+            getProduct_detail(id);
         }
 
         private void initUIElements()
@@ -53,14 +53,14 @@ namespace guwudang.Detail
             image = new Image();
         }
 
-        private void getDetail()
+        private void getDetail(string id)
         {
-            getController().callMethod("detail");
+            getController().callMethod("detail",id);
         }
 
-        private void getProduct_detail()
+        private void getProduct_detail(string id)
         {
-            getController().callMethod("product_detail");
+            getController().callMethod("product_detail",id);
         }
 
         public void setProduct(Model.Product products)
@@ -75,7 +75,7 @@ namespace guwudang.Detail
                 description.Text = products.description;
 
                 if (products.product_picture != null)
-                    image.Source = new BitmapImage(new Uri("http://127.0.0.1:8000/" + products.product_picture));
+                    image.Source = new BitmapImage(new Uri("http://localhost:8000/" + products.product_picture));
             });
         }
         public void setDetailProduct(List<guwudang.Model.ProductDetail> productDetails)
@@ -84,6 +84,18 @@ namespace guwudang.Detail
             {
                 lvProductDetail.ItemsSource = productDetails;
             });
+        }
+        private void lvDetailorder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (guwudang.Model.Detailorder item in e.RemovedItems)
+            {
+                //listProductID.Remove(item.id);
+            }
+
+            foreach (guwudang.Model.Detailorder item in e.AddedItems)
+            {
+                //listProductID.Add(item.id);
+            }
         }
     }
 }
