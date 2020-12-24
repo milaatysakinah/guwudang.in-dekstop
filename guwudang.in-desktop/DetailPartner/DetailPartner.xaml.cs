@@ -24,7 +24,7 @@ namespace guwudang.DetailPartner
             this.id = id; // gunakan id ini biar gak static kirim via parameter di method getDetail dan getProductDetail mu yaaa
             initUIBuilders();
             initUIElements();
-            getPartner();
+            getPartner(id);
         }
 
         public void setDetailPartner(Model.Partner partners)
@@ -51,9 +51,9 @@ namespace guwudang.DetailPartner
             addressTxtBlock = txtBlockBuilder.activate(this, "address");
         }
 
-        private void getPartner()
+        private void getPartner(string id)
         {
-            getController().callMethod("partner");
+            getController().callMethod("partner",id);
         }
     }
 }
