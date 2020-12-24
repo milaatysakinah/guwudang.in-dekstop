@@ -22,14 +22,16 @@ namespace guwudang.Detail
         private BuilderTextBlock txtBlockBuilder;
         private Image image;
         private List<string> listProductID = new List<string>();
+        private string id;
 
-        public Detail()
+        public Detail(string id)
         {
             InitializeComponent();
-            this.KeepAlive = true;
+            this.KeepAlive = false;
             setController(new DetailController(this));
             initUIBuilders();
             initUIElements();
+            this.id = id; // gunakan id ini biar gak static kirim via parameter di method getDetail dan getProductDetail mu yaaa
             getDetail();
             getProduct_detail();
         }

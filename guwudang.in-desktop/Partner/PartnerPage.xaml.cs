@@ -118,6 +118,13 @@ namespace guwudang.Partner
             //getProduct();
         }
 
+        public void onClickDetailPartner(object sender, System.Windows.RoutedEventArgs e)
+        {
+            string id = (string)((Button)sender).Tag;
+            DetailPartner.DetailPartner detail = new DetailPartner.DetailPartner(id);
+            Sidebar.secFrame.Navigate(detail);
+        }
+
         public void backToLogin()
         {
             new MainWindow().Show();

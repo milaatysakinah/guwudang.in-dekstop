@@ -1,5 +1,6 @@
 ﻿using Velacro.UIElements.Basic;
 using Velacro.UIElements.TextBlock;
+using Velacro.UIElements.Button;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System;
@@ -13,38 +14,50 @@ namespace guwudang.DetailInvoice
     {
         private IMyTextBlock nameTxtBlock;
         private IMyTextBlock statusTxtBlock;
+        private IMyButton addOrderItemButton;
+        private BuilderButton buttonBuilder;
         private BuilderTextBlock txtBlockBuilder;
+        private string id;
 
-        public DetailInvoice()
+        public DetailInvoice(string id)
         {
             InitializeComponent();
-            this.KeepAlive = true;
+            this.KeepAlive = false;
             setController(new DetailInvoiceController(this));
+            this.id = id;
             initUIBuilders();
             initUIElements();
-            getDetailinvoice();
-            getDetailorder();
+            getDetailinvoice(id);
+            getDetailorder(id);
         }
 
         private void initUIElements()
         {
             nameTxtBlock = txtBlockBuilder.activate(this, "name");
             statusTxtBlock = txtBlockBuilder.activate(this, "status");
+            addOrderItemButton = buttonBuilder.activate(this, "btnAddOrderItem").addOnClick(this, "onClickAddOrderItem");
         }
 
         private void initUIBuilders()
         {
             txtBlockBuilder = new BuilderTextBlock();
+            buttonBuilder = new BuilderButton();
         }
 
-        private void getDetailinvoice()
+        public void onClickAddOrderItem()
         {
-            getController().callMethod("Detailinvoice");
+            CreateOrderItems.CreateOrderItemPage coi = new CreateOrderItems.CreateOrderItemPage(id);
+            Sidebar.secFrame.Navigate(coi);
         }
 
-        private void getDetailorder()
+        private void getDetailinvoice(string id)
         {
-            getController().callMethod("Detailorder");
+            getController().callMethod("Detailinvoice", id);
+        }
+
+        private void getDetailorder(string id)
+        {
+            getController().callMethod("Detailorder", id);
         }
 
         public void setdetailinvoice(Model.Detailinvoice detailinvoices)
@@ -61,6 +74,19 @@ namespace guwudang.DetailInvoice
             {
                 lvDetailorder.ItemsSource = Detailorders;
             });
+        }
+
+        private void lvDetailorder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (guwudang.Model.Detailorder item in e.RemovedItems)
+            {
+                //listProductID.Remove(item.id);
+            }
+
+            foreach (guwudang.Model.Detailorder item in e.AddedItems)
+            {
+                //listProductID.Add(item.id);
+            }
         }
     }
 }

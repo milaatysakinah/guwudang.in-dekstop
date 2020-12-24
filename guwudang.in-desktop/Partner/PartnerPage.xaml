@@ -43,7 +43,7 @@
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Detail"/>
+                                    <Button Content="Detail" Tag="{Binding id}" Click="onClickDetailPartner"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

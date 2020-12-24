@@ -39,6 +39,8 @@ namespace guwudang.Invoice
         {
             string id = (string)((Button)sender).Tag;
             //DetailInvoice.DetailInvoicePage detail = new DetailInvoice.DetailInvoicePage(id);
+            DetailInvoice.DetailInvoice di = new DetailInvoice.DetailInvoice(id);
+            Sidebar.secFrame.Navigate(di);
             //Sidebar.secFrame.Navigate(detail);
         }
 

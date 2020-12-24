@@ -10,19 +10,84 @@
       Title="DetailInvoice">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Height="19" Margin="143,87,0,0" TextWrapping="Wrap" Text="Patner Name" VerticalAlignment="Top" Width="81"/>
-        <TextBlock HorizontalAlignment="Left" Height="19" Margin="596,87,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Width="81"/>
-        <TextBlock Name="name" HorizontalAlignment="Left" Height="28" Margin="143,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <TextBlock Name="status" HorizontalAlignment="Left" Height="28" Margin="596,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
-        <ListView Name="lvDetailorder" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="113" Margin="108,171,0,0" VerticalAlignment="Top" Width="612">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding product_picture}"  Header="Gambar"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding product_name}"  Header="Nama Product"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding total}" Header="Stock"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding price}"  Header="Price"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Create Invoice" VerticalAlignment="Top" Height="auto" Width="auto" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
+        <Border CornerRadius="35" BorderThickness="20" Margin="20,100,20,0" >
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFFFFF" Offset="0.0"/>
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFFFF" Offset="0.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,0,0,0">
+                    <Label Name="lblPartner" Content="Partner : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <Border CornerRadius="8" BorderThickness="1" BorderBrush="#707070" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <TextBlock Name="name" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" Padding="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="auto"/>
+                    </Border>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,0,0,0">
+                    <Label Name="lblStatus" Content="Status : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <Border CornerRadius="8" BorderThickness="1" BorderBrush="#707070" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <!--<ComboBox Name="cbStatus" Padding="5" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="status" SelectionChanged="cbStatus_SelectionChanged"/>-->
+                        <TextBlock Name="status" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" Padding="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="auto"/>
+                    </Border>
+                </StackPanel>
+
+
+                <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0" Margin="10,75,10,40" Padding="0" Height="auto">
+
+                    <ListView Margin="10,10,10,10" Name="lvDetailorder" ItemsSource="{Binding}" BorderThickness="0" 
+                      SelectionChanged="lvDetailorder_SelectionChanged" >
+                        <ListView.View>
+                            <GridView>
+                                <!--<GridViewColumn>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox Tag="{Binding id}"
+                                              IsChecked="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Path=IsSelected}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>-->
+                                <GridViewColumn DisplayMemberBinding="{Binding product_picture}"  Header="Gambar"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding product_name}"  Header="Nama Product"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding transaction_name}"  Header="Nama Product"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding order_quantity}" Header="Order Qty"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding price}"  Header="Price"/>
+                                <GridViewColumn>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Delete"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Border>
+
+
+                <Button Name="btnAddOrderItem" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,200,20,-1" Content="Add Order"></Button>
+
+            </Grid>
+
+        </Border>
+
     </Grid>
 </basic:MyPage>

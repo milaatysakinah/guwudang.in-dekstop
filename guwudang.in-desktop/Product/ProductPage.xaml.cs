@@ -129,6 +129,13 @@ namespace guwudang.Product
             secondFrame.Navigate(QRGen);
         }
 
+        public void onClickDetailProduct(object sender, System.Windows.RoutedEventArgs e)
+        {
+            string id = (string)((Button)sender).Tag;
+            Detail.Detail detail = new Detail.Detail(id);
+            secondFrame.Navigate(detail);
+        }
+
         public void backToLogin()
         {
             new MainWindow().Show();
