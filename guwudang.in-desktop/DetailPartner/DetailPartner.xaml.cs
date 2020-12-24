@@ -14,12 +14,14 @@ namespace guwudang.DetailPartner
         private IMyTextBlock phone_numberTxtBlock;
         private IMyTextBlock addressTxtBlock;
         private BuilderTextBlock txtBlockBuilder;
+        private string id;
 
-        public DetailPartner()
+        public DetailPartner(string id)
         {
             InitializeComponent();
-            this.KeepAlive = true;
+            this.KeepAlive = false;
             setController(new DetailPartnerC(this));
+            this.id = id; // gunakan id ini biar gak static kirim via parameter di method getDetail dan getProductDetail mu yaaa
             initUIBuilders();
             initUIElements();
             getPartner();

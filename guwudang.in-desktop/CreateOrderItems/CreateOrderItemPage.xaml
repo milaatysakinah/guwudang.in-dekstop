@@ -1,0 +1,66 @@
+﻿<basic:MyPage x:Class="guwudang.CreateOrderItems.CreateOrderItemPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:guwudang.CreateOrderItems"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateOrderItemPage">
+
+    <Grid Margin="1,0,-1,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Add Order Item" VerticalAlignment="Top" Height="auto" Width="auto" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
+        <Border CornerRadius="35" BorderThickness="20" Margin="20,100,20,0" >
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFFFFF" Offset="0.0"/>
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFFFF" Offset="0.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,0,0,0">
+                    <Label Name="lbProduct" Content="Product : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <!--<TextBox Name="email_txt" VerticalAlignment="Top" Height="auto" TextWrapping="Wrap" Text="kucing1@gmail.com" Margin="0,125,0,0" TextDecorations="Underline" />-->
+                    <ComboBox Name="cbProduct" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="product_name" SelectionChanged="cbProduct_SelectionChanged"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,0,0,0">
+                    <Label Name="lbTransType" Content="Transaction Type : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <ComboBox Name="cbTransType" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="transaction_name" SelectionChanged="cbTransType_SelectionChanged"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,75,0,0">
+                    <Label Name="lbTransDate" Content="Date : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="tbTransDate" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,75,0,0">
+                    <Label Name="lbOrderQty" Content="Order Qty : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="tbOrderQty" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+
+
+
+                <Button Name="createBtn"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,200,20,-1" Content="Create"></Button>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</basic:MyPage>

@@ -108,6 +108,10 @@
     <Compile Include="CreateInvoice\CreateInvoicePage.xaml.cs">
       <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateOrderItems\CreateOrderItemController.cs" />
+    <Compile Include="CreateOrderItems\CreateOrderItemPage.xaml.cs">
+      <DependentUpon>CreateOrderItemPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreatePartner\CreatePartnerController.cs" />
     <Compile Include="CreatePartner\CreatePartnerPage.xaml.cs">
       <DependentUpon>CreatePartnerPage.xaml</DependentUpon>
@@ -132,6 +136,18 @@
     <Compile Include="Dashboard\Frame4.xaml.cs">
       <DependentUpon>Frame4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetailInvoice\DetailInvoice.xaml.cs">
+      <DependentUpon>DetailInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DetailInvoice\DetailInvoiceController.cs" />
+    <Compile Include="DetailPartner\DetailPartner.xaml.cs">
+      <DependentUpon>DetailPartner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DetailPartner\DetailPartnerC.cs" />
+    <Compile Include="Detail\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Detail\DetailController.cs" />
     <Compile Include="Experiment\MyRectangle.cs" />
     <Compile Include="Invoice\InvoiceController.cs" />
     <Compile Include="Invoice\ListInvoicePage.xaml.cs">
@@ -142,10 +158,13 @@
       <DependentUpon>Dummy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Detailinvoice.cs" />
+    <Compile Include="Model\Detailorder.cs" />
     <Compile Include="Model\Invoice.cs" />
     <Compile Include="Model\OrderItem.cs" />
     <Compile Include="Model\Partner.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductDetail.cs" />
     <Compile Include="Model\StatusInvoice.cs" />
     <Compile Include="Model\TransType.cs" />
     <Compile Include="Model\WeeklyOrder.cs" />
@@ -184,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="CreateOrderItems\CreateOrderItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CreatePartner\CreatePartnerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -209,6 +232,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Dashboard\Frame4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DetailInvoice\DetailInvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DetailPartner\DetailPartner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Detail\Detail.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

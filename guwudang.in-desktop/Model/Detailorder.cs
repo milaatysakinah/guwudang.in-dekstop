@@ -11,7 +11,8 @@ namespace guwudang.Model
         public string id { get; set; }
         public string product_name { get; set; }
         public string price { get; set; }
-        public string total { get; set; }
+        public string order_quantity { get; set; }
         public string product_picture { get; set; }
+        public string transaction_name { get; set; }
     }
 }
