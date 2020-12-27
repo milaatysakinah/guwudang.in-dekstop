@@ -7,7 +7,7 @@
       xmlns:lineChart="clr-namespace:Velacro.Chart.LineChart;assembly=Velacro"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="7200" d:DesignWidth="1100"
       Title="Dashboard">
     <Grid>
         <ListBox Name="lbTodoList" HorizontalContentAlignment="Stretch">
@@ -24,8 +24,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Frame Name="frame1" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="448" Margin="44,26,0,0"/>
-        <Frame Name="frame2" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="257" Margin="519,26,0,0"/>
-        <Frame Name="frame3" Content="Frame" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" Width="674" Margin="0,164,0,0"/>
-        <Frame Name="frame4" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="257" Margin="519,238,0,0"/>
+        <Frame Name="frame2" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="257" Margin="779,26,0,0"/>
+        <Frame Name="frame3" Content="Frame" HorizontalAlignment="Left" Height="263" VerticalAlignment="Top" Width="674" Margin="44,225,0,0"/>
+        <Frame Name="frame4" Content="Frame" HorizontalAlignment="Left" Height="189" VerticalAlignment="Top" Width="257" Margin="779,225,0,0"/>
     </Grid>
 </basic:MyPage>

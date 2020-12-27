@@ -17,7 +17,7 @@ namespace guwudang.utils
         private static bool initialized;
         private static MyDictionary<string, MyPage> pages;
 
-        private static void initPages()
+        public static void initPages()
         {
             pages = new MyDictionary<string, MyPage>();
             pages.Add(utils.EPages.listDashboardPage, new Dashboard.Dashboard());

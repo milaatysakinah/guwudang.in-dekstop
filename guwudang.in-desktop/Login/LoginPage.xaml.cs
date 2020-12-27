@@ -54,7 +54,7 @@ namespace guwudang.Login {
                 .addOnClick(this, "onLoginButtonClick");
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
             passwordTxtBox = builderPasswordBox.activate(this, "password_txt");
-            loginStatusTxtBlock = txtBlockBuilder.activate(this, "status_field");
+            loginStatusTxtBlock = txtBlockBuilder.activate(this, "status_txt");
         }
 
         public void onLoginButtonClick() {
@@ -65,7 +65,7 @@ namespace guwudang.Login {
         public void setLoginStatus(string _status){
             this.Dispatcher.Invoke(() =>
             {
-                //loginStatusTxtBlock.setText(_status);
+                loginStatusTxtBlock.setText(_status);
             });
         }
 
@@ -88,7 +88,7 @@ namespace guwudang.Login {
             Console.WriteLine("Login" + user.getToken());
 
             if (user.getToken() != null)
-                mainFrame.Navigate(new Sidebar());
+                mainFrame.Navigate(new Sidebar(mainFrame));
         }
 
     
