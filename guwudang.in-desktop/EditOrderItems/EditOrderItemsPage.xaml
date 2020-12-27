@@ -57,7 +57,7 @@
 
 
 
-                <Button Name="createBtn"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,200,20,-1" Content="Create"></Button>
+                <Button Name="createBtn"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,200,20,-1" Content="Submit"></Button>
 
             </Grid>
 
