@@ -18,12 +18,13 @@
             <TextBlock Name="product_type_id" HorizontalAlignment="Left" Margin="413,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="52"/>
             <Image Name="product_picture" HorizontalAlignment="Left" Height="149" Margin="46,30,0,0" VerticalAlignment="Top" Width="192"/>
         </Grid>
-        <ListView Name="lvProductDetail" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="64" Margin="428,298,0,0" VerticalAlignment="Top" Width="318">
+        <ListView Name="lvDetailproduct" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="99" Margin="430,267,0,0" VerticalAlignment="Top" Width="360" 
+                  SelectionChanged="lvDetailproduct_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding product_quantity}" Header="Stock" Width="50"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding in_date}" Header="Expired Date" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding exp_date}" Header="In Date" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding product_quantity}"  Header="Stock"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding in_date}"  Header="Expired Date"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding exp_date}"  Header="In Date"/>
                 </GridView>
             </ListView.View>
         </ListView>

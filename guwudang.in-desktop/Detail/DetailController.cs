@@ -77,12 +77,13 @@ namespace guwudang.Detail
 
         private void setViewDetailData(HttpResponseBundle _response)
         {
-            Console.WriteLine(_response.getParsedObject<guwudang.Model.Product>());
+            //Console.WriteLine(_response.getParsedObject<List<guwudang.Model.Product>>());
             if (_response.getHttpResponseMessage().Content != null)
             {
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
-                Console.WriteLine(_response.getJObject().ToString());
-                getView().callMethod("setProduct", _response.getParsedObject<guwudang.Model.Product>());
+                //Console.WriteLine(_response.getJObject().ToString());
+                List<guwudang.Model.Product> detail = _response.getParsedObject<List<guwudang.Model.Product>>();
+                getView().callMethod("setProduct", detail[0]);
             }
         }
 
@@ -94,7 +95,7 @@ namespace guwudang.Detail
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
                 Console.WriteLine(_response.getParsedObject<List<guwudang.Model.ProductDetail>>()[0]);
                 Console.WriteLine(_response.getHttpResponseMessage().Content.ReadAsStringAsync().Result);
-                getView().callMethod("setDetailProduct", _response.getParsedObject<List<guwudang.Model.ProductDetail>>());
+                getView().callMethod("setDetailproduct", _response.getParsedObject<List<guwudang.Model.ProductDetail>>());
                 //getView().callMethod("setDetailProduct", _response.getParsedObject<guwudang.Model.ProductDetails>().productDetail);
             }
         }

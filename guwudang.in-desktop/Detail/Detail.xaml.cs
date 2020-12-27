@@ -78,21 +78,21 @@ namespace guwudang.Detail
                     image.Source = new BitmapImage(new Uri("http://localhost:8000/" + products.product_picture));
             });
         }
-        public void setDetailProduct(List<guwudang.Model.ProductDetail> productDetails)
+        public void setDetailproduct(List<guwudang.Model.ProductDetail> Detailproducts)
         {
             this.Dispatcher.Invoke(() =>
             {
-                lvProductDetail.ItemsSource = productDetails;
+                lvDetailproduct.ItemsSource = Detailproducts;
             });
         }
-        private void lvDetailorder_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lvDetailproduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (guwudang.Model.Detailorder item in e.RemovedItems)
+            foreach (guwudang.Model.ProductDetail item in e.RemovedItems)
             {
                 //listProductID.Remove(item.id);
             }
 
-            foreach (guwudang.Model.Detailorder item in e.AddedItems)
+            foreach (guwudang.Model.ProductDetail item in e.AddedItems)
             {
                 //listProductID.Add(item.id);
             }
