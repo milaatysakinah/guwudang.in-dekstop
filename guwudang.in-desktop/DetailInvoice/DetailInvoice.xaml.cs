@@ -4,6 +4,7 @@ using Velacro.UIElements.Button;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System;
+using System.Windows;
 
 namespace guwudang.DetailInvoice
 {
@@ -87,6 +88,48 @@ namespace guwudang.DetailInvoice
             {
                 //listProductID.Add(item.id);
             }
+        }
+
+        private void onClick_editOI(Object sender, System.Windows.RoutedEventArgs e)
+        {
+            string id = (string)((Button)sender).Tag;
+            //DetailInvoice.DetailInvoicePage detail = new DetailInvoice.DetailInvoicePage(id);
+            EditOrderItems.EditOrderItemsPage ei = new EditOrderItems.EditOrderItemsPage(id);
+            Sidebar.secFrame.Navigate(ei);
+            //Sidebar.secFrame.Navigate(detail);
+        }
+
+        private void onClick_DeleteOI(Object sender, System.Windows.RoutedEventArgs e)
+        {
+            string id = (string)((Button)sender).Tag;
+            string txt = "Konfirmasi";
+            string msgtext;
+            //if (listProductID.Count > 0)
+            //{
+                msgtext = "Apakah Anda yakin ingin menghapus " + " data tersebut ? ";
+            //}
+            //else
+            //{
+            //    msgtext = "Anda belum memilih data untuk dihapus.";
+            //}
+
+            MessageBoxButton button = MessageBoxButton.YesNo;
+            MessageBoxResult result = MessageBox.Show(msgtext, txt, button);
+
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    delOrder(id);
+                    break;
+                case MessageBoxResult.No:
+                    // No Action
+                    break;
+            }
+        }
+        
+        public void delOrder(string idd)
+        {
+            getController().callMethod("delOrder", idd);
         }
     }
 }

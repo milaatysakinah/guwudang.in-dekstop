@@ -148,6 +148,10 @@
       <DependentUpon>Detail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Detail\DetailController.cs" />
+    <Compile Include="EditOrderItems\EditOrderItemsController.cs" />
+    <Compile Include="EditOrderItems\EditOrderItemsPage.xaml.cs">
+      <DependentUpon>EditOrderItemsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Experiment\MyRectangle.cs" />
     <Compile Include="Invoice\InvoiceController.cs" />
     <Compile Include="Invoice\ListInvoicePage.xaml.cs">
@@ -162,6 +166,7 @@
     <Compile Include="Model\Detailorder.cs" />
     <Compile Include="Model\Invoice.cs" />
     <Compile Include="Model\OrderItem.cs" />
+    <Compile Include="Model\OrderItemGet.cs" />
     <Compile Include="Model\Partner.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductDetail.cs" />
@@ -246,6 +251,10 @@
     <Page Include="Detail\Detail.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditOrderItems\EditOrderItemsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Invoice\ListInvoicePage.xaml">
       <Generator>MSBuild:Compile</Generator>
