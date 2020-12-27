@@ -126,14 +126,16 @@ namespace guwudang.Product
         {
             string id = (string)((Button)sender).Tag;
             QRGen = new QRGenerator.QRGeneratorPage(id);
-            secondFrame.Navigate(QRGen);
+            // secondFrame.Navigate(QRGen);
+            Sidebar.secFrame.Navigate(QRGen);
         }
 
         public void onClickDetailProduct(object sender, System.Windows.RoutedEventArgs e)
         {
             string id = (string)((Button)sender).Tag;
             Detail.Detail detail = new Detail.Detail(id);
-            secondFrame.Navigate(detail);
+            // secondFrame.Navigate(detail);
+            Sidebar.secFrame.Navigate(detail);
         }
 
         public void backToLogin()
