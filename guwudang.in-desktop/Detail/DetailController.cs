@@ -43,11 +43,11 @@ namespace guwudang.Detail
             var response = await client.sendRequest(request.getApiRequestBundle());
         }
 
-        public async void product_detail(string id)
+        public async void product_detail(string idProduct)
         {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/productDetail/?id=:idUser";
+            string _endpoint = "api/productDetail/?id=:idProduct";
 
             utils.User user = new utils.User();
             string token = user.getToken();
@@ -64,7 +64,7 @@ namespace guwudang.Detail
             string _idUser = response1.getJObject()["user"]["id"].ToString();
 
             _endpoint = _endpoint.Replace(":idUser", _idUser);
-            _endpoint = _endpoint.Replace(":id", id);
+            _endpoint = _endpoint.Replace(":idProduct", idProduct);
 
             var req = request
                 .buildHttpRequest()
