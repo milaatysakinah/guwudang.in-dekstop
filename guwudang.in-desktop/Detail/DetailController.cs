@@ -43,7 +43,7 @@ namespace guwudang.Detail
             var response = await client.sendRequest(request.getApiRequestBundle());
         }
 
-        public async void product_detail()
+        public async void product_detail(string id)
         {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
