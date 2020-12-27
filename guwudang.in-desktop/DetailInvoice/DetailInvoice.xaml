@@ -70,10 +70,18 @@
                                 <GridViewColumn DisplayMemberBinding="{Binding transaction_name}"  Header="Nama Product"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding order_quantity}" Header="Order Qty"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding price}"  Header="Price"/>
+                                <!--<GridViewColumn DisplayMemberBinding="{Binding id_order}"  Header="Price"/>-->
                                 <GridViewColumn>
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button Content="Delete"/>
+                                            <Button Content="Delete"  Tag="{Binding id_order}" Click="onClick_DeleteOI"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Edit" Tag="{Binding id_order}" Click="onClick_editOI"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>

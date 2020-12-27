@@ -101,6 +101,22 @@ namespace guwudang.DetailInvoice
             }
         }
 
+        public async void delOrder(string id_order)
+        {
+            var client = new ApiClient("http://localhost:8000/");
+            var request = new ApiRequestBuilder();
+            
+            string _endpoint = "api/orderitem/" + id_order;
+
+             //_endpoint = _endpoint.Replace("{orderitem}", id_order);
+            Console.WriteLine(_endpoint);
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint(_endpoint)
+                .setRequestMethod(HttpMethod.Delete);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
         private void setFailedAuthorization(HttpResponseBundle _response)
         {
             if (_response.getHttpResponseMessage().Content != null)
