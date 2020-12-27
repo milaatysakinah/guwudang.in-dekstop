@@ -34,15 +34,24 @@ namespace guwudang.Dashboard
                 .setEndpoint("api/authUser")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnFailedRequest(setFailedAuthorization);
-            var response = await client.sendRequest(request.getApiRequestBundle());
+            var response = await client.sendRequest(reqAccount.getApiRequestBundle());
+
+            try
+            {
+                id = response.getJObject()["user"]["id"].ToString();
+                Console.WriteLine("frame1 ID : " + id);
+            }
+            catch (Exception e)
+            {
+                //await SetUserID();
+            }
             
-            id = response.getJObject()["user"]["id"].ToString();
-            Console.WriteLine("frame1 ID : " + id);
         }
 
         public async void totalCostumers()
         {
-            await SetUserID();
+            while(id == null)
+                await SetUserID();
 
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
@@ -68,7 +77,8 @@ namespace guwudang.Dashboard
 
         public async void weeklyOrder(String type)
         {
-            await SetUserID();
+            while (id == null)
+                await SetUserID();
 
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
@@ -135,7 +145,8 @@ namespace guwudang.Dashboard
 
         public async void totalInvoices()
         {
-            await SetUserID();
+            while (id == null)
+                await SetUserID();
 
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
@@ -151,7 +162,8 @@ namespace guwudang.Dashboard
 
         public async void totalShipping()
         {
-            await SetUserID();
+            while (id == null)
+                await SetUserID();
 
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
@@ -167,7 +179,8 @@ namespace guwudang.Dashboard
 
         public async void totalProducts()
         {
-            await SetUserID();
+            while (id == null)
+                await SetUserID();
 
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
@@ -183,7 +196,8 @@ namespace guwudang.Dashboard
 
         public async void totalOrderIN()
         {
-            await SetUserID();
+            while (id == null)
+                await SetUserID();
 
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
@@ -209,7 +223,8 @@ namespace guwudang.Dashboard
 
         public async void totalOrderOUT()
         {
-            await SetUserID();
+            while (id == null)
+                await SetUserID();
 
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();

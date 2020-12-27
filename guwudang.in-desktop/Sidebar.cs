@@ -19,6 +19,7 @@ using Velacro.UIElements.Basic;
 using guwudang.Account;
 using Velacro.DataStructures;
 using guwudang.utils;
+using guwudang.Login;
 
 namespace guwudang
 {
@@ -28,13 +29,14 @@ namespace guwudang
     public partial class Sidebar : MyPage
     {
         private static MyDictionary<string, MyPage> pages;
+        Frame mainFrame;
         public static Frame secFrame;
 
 
-        public Sidebar()
+        public Sidebar(Frame mainFrame)
         {
             InitializeComponent();
-
+            this.mainFrame = mainFrame;
             //listDashboardPage = new Dashboard.Dashboard();
             //listInvoicePage = new ListInvoicePage();
             //listPartnerPage = new PartnerPage();
@@ -45,7 +47,7 @@ namespace guwudang
             lblDate.Content = DateTime.Now.ToString("dddd , dd MMM yyyy");
             secFrame = secondFrame;
 
-            //secondFrame.Navigate(listDashboardPage);
+            secondFrame.Navigate(PageManagement.getPage(EPages.listDashboardPage));
             getAccountPage();
         }
 
@@ -87,14 +89,21 @@ namespace guwudang
 
         private void logout_btn_Click(object sender, RoutedEventArgs e)
         {
-            //utils.User user = new utils.User();
-            //user.setToken(null);
+            utils.User user = new utils.User();
+            user.setToken(null);
+            mainFrame.Navigate(new LoginPage(mainFrame));
 
         }
 
         private void account_btn_Click(object sender, RoutedEventArgs e)
         {
             secondFrame.Navigate(PageManagement.getPage(EPages.listAccountPage));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PageManagement.initPages();
+            mainFrame.Navigate(new Sidebar(mainFrame));
         }
     }
 }

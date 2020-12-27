@@ -122,6 +122,7 @@ namespace guwudang.CreateInvoice
 
             var response1 = await client.sendRequest(request.getApiRequestBundle());
             client.setOnFailedRequest(setFailedAuthorization);
+            
             id = response1.getJObject()["user"]["id"].ToString();
             _endpoint = _endpoint.Replace(":id", id);
             //Console.WriteLine(_endpoint);

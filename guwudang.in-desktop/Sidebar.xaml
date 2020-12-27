@@ -84,12 +84,19 @@
             <TextBlock HorizontalAlignment="Left" Margin="40,356,0,0" TextWrapping="Wrap" Text="Product" VerticalAlignment="Top" Height="26" Width="112" FontFamily="Montserrat" FontSize="20" FontWeight="SemiBold" Foreground="#FFC9C9C9" RenderTransformOrigin="0.532,0.44"/>
             <TextBlock HorizontalAlignment="Left" Margin="40,580,0,0" TextWrapping="Wrap" Text="Business" VerticalAlignment="Top" Height="26" Width="112" FontFamily="Montserrat" FontSize="20" FontWeight="SemiBold" Foreground="#FFC9C9C9" RenderTransformOrigin="0.532,0.44"/>
         </Grid>
-        <Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="10,153,-5,-1" Grid.Column="1" Grid.RowSpan="2"/>
+        <Frame x:Name="secondFrame" NavigationUIVisibility="Hidden" Margin="2,153,3,-1" Grid.Column="1" Grid.RowSpan="2"/>
+
         <Grid HorizontalAlignment="Left" Height="162" Margin="5,-14,0,0" VerticalAlignment="Top" Width="1510" Background="#FFDDE5F1" Grid.Column="1">
             <Label Name="lblUsername" Content="Username" FontFamily="Montserrat" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" Width="auto" Height="auto" Margin="20,0,0,0"></Label>
             <Label Name="lblDate" Content="date" FontFamily="Montserrat" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Medium" Width="auto" Height="auto" Margin="20,75,0,0"></Label>
-            <Image Source="/logout_ico.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0"></Image>
+            <Image Source="/logout_ico.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,56,48,56"></Image>
+            <Button Name="logoutBtn" Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="1412,56,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="-0.62,-0.75" Height="50" Click="logout_btn_Click"/>
+            <Button Content="Update View" HorizontalAlignment="Left" Margin="1252,56,0,0" VerticalAlignment="Top" Width="112" Height="50" Click="Button_Click"/>
         </Grid>
-
+        <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,230,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="dashboard_btn_Click"/>
+        <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,382,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="product_btn_Click"/>
+        <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,450,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="invoice_btn_Click"/>
+        <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,608,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="partner_btn_Click"/>
+        <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,681,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="account_btn_Click"/>
     </Grid>
 </basic1:MyPage>

@@ -4,7 +4,6 @@ D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\guwudang.pdb
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\CsvHelper.dll
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\LiveCharts.dll
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\LiveCharts.Wpf.dll
-D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\Velacro.dll
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\RestSharp.dll
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
@@ -153,3 +152,21 @@ C:\xampp\htdocs\guwudang.in-desktop 2\guwudang.in-desktop\guwudang.in-desktop\ob
 C:\xampp\htdocs\guwudang.in-desktop 2\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.in-desktop.csproj.CopyComplete
 C:\xampp\htdocs\guwudang.in-desktop 2\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.exe
 C:\xampp\htdocs\guwudang.in-desktop 2\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.pdb
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreateInvoice\CreateInvoicePage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreateOrderItems\CreateOrderItemPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreatePartner\CreatePartnerPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreateProduct\CreateProductPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\DetailInvoice\DetailInvoice.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\DetailPartner\DetailPartner.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Detail\Detail.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreateInvoice\CreateInvoicePage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreateOrderItems\CreateOrderItemPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreatePartner\CreatePartnerPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\CreateProduct\CreateProductPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\DetailInvoice\DetailInvoice.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\DetailPartner\DetailPartner.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Detail\Detail.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.in-desktop.csproj.CoreCompileInputs.cache
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\EditOrderItems\EditOrderItemsPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\EditOrderItems\EditOrderItemsPage.baml

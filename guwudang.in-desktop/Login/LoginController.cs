@@ -25,25 +25,32 @@ namespace guwudang.Login {
                 .setEndpoint("api/login/")
                 .setRequestMethod(HttpMethod.Post);
             //client.setOnSuccessRequest(setViewLoginStatus);
-            //client.setOnFailedRequest(setViewLoginStatus);
-            var response = await client.sendRequest(request.getApiRequestBundle());
-
-            if(response.getHttpResponseMessage().ReasonPhrase.Equals("OK"))
-            {
-                Console.WriteLine(response.getJObject()["token"]);
-                client.setAuthorizationToken(response.getJObject()["token"].ToString());
-                User user = new User();
-                user.setToken(response.getJObject()["token"].ToString());
-                getView().callMethod("changeToDashboard", "1");
-            }
-
+            client.setOnFailedRequest(setViewLoginStatus);
             
+
+            try
+            {
+                var response = await client.sendRequest(request.getApiRequestBundle());
+
+                if (response.getHttpResponseMessage().ReasonPhrase.Equals("OK"))
+                {
+                    Console.WriteLine(response.getJObject()["token"]);
+                    client.setAuthorizationToken(response.getJObject()["token"].ToString());
+                    User user = new User();
+                    user.setToken(response.getJObject()["token"].ToString());
+                    getView().callMethod("changeToDashboard", "1");
+                }
+            }
+            catch (Exception e)
+            {
+                getView().callMethod("setLoginStatus", "Server Closed");
+            }  
         }
 
         private void setViewLoginStatus(HttpResponseBundle _response){
             if (_response.getHttpResponseMessage().Content != null) {
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
-                getView().callMethod("setLoginStatus", status);
+                getView().callMethod("setLoginStatus", "Username/Password is Wrong");
             }
         }
     }
