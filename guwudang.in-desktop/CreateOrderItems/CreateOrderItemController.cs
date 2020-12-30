@@ -39,6 +39,9 @@ namespace guwudang.CreateOrderItems
 
             var client2 = new ApiClient("http://localhost:8000/");
             var request2 = new ApiRequestBuilder();
+            
+            client2.setAuthorizationToken(token);
+
             var req = request2
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)

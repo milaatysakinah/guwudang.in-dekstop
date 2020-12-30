@@ -41,6 +41,9 @@ namespace guwudang.Partner
 
             var client2 = new ApiClient("http://localhost:8000/");
             var request2 = new ApiRequestBuilder();
+
+            client2.setAuthorizationToken(token);
+
             var req = request2
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -57,6 +60,11 @@ namespace guwudang.Partner
 
             _endpoint = _endpoint.Replace(":id", id);
             _endpoint = _endpoint.Replace(":search", key);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -75,6 +83,11 @@ namespace guwudang.Partner
                 string _endpoint = "api/partner/:id";
 
                 _endpoint = _endpoint.Replace(":id", item);
+
+                User user = new User();
+                string token = user.getToken();
+                client.setAuthorizationToken(token);
+
                 var req = request
                     .buildHttpRequest()
                     .setEndpoint(_endpoint)

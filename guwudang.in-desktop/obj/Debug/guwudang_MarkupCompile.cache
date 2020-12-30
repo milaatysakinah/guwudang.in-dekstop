@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-d:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\
 guwudang
 none
 false
 DEBUG;TRACE
-d:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\App.xaml
-24-1889053842
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\App.xaml
+24-1815970744
 
-63-508278489
-1271178396567
+621880827779
+127-11215502
 Account\AccountPage.xaml;CreateInvoice\CreateInvoicePage.xaml;CreateOrderItems\CreateOrderItemPage.xaml;CreatePartner\CreatePartnerPage.xaml;CreateProduct\CreateProductPage.xaml;Dashboard\Dashboard.xaml;Dashboard\Frame1.xaml;Dashboard\Frame2.xaml;Dashboard\Frame3.xaml;Dashboard\Frame4.xaml;DetailInvoice\DetailInvoice.xaml;DetailPartner\DetailPartner.xaml;Detail\Detail.xaml;EditOrderItems\EditOrderItemsPage.xaml;Invoice\ListInvoicePage.xaml;Login\LoginPage.xaml;MainWindow.xaml;Dummy.xaml;Partner\PartnerPage.xaml;Product\ProductPage.xaml;QRGenerator\QRGeneratorPage.xaml;Register\RegisterPage.xaml;ShowProductDetail\ShowProductDetail.xaml;Sidebar.xaml;
 
-True
+False
 
