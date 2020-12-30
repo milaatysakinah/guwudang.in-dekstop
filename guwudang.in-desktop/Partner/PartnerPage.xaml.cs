@@ -45,7 +45,7 @@ namespace guwudang.Partner
 
         private void initUIElements()
         {
-            newPartnerButton = buttonBuilder.activate(this, "newPartnerBtn").addOnClick(this, "");
+            newPartnerButton = buttonBuilder.activate(this, "newPartnerBtn").addOnClick(this, "onClick_newPartner");
             deletePartnerButton = buttonBuilder.activate(this, "deletePartnerBtn").addOnClick(this, "onClickBtnDelete");
             searchPartnerTxtBox = txtBoxBuilder.activate(this, "searchPartnerTxt");
         }
@@ -61,6 +61,11 @@ namespace guwudang.Partner
             {
                 lvPartner.ItemsSource = partners;
             });
+        }
+
+        public void onClick_newPartner()
+        {
+            Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.newPartnerPage));
         }
 
         private void search_btn_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -130,7 +135,6 @@ namespace guwudang.Partner
             new MainWindow().Show();
             this.KeepAlive = false;
         }
-
     }
 
     //public class Product

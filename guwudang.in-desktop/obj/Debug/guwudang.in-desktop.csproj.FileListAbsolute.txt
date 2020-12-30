@@ -170,3 +170,33 @@ D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Detail\Detail.
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\guwudang.in-desktop.csproj.CoreCompileInputs.cache
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\EditOrderItems\EditOrderItemsPage.g.cs
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\EditOrderItems\EditOrderItemsPage.baml
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang.in-desktop.csprojAssemblyReference.cache
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Account\AccountPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\CreateInvoice\CreateInvoicePage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\CreateOrderItems\CreateOrderItemPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\CreatePartner\CreatePartnerPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\CreateProduct\CreateProductPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Dashboard\Dashboard.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Dashboard\Frame1.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Dashboard\Frame2.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Dashboard\Frame3.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Dashboard\Frame4.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\DetailInvoice\DetailInvoice.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\DetailPartner\DetailPartner.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Detail\Detail.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\EditOrderItems\EditOrderItemsPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Invoice\ListInvoicePage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Login\LoginPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\MainWindow.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Dummy.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Partner\PartnerPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Product\ProductPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\QRGenerator\QRGeneratorPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Register\RegisterPage.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\ShowProductDetail\ShowProductDetail.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\Sidebar.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\App.g.cs
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang_MarkupCompile.cache
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang_MarkupCompile.lref
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang.exe
+C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang.pdb

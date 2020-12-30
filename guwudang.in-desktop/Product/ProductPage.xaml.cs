@@ -49,7 +49,7 @@ namespace guwudang.Product
 
         private void initUIElements()
         {
-            newProductButton = buttonBuilder.activate(this, "newProductBtn").addOnClick(this, "");
+            newProductButton = buttonBuilder.activate(this, "newProductBtn").addOnClick(this, "onClick_newProduct");
             deleteProductButton = buttonBuilder.activate(this, "deleteProductBtn").addOnClick(this, "onClickBtnDelete");
             searchProductTxtBox = txtBoxBuilder.activate(this, "searchProductTxt");
         }
@@ -65,6 +65,11 @@ namespace guwudang.Product
             {
                 lvProduct.ItemsSource = products;
             });
+        }
+
+        public void onClick_newProduct()
+        {
+            Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.newProductPage));
         }
 
         private void search_btn_Click(object sender, System.Windows.RoutedEventArgs e)
