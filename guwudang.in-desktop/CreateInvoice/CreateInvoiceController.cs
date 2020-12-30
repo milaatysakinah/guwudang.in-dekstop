@@ -21,6 +21,10 @@ namespace guwudang.CreateInvoice
             var client = new ApiClient("http://127.0.0.1:8000/");
             var request = new ApiRequestBuilder();
 
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint("api/status/")
@@ -62,6 +66,9 @@ namespace guwudang.CreateInvoice
             //Console.WriteLine(_endpoint);
 
             var client2 = new ApiClient("http://localhost:8000/");
+            
+            client2.setAuthorizationToken(token);
+
             var request2 = new ApiRequestBuilder();
             var req = request2
                 .buildHttpRequest()
@@ -79,6 +86,11 @@ namespace guwudang.CreateInvoice
 
             _endpoint = _endpoint.Replace(":id", id);
             _endpoint = _endpoint.Replace(":search", key);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -128,6 +140,9 @@ namespace guwudang.CreateInvoice
             //Console.WriteLine(_endpoint);
 
             var client2 = new ApiClient("http://localhost:8000/");
+
+            client2.setAuthorizationToken(token);
+
             var request2 = new ApiRequestBuilder();
             var req = request2
                 .buildHttpRequest()

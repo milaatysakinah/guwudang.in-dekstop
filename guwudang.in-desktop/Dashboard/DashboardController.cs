@@ -26,8 +26,8 @@ namespace guwudang.Dashboard
 
             User user = new User();
             string token = user.getToken();
-            Console.WriteLine("Dashboard : " + token);
             client.setAuthorizationToken(token);
+            Console.WriteLine("Dashboard : " + token);
 
             var reqAccount = request
                 .buildHttpRequest()
@@ -57,6 +57,11 @@ namespace guwudang.Dashboard
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchPartnerByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -85,6 +90,10 @@ namespace guwudang.Dashboard
             string _endpoint = "api/weeklyOrderItem/?id=:id&type=:type";
             _endpoint = _endpoint.Replace(":id", id);
             _endpoint = _endpoint.Replace(":type", type);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
 
             var req = request
                 .buildHttpRequest()
@@ -152,6 +161,11 @@ namespace guwudang.Dashboard
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchInvoiceByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -169,6 +183,11 @@ namespace guwudang.Dashboard
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchOrderItemByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -186,6 +205,11 @@ namespace guwudang.Dashboard
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchProductByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -203,6 +227,11 @@ namespace guwudang.Dashboard
             var request = new ApiRequestBuilder();
             string _endpoint = "api/orderItemIN/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -230,6 +259,11 @@ namespace guwudang.Dashboard
             var request = new ApiRequestBuilder();
             string _endpoint = "api/orderItemOUT/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
+
+            User user = new User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
