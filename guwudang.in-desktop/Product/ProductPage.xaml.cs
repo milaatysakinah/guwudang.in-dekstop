@@ -143,12 +143,6 @@ namespace guwudang.Product
             Sidebar.secFrame.Navigate(detail);
         }
 
-        public void backToLogin()
-        {
-            new MainWindow().Show();
-            this.KeepAlive = false;
-        }
-
 
     }
 

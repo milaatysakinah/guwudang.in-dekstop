@@ -24,6 +24,7 @@ namespace guwudang.CreateInvoice
         private IMyButton deletePartnerButton;
         private IMyTextBox searchPartnerTxtBox;
 
+
         public CreateInvoicePage()
         {
             InitializeComponent();
