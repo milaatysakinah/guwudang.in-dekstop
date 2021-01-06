@@ -1,0 +1,39 @@
+﻿<basic:MyPage x:Class="guwudang.Account.EditAccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:guwudang.Account"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      mc:Ignorable="d" 
+      d:DesignHeight="920" d:DesignWidth="1520"
+      Title="EditAccountPage">
+
+    <Grid>
+        <Canvas Background="Aqua"  HorizontalAlignment="Left" Height="571" Margin="243,192,0,0" VerticalAlignment="Top" Width="1042">
+            <Canvas Height="226" Canvas.Left="382" Canvas.Top="14" Width="265"/>
+            <Button Name="doneBtn" Content="Done" Canvas.Left="821" Canvas.Top="492" Width="102" Height="44" Click="doneBtn_Click"/>
+            <Button Name ="image_btn" Content="Upload Profile Picture" Canvas.Left="592" Canvas.Top="288" Width="185" Click="image_btn_Click"/>
+            <TextBlock Name="status_txt" Canvas.Left="592" TextWrapping="Wrap" Text="" Canvas.Top="345" Height="44" Width="430"/>
+        </Canvas>
+
+        <Grid HorizontalAlignment="Left" Height="58" Width="394" Margin="273,252,0,0" VerticalAlignment="Top" Background="White" >
+            <TextBox Name="username_txt" HorizontalAlignment="Left" Height="38" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="301"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="52" Width="394" Margin="273,482,0,0" VerticalAlignment="Top" Background="White" >
+            <TextBox Name="phoneNumber_txt" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="293"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="52" Width="394" Margin="273,364,0,0" VerticalAlignment="Top" Background="White" />
+        <Grid HorizontalAlignment="Left" Height="54" Width="394" Margin="273,619,0,0" VerticalAlignment="Top" Background="White" >
+            <TextBox Name="companyName_txt" HorizontalAlignment="Left" Height="34" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289"/>
+        </Grid>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="273,223,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="273,329,0,0" VerticalAlignment="Top"/>
+        <Label Content="Company Name" HorizontalAlignment="Left" Margin="273,574,0,0" VerticalAlignment="Top"/>
+        <Label Content="Phone Number" HorizontalAlignment="Left" Margin="273,443,0,0" VerticalAlignment="Top"/>
+        <Image Name ="profilePic_img" HorizontalAlignment="Left" Height="204" Margin="828,252,0,0" VerticalAlignment="Top" Width="204"/>
+        <TextBox Name="email_txt" HorizontalAlignment="Left" Height="37" Margin="285,364,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="297"/>
+
+
+    </Grid>
+</basic:MyPage>

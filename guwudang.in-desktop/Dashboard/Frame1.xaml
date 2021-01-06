@@ -14,9 +14,9 @@
                    " VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846" Width="89"/>
         <TextBlock HorizontalAlignment="Left" Margin="169,131,0,0" TextWrapping="Wrap" Text="Total Invoice Created" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842"/>
         <TextBlock HorizontalAlignment="Left" Margin="328,131,0,0" TextWrapping="Wrap" Text="Total Shipping" VerticalAlignment="Top"/>
-        <TextBlock Name="totalCustomers_txt" HorizontalAlignment="Left" Margin="49,105,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846"/>
-        <TextBlock Name="totalInvoice_txt" HorizontalAlignment="Left" Margin="199,107,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842"/>
-        <TextBlock Name="totalShipping_txt" HorizontalAlignment="Left" Margin="342,108,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock Name="totalCustomers_txt" HorizontalAlignment="Left" Margin="49,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846"/>
+        <TextBlock Name="totalInvoice_txt" HorizontalAlignment="Left" Margin="199,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842"/>
+        <TextBlock Name="totalShipping_txt" HorizontalAlignment="Left" Margin="342,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
     </Grid>
 </basic:MyPage>

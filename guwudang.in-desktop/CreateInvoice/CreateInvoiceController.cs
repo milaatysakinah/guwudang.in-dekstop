@@ -48,21 +48,12 @@ namespace guwudang.CreateInvoice
         {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchPartnerByUserID/?id=:id";
+            string _endpoint = "api/searchPartnerByUserID/";
 
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-
-            var response1 = await client.sendRequest(request.getApiRequestBundle());
-            client.setOnFailedRequest(setFailedAuthorization);
-            id = response1.getJObject()["user"]["id"].ToString();
-            _endpoint = _endpoint.Replace(":id", id);
             //Console.WriteLine(_endpoint);
 
             var client2 = new ApiClient("http://localhost:8000/");
@@ -121,22 +112,13 @@ namespace guwudang.CreateInvoice
         {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchProductByUserID/?id=:id";
+            string _endpoint = "api/searchProductByUserID/";
 
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-
-            var response1 = await client.sendRequest(request.getApiRequestBundle());
-            client.setOnFailedRequest(setFailedAuthorization);
             
-            id = response1.getJObject()["user"]["id"].ToString();
-            _endpoint = _endpoint.Replace(":id", id);
             //Console.WriteLine(_endpoint);
 
             var client2 = new ApiClient("http://localhost:8000/");
