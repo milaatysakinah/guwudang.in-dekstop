@@ -200,3 +200,5 @@ C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang_Ma
 C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang_MarkupCompile.lref
 C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang.exe
 C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang.pdb
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Account\EditAccountPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Account\EditAccountPage.baml

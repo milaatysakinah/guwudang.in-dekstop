@@ -31,7 +31,7 @@ namespace guwudang.Account
         private IMyTextBlock emailTxtBlock;
         private IMyTextBlock companyNameTxtBlock;
         private IMyTextBlock phoneNumberTxtBlock;
-
+        
         public AccountPage()
         {
             InitializeComponent();
@@ -70,7 +70,36 @@ namespace guwudang.Account
                 companyNameTxtBlock.setText(account.company_name);
                 emailTxtBlock.setText(account.email);
                 phoneNumberTxtBlock.setText(account.phone_number);
+
+                try
+                {
+                    profilePic_img.Source = null; 
+                    Console.WriteLine("Gambar : " + account.profile_picture);
+                    Uri resourceUri = new Uri(account.profile_picture);
+
+                    if (resourceUri != null)
+                    {
+                        var bi = new BitmapImage();
+                        bi.BeginInit();
+                        bi.UriSource = resourceUri;
+                        bi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        bi.CacheOption = BitmapCacheOption.OnLoad;
+                        bi.EndInit();
+                        profilePic_img.Source = bi;
+                    }
+                        
+                }catch(Exception e)
+                {
+
+                }
             });
         }
+
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Sidebar.secFrame.Navigate(new EditAccountPage());
+        }
+
+        
     }
 }

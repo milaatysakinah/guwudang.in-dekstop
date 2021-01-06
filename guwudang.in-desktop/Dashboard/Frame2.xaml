@@ -14,12 +14,12 @@
             <RowDefinition Height="11*"/>
             <RowDefinition Height="16*"/>
         </Grid.RowDefinitions>
-        <TextBlock Name="totalProducts_txt" HorizontalAlignment="Left" Margin="17,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock Name="totalProducts_txt" HorizontalAlignment="Left" Margin="17,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Total Product : " VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,61,0,0" TextWrapping="Wrap" Text="Total IN : " VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,46,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Total OUT : " VerticalAlignment="Top"/>
-        <TextBlock Name = "totalOrderIN_txt" HorizontalAlignment="Left" Margin="17,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock Name = "totalOrderOUT_txt" HorizontalAlignment="Left" Margin="16,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.048,-0.333"/>
+        <TextBlock Name = "totalOrderIN_txt" HorizontalAlignment="Left" Margin="17,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock Name = "totalOrderOUT_txt" HorizontalAlignment="Left" Margin="16,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.048,-0.333"/>
 
     </Grid>
 </basic:MyPage>
