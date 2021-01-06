@@ -11,6 +11,7 @@ namespace guwudang.EditOrderItems
     class EditOrderItemsController : MyController
     {
         private static string id;
+        private static User user = new User();
 
         public EditOrderItemsController(IMyView _myView) : base(_myView)
         {
@@ -23,7 +24,7 @@ namespace guwudang.EditOrderItems
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchProductByUserID/?id=:id";
 
-            User user = new User();
+            //User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
@@ -40,6 +41,9 @@ namespace guwudang.EditOrderItems
 
             var client2 = new ApiClient("http://localhost:8000/");
             var request2 = new ApiRequestBuilder();
+
+            client2.setAuthorizationToken(token);
+
             var req = request2
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -67,6 +71,14 @@ namespace guwudang.EditOrderItems
             _endpoint = _endpoint.Replace(":id", idOrder);
             Console.WriteLine(_endpoint);
 
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
+            var reqAccount = request
+                .buildHttpRequest()
+                .setEndpoint("api/authUser")
+                .setRequestMethod(HttpMethod.Get);
+
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -89,6 +101,14 @@ namespace guwudang.EditOrderItems
         {
             var client = new ApiClient("http://127.0.0.1:8000/");
             var request = new ApiRequestBuilder();
+
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
+            var reqAccount = request
+                .buildHttpRequest()
+                .setEndpoint("api/authUser")
+                .setRequestMethod(HttpMethod.Get);
 
             var req = request
                 .buildHttpRequest()
@@ -125,21 +145,13 @@ namespace guwudang.EditOrderItems
             string _endpoint = "api/orderitem/" + _idOrder;
             Console.WriteLine(_endpoint + " -- QTY : " + _orderQty);
 
-            //User user = new User();
-            //string token = user.getToken();
-            //client.setAuthorizationToken(token);
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
 
-            //var reqAccount = request
-            //    .buildHttpRequest()
-            //    .setEndpoint("api/authUser")
-            //    .setRequestMethod(HttpMethod.Get);
-
-            //var response1 = await client.sendRequest(request.getApiRequestBundle());
-            //client.setOnFailedRequest(setFailedAuthorization);
-
-
-            //var client = new ApiClient("http://127.0.0.1:8000/");
-            //var request = new ApiRequestBuilder();
+            var reqAccount = request
+                .buildHttpRequest()
+                .setEndpoint("api/authUser")
+                .setRequestMethod(HttpMethod.Get);
 
             var req = request
                 .buildHttpRequest()

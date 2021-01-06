@@ -8,17 +8,21 @@ namespace guwudang.DetailInvoice
 {
     public class DetailInvoiceController : MyController
     {
+        private static utils.User user = new utils.User();
+        private string id_invoice;
+
         public DetailInvoiceController(IMyView _myView) : base(_myView)
         {
         }
 
         public async void Detailinvoice(string _idInvoice)
         {
+            this.id_invoice = _idInvoice;
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
             string _endpoint = "api/detail_invoice/?id=:idUser&detail_invoice=:idInvoice";
 
-            utils.User user = new utils.User();
+            //utils.User user = new utils.User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
@@ -108,13 +112,22 @@ namespace guwudang.DetailInvoice
             
             string _endpoint = "api/orderitem/" + id_order;
 
-             //_endpoint = _endpoint.Replace("{orderitem}", id_order);
-            Console.WriteLine(_endpoint);
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
+            var reqAccount = request
+                .buildHttpRequest()
+                .setEndpoint("api/authUser")
+                .setRequestMethod(HttpMethod.Get);
+
+            //_endpoint = _endpoint.Replace("{orderitem}", id_order);
+            Console.WriteLine("Delete " + _endpoint);
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
                 .setRequestMethod(HttpMethod.Delete);
             var response = await client.sendRequest(request.getApiRequestBundle());
+            Detailorder(id_invoice);
         }
 
         private void setFailedAuthorization(HttpResponseBundle _response)

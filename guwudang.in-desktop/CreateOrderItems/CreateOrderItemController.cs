@@ -10,6 +10,7 @@ namespace guwudang.CreateOrderItems
     class CreateOrderItemController : MyController
     {
         private static string id;
+        private static User user = new User();
 
         public CreateOrderItemController(IMyView _myView) : base(_myView)
         {
@@ -22,7 +23,7 @@ namespace guwudang.CreateOrderItems
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchProductByUserID/?id=:id";
 
-            User user = new User();
+            //User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
@@ -63,6 +64,15 @@ namespace guwudang.CreateOrderItems
         {
             var client = new ApiClient("http://127.0.0.1:8000/");
             var request = new ApiRequestBuilder();
+
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
+            var reqAccount = request
+                .buildHttpRequest()
+                .setEndpoint("api/authUser")
+                .setRequestMethod(HttpMethod.Get);
+
 
             var req = request
                 .buildHttpRequest()
