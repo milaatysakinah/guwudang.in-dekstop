@@ -37,7 +37,6 @@ namespace guwudang.EditOrderItems
             getType();
             getOrderItem(_idOrder);
             idOrder = _idOrder;
-           // lbProduct.Content = idOrder;
         }
 
         private void initUIBuilders()
@@ -48,9 +47,7 @@ namespace guwudang.EditOrderItems
 
         private void initUIElements()
         {
-            //newPartnerButton = buttonBuilder.activate(this, "newPartnerBtn").addOnClick(this, "");
             createButton = buttonBuilder.activate(this, "createBtn").addOnClick(this, "onClickBtnCreate");
-            //searchPartnerTxtBox = txtBoxBuilder.activate(this, "searchPartnerTxt");
         }
 
         public void onClickBtnCreate()
@@ -69,9 +66,7 @@ namespace guwudang.EditOrderItems
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    //if (listProductID.Count > 0) { delProduct(); }
-                    //DetailInvoice.DetailInvoice di = new DetailInvoice.DetailInvoice(idInvoice);
-                    //Sidebar.secFrame.Navigate(di);
+                    // Action Sukses
                     break;
                 case MessageBoxResult.No:
                     // No Action
@@ -129,13 +124,11 @@ namespace guwudang.EditOrderItems
         private void cbProduct_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             idProduct = ((Model.Product)(cbProduct.SelectedItem)).id;
-            //lblPartner.Content = ((Model.Partner)(cbPartners.SelectedItem)).id;
         }
 
         private void cbTransType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             idType = ((Model.TransType)(cbTransType.SelectedItem)).id;
-            //lblStatus.Content = ((Model.StatusInvoice)(cbStatus.SelectedItem)).id; ;
         }
     }
 }

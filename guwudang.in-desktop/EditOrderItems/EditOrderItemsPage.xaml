@@ -37,9 +37,7 @@
                 </Grid.Background>
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,0,0,0">
                     <Label Name="lbProduct" Content="Product : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
-                    <!--<TextBox Name="email_txt" VerticalAlignment="Top" Height="auto" TextWrapping="Wrap" Text="kucing1@gmail.com" Margin="0,125,0,0" TextDecorations="Underline" />-->
                     <ComboBox Name="cbProduct" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="product_name" SelectionChanged="cbProduct_SelectionChanged" IsEnabled="False"/>
-                    <!--<Label Name="lblProduct" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>-->
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,0,0,0">
                     <Label Name="lbTransType" Content="Transaction Type : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
@@ -54,8 +52,6 @@
                     <Label Name="lbOrderQty" Content="Order Qty : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
                     <TextBox Name="tbOrderQty" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
                 </StackPanel>
-
-
 
                 <Button Name="createBtn"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,200,20,-1" Content="Submit"></Button>
 

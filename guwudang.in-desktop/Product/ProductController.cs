@@ -11,6 +11,7 @@ namespace guwudang.Product
     public class ProductController : MyController
     {
         private static string id;
+        private static User user = new User();
 
         public ProductController(IMyView _myView) : base(_myView) { }
 
@@ -19,8 +20,6 @@ namespace guwudang.Product
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
 
-
-            User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
@@ -33,8 +32,6 @@ namespace guwudang.Product
             var response1 = await client.sendRequest(request.getApiRequestBundle());
 
             Console.WriteLine(response1.getHttpResponseMessage().Content);
-
-
         }
 
         public async void nextProduct(string id)
@@ -42,21 +39,20 @@ namespace guwudang.Product
             string _endpoint = "api/searchProductByUserID/?id=:id";
 
             _endpoint = _endpoint.Replace(":id", id);
-            //Console.WriteLine(_endpoint);
 
-            var client2 = new ApiClient("http://localhost:8000/");
-            var request2 = new ApiRequestBuilder();
+            var client = new ApiClient("http://localhost:8000/");
+            var request = new ApiRequestBuilder();
 
             User user = new User();
             string token = user.getToken();
-            client2.setAuthorizationToken(token);
+            client.setAuthorizationToken(token);
 
-            var req = request2
+            var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
                 .setRequestMethod(HttpMethod.Get);
-            client2.setOnSuccessRequest(setViewProductData);
-            var response = await client2.sendRequest(request2.getApiRequestBundle());
+            client.setOnSuccessRequest(setViewProductData);
+            var response = await client.sendRequest(request.getApiRequestBundle());
         }
 
         public void searchProduct(string key)
@@ -86,7 +82,6 @@ namespace guwudang.Product
             var request = new ApiRequestBuilder();
             foreach (string item in selectedItemsID)
             {
-                //Console.WriteLine(item);
                 string _endpoint = "api/product/:id";
 
                 _endpoint = _endpoint.Replace(":id", item);

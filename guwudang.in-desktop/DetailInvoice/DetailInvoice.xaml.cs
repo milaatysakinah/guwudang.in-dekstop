@@ -93,26 +93,16 @@ namespace guwudang.DetailInvoice
         private void onClick_editOI(Object sender, System.Windows.RoutedEventArgs e)
         {
             string id = (string)((Button)sender).Tag;
-            //DetailInvoice.DetailInvoicePage detail = new DetailInvoice.DetailInvoicePage(id);
             EditOrderItems.EditOrderItemsPage ei = new EditOrderItems.EditOrderItemsPage(id);
             Sidebar.secFrame.Navigate(ei);
-            //Sidebar.secFrame.Navigate(detail);
         }
 
         private void onClick_DeleteOI(Object sender, System.Windows.RoutedEventArgs e)
         {
             string id = (string)((Button)sender).Tag;
             string txt = "Konfirmasi";
-            string msgtext;
-            //if (listProductID.Count > 0)
-            //{
-                msgtext = "Apakah Anda yakin ingin menghapus " + " data tersebut ? ";
-            //}
-            //else
-            //{
-            //    msgtext = "Anda belum memilih data untuk dihapus.";
-            //}
-
+            string msgtext = "Apakah Anda yakin ingin menghapus " + " data tersebut ? ";
+            
             MessageBoxButton button = MessageBoxButton.YesNo;
             MessageBoxResult result = MessageBox.Show(msgtext, txt, button);
 

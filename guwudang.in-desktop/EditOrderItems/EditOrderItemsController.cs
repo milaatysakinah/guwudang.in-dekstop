@@ -22,22 +22,9 @@ namespace guwudang.EditOrderItems
         {
             var client = new ApiClient("http://localhost:8000/");
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchProductByUserID/?id=:id";
-
-            //User user = new User();
+            string _endpoint = "api/searchProductByUserID/";
             string token = user.getToken();
             client.setAuthorizationToken(token);
-
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-
-            var response1 = await client.sendRequest(request.getApiRequestBundle());
-            client.setOnFailedRequest(setFailedAuthorization);
-            id = response1.getJObject()["user"]["id"].ToString();
-            _endpoint = _endpoint.Replace(":id", id);
-            //Console.WriteLine(_endpoint);
 
             var client2 = new ApiClient("http://localhost:8000/");
             var request2 = new ApiRequestBuilder();
@@ -74,11 +61,6 @@ namespace guwudang.EditOrderItems
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-
             var req = request
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
@@ -105,19 +87,12 @@ namespace guwudang.EditOrderItems
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-
             var req = request
                 .buildHttpRequest()
                 .setEndpoint("api/transactionType/")
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setViewTypeData);
             var response = await client.sendRequest(request.getApiRequestBundle());
-            //Console.WriteLine(response.getJObject().ToString());
-            //client.setAuthorizationToken(response.getJObject().ToString());
         }
 
         private void setViewTypeData(HttpResponseBundle _response)
@@ -147,11 +122,6 @@ namespace guwudang.EditOrderItems
 
             string token = user.getToken();
             client.setAuthorizationToken(token);
-
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
 
             var req = request
                 .buildHttpRequest()

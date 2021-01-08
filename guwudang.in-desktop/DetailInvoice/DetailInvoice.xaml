@@ -45,7 +45,6 @@
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,0,0,0">
                     <Label Name="lblStatus" Content="Status : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
                     <Border CornerRadius="8" BorderThickness="1" BorderBrush="#707070" Margin="0,0,0,0" VerticalAlignment="Top">
-                        <!--<ComboBox Name="cbStatus" Padding="5" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="status" SelectionChanged="cbStatus_SelectionChanged"/>-->
                         <TextBlock Name="status" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" Padding="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="auto"/>
                     </Border>
                 </StackPanel>
@@ -57,20 +56,12 @@
                       SelectionChanged="lvDetailorder_SelectionChanged" >
                         <ListView.View>
                             <GridView>
-                                <!--<GridViewColumn>
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <CheckBox Tag="{Binding id}"
-                                              IsChecked="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Path=IsSelected}" />
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>-->
+                               
                                 <GridViewColumn DisplayMemberBinding="{Binding product_picture}"  Header="Gambar"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding product_name}"  Header="Nama Product"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding transaction_name}"  Header="Nama Product"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding order_quantity}" Header="Order Qty"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding price}"  Header="Price"/>
-                                <!--<GridViewColumn DisplayMemberBinding="{Binding id_order}"  Header="Price"/>-->
                                 <GridViewColumn>
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
