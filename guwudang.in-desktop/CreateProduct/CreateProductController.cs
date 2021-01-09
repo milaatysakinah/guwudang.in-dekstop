@@ -11,52 +11,86 @@ namespace guwudang.CreateProduct
 {
     class CreateProductController : MyController
     {
+        private static string id;
+        private static User user = new User();
         public CreateProductController(IMyView _myView) : base(_myView)
         {
 
         }
 
-        public async void createProduct(string _productName, string _stock, string _price,
-            string _description, MyList<MyFile> fileImage)
+        public async void productType()
+        {
+            var client = new ApiClient("http://localhost:8000/");
+            var request = new ApiRequestBuilder();
+            string _endpoint = "api/ProductType/";
+
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint(_endpoint)
+                .setRequestMethod(HttpMethod.Get);
+            client.setOnSuccessRequest(setViewProductTypeData);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
+        private void setViewProductTypeData(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                string status = _response.getHttpResponseMessage().ReasonPhrase;
+                getView().callMethod("setProductType", _response.getParsedObject<List<guwudang.Model.ProductType>>());
+            }
+        }
+
+        public async void units()
         {
             var client = new ApiClient("http://127.0.0.1:8000/");
             var request = new ApiRequestBuilder();
+
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint("api/units/")
+                .setRequestMethod(HttpMethod.Get);
+            client.setOnSuccessRequest(setViewUnitsData);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
+        private void setViewUnitsData(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                string status = _response.getHttpResponseMessage().ReasonPhrase;
+                getView().callMethod("setUnits", _response.getParsedObject<List<guwudang.Model.Units>>());
+            }
+        }
+
+        public async void createProduct(Model.Product product, MyList<MyFile> fileImage)
+        {
+            var client = new ApiClient("http://127.0.0.1:8000/");
+            var request = new ApiRequestBuilder();
+            String endpoint = "api/product/create";
+
+            var content = new MultipartFormDataContent();
+            content.Add(new StringContent(product.product_name), "product_name");
+            content.Add(new StringContent(product.product_type_id), "product_type_id");
+            content.Add(new StringContent(product.units), "units");
+            content.Add(new StringContent(product.description), "description");
+            content.Add(new StringContent(product.product_picture), "product_picture");
+            content.Add(new StringContent(product.price), "price");
+            if (fileImage.Count > 0)
+                content.Add(new StreamContent(new MemoryStream(fileImage[0].byteArray)), "file", fileImage[0].fullFileName);
+
+            var multiPartRequest = request
+            .buildMultipartRequest(new MultiPartContent(content))
+            .setEndpoint(endpoint)
+            .setRequestMethod(HttpMethod.Post);
 
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
-            //var formContent = new MultipartFormDataContent();
-            //formContent.Add(new StringContent(_productName), "product_name");
-            //formContent.Add(new StringContent("1"), "product_type_id");
-            //formContent.Add(new StringContent(_stock), "stock");
-            //formContent.Add(new StringContent(_price), "price");
-            //formContent.Add(new StringContent(_description), "descripton");
-            //formContent.Add(new StringContent("pict"), "product_picture");
-            //formContent.Add(new StringContent("units"), "units");
-            //if (fileImage.Count > 0)
-            //    formContent.Add(new StreamContent(new MemoryStream(fileImage[0].byteArray)), "picture", fileImage[0].fullFileName);
-
-            //var multiPartRequest = request
-            //.buildMultipartRequest(new MultiPartContent(formContent))
-            //.setEndpoint("api/product/")
-            //.setRequestMethod(HttpMethod.Post);
-            //client.setOnFailedRequest(setViewFailed);
-            //client.setOnSuccessRequest(setViewSuccess);
-            //var response = await client.sendRequest(request.getApiRequestBundle());
-
-            var req = request
-                .buildHttpRequest()
-                .setEndpoint("api/product/")
-                .addParameters("product_name", _productName)
-                .addParameters("product_type_id", "1")
-                .addParameters("units", "kg")
-                .addParameters("price", _price)
-                .addParameters("description", _description)
-                .addParameters("product_picture","test")
-                .setRequestMethod(HttpMethod.Post);
             client.setOnFailedRequest(setViewFailed);
             client.setOnSuccessRequest(setViewSuccess);
+
             var response = await client.sendRequest(request.getApiRequestBundle());
         }
 

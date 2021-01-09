@@ -9,15 +9,55 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CreatePartnerPage">
 
-    <Grid>
-        <Label Content="Company Name" HorizontalAlignment="Left" Margin="35,26,0,0" VerticalAlignment="Top" Height="26" Width="109"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="243,28,0,0" VerticalAlignment="Top"/>
-        <Label Content="Phone Number" HorizontalAlignment="Left" Margin="480,28,0,0" VerticalAlignment="Top"/>
-        <Label Content="Address" HorizontalAlignment="Left" Margin="35,130,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="create_btn" Content="Create" HorizontalAlignment="Left" Margin="604,320,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox Name="companyName_tb" HorizontalAlignment="Left" Height="23" Margin="39,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166"/>
-        <TextBox Name="email_tb" HorizontalAlignment="Left" Height="23" Margin="246,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="phoneNumber_tb" HorizontalAlignment="Left" Height="23" Margin="480,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="address_tb" HorizontalAlignment="Left" Height="93" Margin="39,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
+    <Grid Margin="1,0,-1,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Add Partner" VerticalAlignment="Top" Height="auto" Width="auto" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
+        <Border CornerRadius="35" BorderThickness="20" Margin="20,100,20,0" >
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFFFFF" Offset="0.0"/>
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFFFF" Offset="0.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,0,0,0">
+                    <Label Name="lbCompanyName" Content="Company Name : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="companyName_tb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>                    
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,0,0,0">
+                    <Label Name="lbEmail" Content="Email : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="email_tb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,75,0,0">
+                    <Label Name="lbPhone" Content="Phone Number : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="phoneNumber_tb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,75,0,0">
+                    <Label Name="lbAddress" Content="Address : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="address_tb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+
+                <Button Name="createBtn"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,200,20,-1" Content="Add"></Button>
+
+            </Grid>
+
+        </Border>
+
     </Grid>
 </basic:MyPage>

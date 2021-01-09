@@ -165,6 +165,7 @@
       <DependentUpon>Dummy.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\ProductType.cs" />
     <Compile Include="Model\Detailinvoice.cs" />
     <Compile Include="Model\Detailorder.cs" />
     <Compile Include="Model\Invoice.cs" />
@@ -175,7 +176,12 @@
     <Compile Include="Model\ProductDetail.cs" />
     <Compile Include="Model\StatusInvoice.cs" />
     <Compile Include="Model\TransType.cs" />
+    <Compile Include="Model\Units.cs" />
     <Compile Include="Model\WeeklyOrder.cs" />
+    <Compile Include="Partner\EditPartnerController.cs" />
+    <Compile Include="Partner\EditPartnerPage.xaml.cs">
+      <DependentUpon>EditPartnerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Partner\PartnerController.cs" />
     <Compile Include="Partner\PartnerPage.xaml.cs">
       <DependentUpon>PartnerPage.xaml</DependentUpon>
@@ -287,6 +293,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Dummy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Partner\EditPartnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

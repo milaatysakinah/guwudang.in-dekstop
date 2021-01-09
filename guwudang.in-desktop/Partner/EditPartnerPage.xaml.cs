@@ -1,18 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using guwudang.Product;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using Velacro.Basic;
+using Velacro.LocalFile;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
-using System.Windows.Controls;
-using System.Windows;
-using guwudang.Model;
 
-namespace guwudang.CreatePartner
+namespace guwudang.Partner
 {
     /// <summary>
-    /// Interaction logic for CreateProductPage.xaml
+    /// Interaction logic for EditPartnerPage.xaml
     /// </summary>
-    public partial class CreatePartnerPage : MyPage
+    public partial class EditPartnerPage : MyPage
     {
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
@@ -21,12 +27,17 @@ namespace guwudang.CreatePartner
         private IMyTextBox emailTxtBox;
         private IMyTextBox phoneTxtBox;
         private IMyTextBox addressTxtBox;
-        public CreatePartnerPage()
+        public string idPartner;
+        private Model.Partner thisPartner;
+        public EditPartnerPage(string _idPartner)
         {
             InitializeComponent();
-            setController(new CreatePartnerController(this));
+            setController(new EditPartnerController(this));
             initUIBuilders();
             initUIElements();
+            this.KeepAlive = false;
+            getPartner(_idPartner);
+            idPartner = _idPartner;
         }
 
         private void initUIBuilders()
@@ -38,15 +49,32 @@ namespace guwudang.CreatePartner
         private void initUIElements()
         {
             createButton = buttonBuilder
-                .activate(this, "create_btn")
-                .addOnClick(this, "onCreateButtonClick");
+                .activate(this, "edit_btn")
+                .addOnClick(this, "onEditButtonClick");
             companyNameTxtBox = txtBoxBuilder.activate(this, "companyName_tb");
             emailTxtBox = txtBoxBuilder.activate(this, "email_tb");
             phoneTxtBox = txtBoxBuilder.activate(this, "phoneNumber_tb");
             addressTxtBox = txtBoxBuilder.activate(this, "address_tb");
         }
 
-        public void onCreateButtonClick()
+        public void getPartner(string idPartner)
+        {
+            getController().callMethod("getPartner", idPartner);
+        }
+
+        public void setPartner(Model.Partner partner)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                thisPartner = partner;
+                companyName_tb.Text = thisPartner.name;
+                email_tb.Text = thisPartner.email;
+                phoneNumber_tb.Text = thisPartner.phone_number;
+                address_tb.Text = thisPartner.address;             
+            });
+        }
+
+        public void onEditButtonClick()
         {
             Model.Partner partner = new Model.Partner();
             partner.name = companyNameTxtBox.getText();
@@ -54,8 +82,7 @@ namespace guwudang.CreatePartner
             partner.phone_number = phoneTxtBox.getText();
             partner.address = addressTxtBox.getText();
 
-            getController().callMethod("createPartner", partner);
+            getController().callMethod("editPartner", partner, idPartner);
         }
-
     }
 }
