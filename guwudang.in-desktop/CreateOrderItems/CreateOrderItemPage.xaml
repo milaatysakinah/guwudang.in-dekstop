@@ -37,7 +37,6 @@
                 </Grid.Background>
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,0,0,0">
                     <Label Name="lbProduct" Content="Product : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
-                    <!--<TextBox Name="email_txt" VerticalAlignment="Top" Height="auto" TextWrapping="Wrap" Text="kucing1@gmail.com" Margin="0,125,0,0" TextDecorations="Underline" />-->
                     <ComboBox Name="cbProduct" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="product_name" SelectionChanged="cbProduct_SelectionChanged"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,0,0,0">

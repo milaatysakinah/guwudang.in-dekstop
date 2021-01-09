@@ -64,9 +64,7 @@ namespace guwudang.CreateOrderItems
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    //if (listProductID.Count > 0) { delProduct(); }
-                    //DetailInvoice.DetailInvoice di = new DetailInvoice.DetailInvoice(idInvoice);
-                    //Sidebar.secFrame.Navigate(di);
+                    // Action SUkses
                     break;
                 case MessageBoxResult.No:
                     // No Action
