@@ -14,18 +14,17 @@ namespace guwudang.CreatePartner
 
         }
 
-        public async void createPartner(string _companyName, string _email, string _phone,
-            string _address)
+        public async void createPartner(Model.Partner partner)
         {
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             var req = request
                 .buildHttpRequest()
-                .addParameters("companyName", _companyName)
-                .addParameters("email", _email)
-                .addParameters("phone", _phone)
-                .addParameters("address", _address)
+                .addParameters("companyName", partner.name)
+                .addParameters("email", partner.email)
+                .addParameters("phone", partner.phone_number)
+                .addParameters("address", partner.address)
                 .setEndpoint("api/partner/create")
                 .setRequestMethod(HttpMethod.Get);
             var response = await client.sendRequest(request.getApiRequestBundle());

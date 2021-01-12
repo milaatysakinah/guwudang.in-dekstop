@@ -7,13 +7,13 @@ using guwudang.utils;
 using System;
 using System.IO;
 
-namespace guwudang.CreateProduct
+namespace guwudang.Product
 {
-    class CreateProductController : MyController
+    class EditProductController : MyController
     {
         private static string id;
         private static User user = new User();
-        public CreateProductController(IMyView _myView) : base(_myView)
+        public EditProductController(IMyView _myView) : base(_myView)
         {
 
         }
@@ -63,11 +63,42 @@ namespace guwudang.CreateProduct
             }
         }
 
-        public async void createProduct(Model.Product product, MyList<MyFile> fileImage)
+        public async void getProduct(string idProduct)
+        {
+            Console.WriteLine("Id Product : " + idProduct);
+            var client = new ApiClient("http://127.0.0.1:8000/");
+            var request = new ApiRequestBuilder();
+            string _endpoint = "api/product/:id";
+
+            _endpoint = _endpoint.Replace(":id", idProduct);
+            Console.WriteLine(_endpoint);
+
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint(_endpoint)
+                .setRequestMethod(HttpMethod.Get);
+            client.setOnSuccessRequest(setViewProductData);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
+        private void setViewProductData(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                string status = _response.getHttpResponseMessage().ReasonPhrase;
+                guwudang.Model.Product getList = _response.getParsedObject<guwudang.Model.Product>();
+                getView().callMethod("setProduct", getList);
+            }
+        }
+
+        public async void editProduct(Model.Product product, MyList<MyFile> fileImage)
         {
             var client = new ApiClient("http://127.0.0.1:8000/");
             var request = new ApiRequestBuilder();
-            String endpoint = "api/product/create";
+            string endpoint = "api/product/" + product.id;
 
             var content = new MultipartFormDataContent();
             content.Add(new StringContent(product.product_name), "product_name");

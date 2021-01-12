@@ -1,10 +1,7 @@
-﻿using guwudang.Product;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Velacro.Basic;
 using Velacro.LocalFile;
@@ -13,18 +10,18 @@ using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
 
-namespace guwudang.CreateProduct
+namespace guwudang.Product
 {
     /// <summary>
-    /// Interaction logic for CreateProductPage.xaml
+    /// Interaction logic for EditProductPage.xaml
     /// </summary>
-    public partial class CreateProductPage : MyPage
+    public partial class EditProductPage : MyPage
     {
-        private String idProductType, idUnits;
+        private String idProductType, idUnits, idProduct;
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
         private BuilderTextBlock txtBlockBuilder;
-        private IMyButton createButton;
+        private IMyButton editButton;
         private IMyButton uploadButton;
         private IMyTextBlock statusTextBlock;
         private IMyTextBox productNameTxtBox;
@@ -34,12 +31,18 @@ namespace guwudang.CreateProduct
         private Model.Product thisProduct;
 
         private MyList<MyFile> uploadImage = new MyList<MyFile>();
-        public CreateProductPage()
+        public EditProductPage(string _idProduct)
         {
             InitializeComponent();
-            setController(new CreateProductController(this));
+            setController(new EditProductController(this));
             initUIBuilders();
             initUIElements();
+            this.KeepAlive = false;
+            DataContext = this;
+            getProductType();
+            getUnits();
+            getProduct(_idProduct);
+            idProduct = _idProduct;
         }
 
         private void initUIBuilders()
@@ -54,9 +57,9 @@ namespace guwudang.CreateProduct
             uploadButton = buttonBuilder
                 .activate(this, "upload_btn")
                 .addOnClick(this, "onPictureButtonClick");
-            createButton = buttonBuilder
-                .activate(this, "create_btn")
-                .addOnClick(this, "onCreateButtonClick");
+            editButton = buttonBuilder
+                .activate(this, "edit_btn")
+                .addOnClick(this, "onEditButtonClick");
             productNameTxtBox = txtBoxBuilder.activate(this, "productName_tb");
             stockTxtBox = txtBoxBuilder.activate(this, "stock_tb");
             priceTxtBox = txtBoxBuilder.activate(this, "price_tb");
@@ -85,7 +88,7 @@ namespace guwudang.CreateProduct
             
         }
 
-        public void onCreateButtonClick()
+        public void onEditButtonClick()
         {
             Model.Product product = new Model.Product();
             product.product_name = productNameTxtBox.getText();
@@ -96,7 +99,7 @@ namespace guwudang.CreateProduct
             product.product_picture = picture.Source.ToString();
 
             Console.WriteLine(product.product_picture);
-            getController().callMethod("createProduct", product, uploadImage);
+            getController().callMethod("editProduct", product, uploadImage);
         }
 
         public void onSuccess(string msg)
@@ -136,6 +139,27 @@ namespace guwudang.CreateProduct
 
                 utils.PageManagement.initPages();
                 Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.listProductPage));
+            });
+        }
+
+        public void getProduct(string idProduct)
+        {
+            getController().callMethod("getProduct", idProduct);
+        }
+
+        public void setProduct(Model.Product product)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                thisProduct = product;
+                productName_tb.Text = thisProduct.price;
+                productType_cb.SelectedIndex = Int32.Parse(thisProduct.product_type_id) - 1;
+                units_cb.SelectedIndex = Int32.Parse(thisProduct.units) - 1;
+                idProductType = thisProduct.product_type_id;
+                idUnits = thisProduct.units;
+                price_tb.Text = thisProduct.price.ToString();
+                description_tb.Text = thisProduct.description;
+                //picture = thisProduct.product_picture.Source.toString();
             });
         }
 
