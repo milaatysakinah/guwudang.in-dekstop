@@ -19,7 +19,7 @@ namespace guwudang.Invoice
 
         public async void listInvoice()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchInvoiceByUserID/?id=:id";
 
@@ -42,7 +42,7 @@ namespace guwudang.Invoice
             _endpoint = _endpoint.Replace(":id", id);
             //Console.WriteLine(_endpoint);
 
-            var client2 = new ApiClient("http://localhost:8000/");
+            var client2 = new ApiClient(utils.urls.BASE_URL);
             var request2 = new ApiRequestBuilder();
 
             client2.setAuthorizationToken(token);
@@ -60,7 +60,7 @@ namespace guwudang.Invoice
 
         public void searchInvoice(String key)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchInvoice/?id=:id&search=:search";
 
@@ -98,7 +98,7 @@ namespace guwudang.Invoice
 
         public void deleteInvoice(List<string> selectedItemsID)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             foreach (string item in selectedItemsID)
             {

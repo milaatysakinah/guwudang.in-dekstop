@@ -14,7 +14,7 @@ namespace guwudang.Detail
 
         public async void detail(string id)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/product/?id=:idUser";
 
@@ -45,7 +45,7 @@ namespace guwudang.Detail
 
         public async void product_detail(string idProduct)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/productDetail/?id=:idProduct";
 

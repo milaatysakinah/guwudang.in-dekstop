@@ -19,7 +19,7 @@ namespace guwudang.Partner
 
         public async void partner()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchPartnerByUserID/?id=:id";
 
@@ -39,7 +39,7 @@ namespace guwudang.Partner
             _endpoint = _endpoint.Replace(":id", id);
             //Console.WriteLine(_endpoint);
 
-            var client2 = new ApiClient("http://localhost:8000/");
+            var client2 = new ApiClient(utils.urls.BASE_URL);
             var request2 = new ApiRequestBuilder();
 
             client2.setAuthorizationToken(token);
@@ -54,7 +54,7 @@ namespace guwudang.Partner
 
         public void searchPartner(string key)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchPartner/?id=:id&search=:search";
 
@@ -75,7 +75,7 @@ namespace guwudang.Partner
 
         public async void deletePartner(List<string> selectedItemsID)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             foreach (string item in selectedItemsID)
             {

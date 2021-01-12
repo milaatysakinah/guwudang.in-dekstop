@@ -199,6 +199,7 @@
     <Compile Include="SidebarController.cs" />
     <Compile Include="utils\EPages.cs" />
     <Compile Include="utils\PageManagement.cs" />
+    <Compile Include="utils\urls.cs" />
     <Compile Include="utils\User.cs" />
     <Compile Include="Sidebar.cs">
       <DependentUpon>Sidebar.xaml</DependentUpon>

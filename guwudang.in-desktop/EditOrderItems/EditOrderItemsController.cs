@@ -20,13 +20,13 @@ namespace guwudang.EditOrderItems
 
         public async void product()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchProductByUserID/";
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
-            var client2 = new ApiClient("http://localhost:8000/");
+            var client2 = new ApiClient(utils.urls.BASE_URL);
             var request2 = new ApiRequestBuilder();
 
             client2.setAuthorizationToken(token);
@@ -115,7 +115,7 @@ namespace guwudang.EditOrderItems
 
         public async void UpdateOrderItem(string _idProduct, string _idType, string _orderQty, string _idOrder)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/orderitem/" + _idOrder;
             Console.WriteLine(_endpoint + " -- QTY : " + _orderQty);

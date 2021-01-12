@@ -21,7 +21,7 @@ namespace guwudang.Dashboard
 
         public async Task SetUserID()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             User user = new User();
@@ -53,7 +53,7 @@ namespace guwudang.Dashboard
             while(id == null)
                 await SetUserID();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchPartnerByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
@@ -85,7 +85,7 @@ namespace guwudang.Dashboard
             while (id == null)
                 await SetUserID();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/weeklyOrderItem/?id=:id&type=:type";
             _endpoint = _endpoint.Replace(":id", id);
@@ -157,7 +157,7 @@ namespace guwudang.Dashboard
             while (id == null)
                 await SetUserID();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchInvoiceByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
@@ -179,7 +179,7 @@ namespace guwudang.Dashboard
             while (id == null)
                 await SetUserID();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchOrderItemByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
@@ -201,7 +201,7 @@ namespace guwudang.Dashboard
             while (id == null)
                 await SetUserID();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchProductByUserID/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
@@ -223,7 +223,7 @@ namespace guwudang.Dashboard
             while (id == null)
                 await SetUserID();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/orderItemIN/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);
@@ -255,7 +255,7 @@ namespace guwudang.Dashboard
             while (id == null)
                 await SetUserID();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/orderItemOUT/?id=:id";
             _endpoint = _endpoint.Replace(":id", id);

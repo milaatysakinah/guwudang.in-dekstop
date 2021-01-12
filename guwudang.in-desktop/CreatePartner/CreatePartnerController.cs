@@ -17,7 +17,7 @@ namespace guwudang.CreatePartner
         public async void createPartner(string _companyName, string _email, string _phone,
             string _address)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             var req = request

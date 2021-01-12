@@ -29,7 +29,7 @@ namespace guwudang.Account
 
         public async void getAccountData()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             User user = new User();
@@ -67,7 +67,7 @@ namespace guwudang.Account
 
         public async void updateData(Model.Account account, MyList<MyFile> fileImage)
         {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             String endpoint = "api/users/" + account.id;
 

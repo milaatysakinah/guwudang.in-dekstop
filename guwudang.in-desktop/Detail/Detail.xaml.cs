@@ -75,7 +75,7 @@ namespace guwudang.Detail
                 description.Text = products.description;
 
                 if (products.product_picture != null)
-                    image.Source = new BitmapImage(new Uri("http://localhost:8000/" + products.product_picture));
+                    image.Source = new BitmapImage(new Uri(utils.urls.BASE_URL + products.product_picture));
             });
         }
         public void setDetailproduct(List<guwudang.Model.ProductDetail> Detailproducts)

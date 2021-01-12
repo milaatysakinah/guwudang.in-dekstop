@@ -24,7 +24,7 @@ namespace guwudang
 
         public async void getAccountData()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             User user = new User();
