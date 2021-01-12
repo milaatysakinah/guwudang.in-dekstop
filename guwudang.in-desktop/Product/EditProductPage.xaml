@@ -1,0 +1,74 @@
+﻿<basic:MyPage x:Class="guwudang.Product.EditProductPage"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:guwudang.CreateProduct"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditProductPage">
+
+    <Grid Margin="1,0,-1,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Edit Product" VerticalAlignment="Top" Height="auto" Width="auto" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
+        <Border CornerRadius="35" BorderThickness="20" Margin="20,100,20,0" >
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFFFFF" Offset="0.0"/>
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFFFF" Offset="0.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,0,0,0">
+                    <Label Name="lbProdctName" Content="Product Name : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="productName_tb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,0,0,0">
+                    <Label Name="lbProductType" Content="Product Type : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <ComboBox Name="productType_cb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="productType_name" SelectionChanged="productType_cb_SelectionChanged" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="500,0,0,0">
+                    <Label Name="lbpicture" Content="Upload Picture : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <Image Name="picture" HorizontalAlignment="Left" Height="84" Margin="0,0,0,0" VerticalAlignment="Top" Width="84"/>
+                    <Button Name="picture_btn"  VerticalAlignment="Top" Margin="0,15,0,0" Content="Upload"></Button>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,75,0,0">
+                    <Label Name="lbPrice" Content="Price : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="price_tb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="270,75,0,0">
+                    <Label Name="lbUnits" Content="Units : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <ComboBox Name="units_cb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0" ItemsSource="{Binding}" DisplayMemberPath="units_name" SelectionChanged="units_cb_SelectionChanged" IsEnabled="False"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="20,150,0,0">
+                    <Label Name="lbdescription" Content="Description : " FontWeight="Medium" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                    <TextBox Name="description_tb" VerticalAlignment="Top" Height="auto" Margin="0,0,0,0"/>
+                </StackPanel>
+
+                <Button Name="edit_btn"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,200,20,-1" Content="Edit"></Button>
+                
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</basic:MyPage>
