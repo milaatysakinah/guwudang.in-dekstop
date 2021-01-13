@@ -1,0 +1,67 @@
+﻿<basic:MyPage x:Class="guwudang.AboutPage.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:guwudang.AboutPage"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      mc:Ignorable="d" 
+      d:DesignHeight="4360" d:DesignWidth="1700"
+      Title="AboutPage">
+
+    <ScrollViewer>
+        <Canvas ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="3184" VerticalAlignment="Top" Width="1700">
+            <TextBlock Canvas.Left="-56" TextWrapping="Wrap" Canvas.Top="38" Height="159" Width="683" FontFamily="Montserrat" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="About Us"/>
+            <TextBlock TextWrapping="Wrap" Canvas.Top="191" Height="159" Width="698" FontFamily="Montserrat" FontSize="60
+                   " FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Developer Team" Canvas.Left="18"/>
+
+            <Image Source="/AboutPage/asset/Milati_Kelompok A lima.JPG" Height="190" Canvas.Left="247" Canvas.Top="331" Width="190">
+                <Image.Clip>
+                    <EllipseGeometry Center="100,90" RadiusX="80" RadiusY="80"/>
+                </Image.Clip>
+            </Image>
+            <Image Source="/AboutPage/asset/Rifki_Kelompok A Lima.png" Height="190" Canvas.Left="414" Canvas.Top="668" Width="190">
+                <Image.Clip>
+                    <EllipseGeometry Center="93,80" RadiusX="80" RadiusY="80"/>
+                </Image.Clip>
+            </Image>
+            <Image Source="/AboutPage/asset/Hakim_Kelompok A Lima.jpg" Height="190" Canvas.Left="618" Canvas.Top="333" Width="190">
+                <Image.Clip>
+                    <EllipseGeometry Center="100,90" RadiusX="80" RadiusY="80"/>
+                </Image.Clip>
+            </Image>
+            <Image Source="/AboutPage/asset/Izzat_Kelompok A Lima.png" Height="190" Canvas.Left="1011" Canvas.Top="353" Width="190">
+                <Image.Clip>
+                    <EllipseGeometry Center="94,80" RadiusX="80" RadiusY="80"/>
+                </Image.Clip>
+            </Image>
+            <TextBlock Canvas.Left="255" TextWrapping="Wrap" Canvas.Top="529" Height="39" Width="180" FontFamily="Montserrat" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Milati"/>
+            <TextBlock Canvas.Left="629" TextWrapping="Wrap" Canvas.Top="533" Height="38" Width="181" FontFamily="Montserrat" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Hakim"/>
+            <TextBlock Canvas.Left="1015" TextWrapping="Wrap" Canvas.Top="532" Height="38" Width="180" FontFamily="Montserrat" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59"><Run Text="Izzat"/><LineBreak/><Run/></TextBlock>
+            <TextBlock Canvas.Left="422" TextWrapping="Wrap" Canvas.Top="850" Height="56" Width="180" FontFamily="Montserrat" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Rifqi"/>
+            <TextBlock Canvas.Left="847" TextWrapping="Wrap" Canvas.Top="852" Height="39" Width="180" FontFamily="Montserrat" FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Haidar"/>
+
+            <TextBlock Canvas.Left="-93" TextWrapping="Wrap" Canvas.Top="1127" Height="159" Width="828" FontFamily="Montserrat" FontSize="60
+                   " FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Sponsored By"/>
+
+            <Image Source="/AboutPage/asset/logo - sinergi dimensi informatika.png" Height="173" Canvas.Left="868" Canvas.Top="1250" Width="173"/>
+            <Image Source="/AboutPage/asset/logo-virtuahive-300dpi.png" Height="333" Canvas.Left="101" Canvas.Top="1154" Width="333" RenderTransformOrigin="0.39,0.309"/>
+
+            <Image Source="/AboutPage/asset/logo-rasyidinstitute-300dpi.png" Height="253" Canvas.Left="1162" Canvas.Top="1211" Width="253"/>
+            <Image Source="/AboutPage/asset/trustmedis.png" Height="180" Canvas.Left="852" Canvas.Top="1516" Width="256"/>
+            <Image Source="/AboutPage/asset/Haidar_Kelompok A Lima.jpg" Height="190" Canvas.Left="838" Canvas.Top="656" Width="189">
+                <Image.Clip>
+                    <EllipseGeometry Center="100,90" RadiusX="80" RadiusY="80"/>
+                </Image.Clip>
+            </Image>
+            <Image Source="/AboutPage/asset/logo-rasyidtechnologies-300dpi.png" Height="294" Canvas.Left="473" Canvas.Top="1193" Width="294"/>
+            <TextBlock Canvas.Left="632" TextWrapping="Wrap" Canvas.Top="1128" Height="159" Width="828" FontFamily="Montserrat" FontSize="60                    " FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Supported By"/>
+            <Image Source="asset/Alterra-Logo---Full-Colour-2000x2000.png" Height="338" Canvas.Left="958" Canvas.Top="1597" Width="340"/>
+            <Image Source="asset/logo profilku - for light bg.png" Height="243" Canvas.Left="1174" Canvas.Top="1491" Width="244"/>
+            <Image Source="asset/logo-maulidangames-landscape-300dpi.png" Height="325" Canvas.Left="457" Canvas.Top="1444" Width="325"/>
+            <Image Source="asset/PTI - Logo NEW (HQ).png" Height="213" Canvas.Left="178" Canvas.Top="1492" Width="213"/>
+            <TextBlock Canvas.Left="75" TextWrapping="Wrap" Canvas.Top="2159" Height="90" Width="1248" FontFamily="Montserrat" FontSize="60" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59" Text="Our Teachers, Reviewers, and Mentors"/>
+            <TextBlock Canvas.Left="129" TextWrapping="Wrap" Canvas.Top="2281" Height="763" Width="1561" FontFamily="Montserrat" FontSize="28 " FontWeight="Bold"><Span Foreground="#FF707070"><Run Text="Umi Sa'adah (Dosen Teknik Informatika PENS)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Desy Intan Permatasari (Dosen Teknik Informatika PENS)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Andhik Ampuh Yunanto (Dosen Teknik Informatika PENS)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Maulidan Bagus Afridian Rasyid (Founder Maulidan Games &amp; Rasyid Technologies)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Willy Achmat Fauzi (CEO Sindika)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Verent Flourencia Irene (UX Designer Maulidan Games)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Mayshella Ainun Wakhidah (Mahasiswa Teknik Informatika PENS)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Andika Ahmad Ramadhan (Mahasiswa Teknik Informatika PENS)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Fandi Ahmad (Mahasiswa Teknik Informatika PENS)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Ardian Kristya Pratama (Mobile Developer AlinaMed &amp; Ikkat Inovasi Teknologi)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Angga Pradipta Kurnia Putra (CTO AlinaMed &amp; Mobile Developer Ikkat Inovasi Teknologi)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Muhammad Alif Pradipta ADP (Mobile Developer Sindika)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Rafly Arief Kanza (Owner &amp; Full Stack Developer punggawastudio.com)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Ahmad Jarir At Thobari (Software Engineer Rasyid Technologies)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Ajie Dibyo Respati (Mahasiswa Teknik Informatika PENS)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Achmad Zulkarnain (CEO &amp; Co-Founder TrustMedis)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Arie Affianto (Founder Profilku Mobile &amp; Samsung Developer Warrior)"/></Span><LineBreak/><Span Foreground="#FF707070"><Run Text="Tegar Imansyah ( Software RnD in System Architect Alterra)"/></Span></TextBlock>
+        </Canvas>
+    </ScrollViewer>
+</basic:MyPage>

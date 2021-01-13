@@ -202,3 +202,9 @@ C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang.ex
 C:\xampp\htdocs\guwudang.in-baruu lagi\guwudang.in-desktop\obj\Debug\guwudang.pdb
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Account\EditAccountPage.g.cs
 D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Account\EditAccountPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\AboutPage\AboutPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Partner\EditPartnerPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Product\EditProductPage.g.cs
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\AboutPage\AboutPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Partner\EditPartnerPage.baml
+D:\Xampp\htdocs\guwudang.in-desktop\guwudang.in-desktop\obj\Debug\Product\EditProductPage.baml

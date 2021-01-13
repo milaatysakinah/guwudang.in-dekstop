@@ -19,5 +19,6 @@ namespace guwudang.utils
         public static string detailInvoice = "DETAILINVOICE";
         public static string newProductPage = "NEWPRODUCT";
         public static string newPartnerPage = "NEWPARTNER";
+        public static string aboutPage = "ABOUT";
     }
 }

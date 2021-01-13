@@ -28,6 +28,7 @@ namespace guwudang.utils
             pages.Add(utils.EPages.newInvoicePage, new CreateInvoice.CreateInvoicePage());
             pages.Add(utils.EPages.newProductPage, new CreateProduct.CreateProductPage());
             pages.Add(utils.EPages.newPartnerPage, new CreatePartner.CreatePartnerPage());
+            pages.Add(utils.EPages.aboutPage, new AboutPage.AboutPage());
             //pages.Add(utils.EPages.newOrderItem, new CreateOrderItems.CreateOrderItemPage());
             //pages.Add(utils.EPages.detailInvoice, new DetailInvoice.DetailInvoicePage());
             initialized = true;
