@@ -53,6 +53,13 @@
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
+                                    <Button Content="Update" Tag="{Binding id}" Click="onClickUpdateProduct"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
                                     <Button Name="CreateQR" Tag="{Binding id}"  Content="Create QR" Click="onClickCreateQR"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

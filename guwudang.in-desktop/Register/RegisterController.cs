@@ -41,7 +41,7 @@ namespace guwudang.Register {
             {
                 User user = new User();
                 user.setToken(response.getJObject()["token"].ToString());
-                getView().callMethod("toDummy", null);
+                getView().callMethod("toLogin", null);
             }
             
         }

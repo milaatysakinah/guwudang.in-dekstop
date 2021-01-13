@@ -11,14 +11,16 @@
         <Grid HorizontalAlignment="Left" Height="210" Margin="50,52,0,0" VerticalAlignment="Top" Width="696">
             <TextBlock Name="product_name" HorizontalAlignment="Left" Height="20" Margin="382,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="181"/>
             <TextBlock Name="user_id" HorizontalAlignment="Left" Margin="382,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
-            <TextBlock Name="description" HorizontalAlignment="Left" Margin="382,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="81"/>
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="382,146,0,0" TextWrapping="Wrap" Text="IDR" VerticalAlignment="Top" Width="27"/>
-            <TextBlock Name="price" HorizontalAlignment="Left" Height="20" Margin="409,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57"/>
-            <TextBlock HorizontalAlignment="Left" Height="23" Margin="382,174,0,0" TextWrapping="Wrap" Text="Type : " VerticalAlignment="Top" Width="31"/>
-            <TextBlock Name="product_type_id" HorizontalAlignment="Left" Margin="413,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="52"/>
+            <TextBlock Name="description" HorizontalAlignment="Left" Margin="382,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="71"/>
+            <TextBlock HorizontalAlignment="Left" Height="20" Margin="382,128,0,0" TextWrapping="Wrap" Text="IDR" VerticalAlignment="Top" Width="27"/>
+            <TextBlock Name="price" HorizontalAlignment="Left" Height="20" Margin="409,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57"/>
+            <TextBlock HorizontalAlignment="Left" Height="23" Margin="382,156,0,0" TextWrapping="Wrap" Text="Type : " VerticalAlignment="Top" Width="31"/>
+            <TextBlock Name="product_type_id" HorizontalAlignment="Left" Margin="413,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="52"/>
             <Image Name="product_picture" HorizontalAlignment="Left" Height="149" Margin="46,30,0,0" VerticalAlignment="Top" Width="192"/>
+            <TextBlock HorizontalAlignment="Left" Height="23" Margin="381,183,0,0" TextWrapping="Wrap" Text="Unit : " VerticalAlignment="Top" Width="31"/>
+            <TextBlock x:Name="units" HorizontalAlignment="Left" Margin="413,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="52"/>
         </Grid>
-        <ListView Name="lvDetailproduct" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="99" Margin="430,267,0,0" VerticalAlignment="Top" Width="360" 
+        <ListView Name="lvDetailproduct" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="173" Margin="364,267,0,0" VerticalAlignment="Top" Width="426" 
                   SelectionChanged="lvDetailproduct_SelectionChanged">
             <ListView.View>
                 <GridView>
