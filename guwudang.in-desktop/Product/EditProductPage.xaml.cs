@@ -91,6 +91,7 @@ namespace guwudang.Product
         public void onEditButtonClick()
         {
             Model.Product product = new Model.Product();
+            product.id = idProduct;
             product.product_name = productNameTxtBox.getText();
             product.units = idUnits;
             product.price = priceTxtBox.getText();
@@ -131,12 +132,6 @@ namespace guwudang.Product
         {
             this.Dispatcher.Invoke(() =>
             {
-                productNameTxtBox.setText("");
-                stockTxtBox.setText("");
-                priceTxtBox.setText("");
-                descriptionTxtBox.setText("");
-                statusTextBlock.setText("");
-
                 utils.PageManagement.initPages();
                 Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.listProductPage));
             });
@@ -152,7 +147,7 @@ namespace guwudang.Product
             this.Dispatcher.Invoke(() =>
             {
                 thisProduct = product;
-                productName_tb.Text = thisProduct.price;
+                productName_tb.Text = thisProduct.product_name;
                 productType_cb.SelectedIndex = Int32.Parse(thisProduct.product_type_id) - 1;
                 units_cb.SelectedIndex = Int32.Parse(thisProduct.units) - 1;
                 idProductType = thisProduct.product_type_id;
@@ -160,6 +155,29 @@ namespace guwudang.Product
                 price_tb.Text = thisProduct.price.ToString();
                 description_tb.Text = thisProduct.description;
                 //picture = thisProduct.product_picture.Source.toString();
+
+                try
+                {
+                    picture.Source = null;
+                    Console.WriteLine("Gambar : " + thisProduct.product_picture);
+                    Uri resourceUri = new Uri(thisProduct.product_picture);
+
+                    if (resourceUri != null)
+                    {
+                        var bi = new BitmapImage();
+                        bi.BeginInit();
+                        bi.UriSource = resourceUri;
+                        bi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        bi.CacheOption = BitmapCacheOption.OnLoad;
+                        bi.EndInit();
+                        picture.Source = bi;
+                    }
+
+                }
+                catch (Exception e)
+                {
+
+                }
             });
         }
 
@@ -172,6 +190,8 @@ namespace guwudang.Product
         {
             this.Dispatcher.Invoke(() =>
             {
+                Console.WriteLine("Reach");
+                Console.WriteLine(productType[0].product_type_name);
                 productType_cb.ItemsSource = productType;
             });
         }

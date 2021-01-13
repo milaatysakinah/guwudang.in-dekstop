@@ -20,9 +20,13 @@ namespace guwudang.Product
 
         public async void productType()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/ProductType/";
+            string _endpoint = "api/productType/";
+
+            utils.User user = new utils.User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
 
             var req = request
                 .buildHttpRequest()
@@ -43,8 +47,12 @@ namespace guwudang.Product
 
         public async void units()
         {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
+
+            utils.User user = new utils.User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
 
             var req = request
                 .buildHttpRequest()
@@ -66,13 +74,14 @@ namespace guwudang.Product
         public async void getProduct(string idProduct)
         {
             Console.WriteLine("Id Product : " + idProduct);
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/product/:id";
 
             _endpoint = _endpoint.Replace(":id", idProduct);
             Console.WriteLine(_endpoint);
 
+            utils.User user = new utils.User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 
@@ -96,7 +105,7 @@ namespace guwudang.Product
 
         public async void editProduct(Model.Product product, MyList<MyFile> fileImage)
         {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string endpoint = "api/product/" + product.id;
 
@@ -105,8 +114,8 @@ namespace guwudang.Product
             content.Add(new StringContent(product.product_type_id), "product_type_id");
             content.Add(new StringContent(product.units), "units");
             content.Add(new StringContent(product.description), "description");
-            content.Add(new StringContent(product.product_picture), "product_picture");
             content.Add(new StringContent(product.price), "price");
+            content.Add(new StringContent("PUT"), "_method");
             if (fileImage.Count > 0)
                 content.Add(new StreamContent(new MemoryStream(fileImage[0].byteArray)), "file", fileImage[0].fullFileName);
 
@@ -115,7 +124,7 @@ namespace guwudang.Product
             .setEndpoint(endpoint)
             .setRequestMethod(HttpMethod.Post);
 
-            User user = new User();
+            utils.User user = new utils.User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
 

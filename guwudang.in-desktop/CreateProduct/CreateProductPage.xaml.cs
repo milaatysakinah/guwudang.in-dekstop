@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -62,7 +63,8 @@ namespace guwudang.CreateProduct
             priceTxtBox = txtBoxBuilder.activate(this, "price_tb");
             descriptionTxtBox = txtBoxBuilder.activate(this, "description_tb");
             statusTextBlock = txtBlockBuilder.activate(this, "status_txt");
-
+            getUnits();
+            getProductType();
         }
 
         public void onPictureButtonClick()
@@ -93,9 +95,8 @@ namespace guwudang.CreateProduct
             product.price = priceTxtBox.getText();
             product.description = descriptionTxtBox.getText();
             product.product_type_id = idProductType;
-            product.product_picture = picture.Source.ToString();
+            //product.product_picture = picture.Source.ToString();
 
-            Console.WriteLine(product.product_picture);
             getController().callMethod("createProduct", product, uploadImage);
         }
 
@@ -129,7 +130,7 @@ namespace guwudang.CreateProduct
             this.Dispatcher.Invoke(() =>
             {
                 productNameTxtBox.setText("");
-                stockTxtBox.setText("");
+                //stockTxtBox.setText("");
                 priceTxtBox.setText("");
                 descriptionTxtBox.setText("");
                 statusTextBlock.setText("");
@@ -173,6 +174,12 @@ namespace guwudang.CreateProduct
         private void units_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             idUnits = ((Model.Units)(units_cb.SelectedItem)).id;
+        }
+
+        private void numberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

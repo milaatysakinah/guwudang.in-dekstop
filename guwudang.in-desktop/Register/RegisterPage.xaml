@@ -49,7 +49,7 @@
         <Border CornerRadius="36"
                 BorderThickness="1"
                 BorderBrush="#707070"
-                Margin="442,178,578,192"
+                Margin="442,160,578,246"
                 Height="80"/>
         <TextBox materialDesign:HintAssist.Hint="Username"
                  Name="name_txt"
@@ -58,42 +58,42 @@
                  Grid.Column="0"
                  TextWrapping="Wrap"
                  Width="816"
-                 Margin="480,212,624,210"
+                 Margin="480,176,624,246"
                  FontFamily="Montserrat"
                  FontSize="30"/>
 
         <Border CornerRadius="36"
             BorderThickness="1"
             BorderBrush="#707070"
-            Margin="442,300,1046,73"
+            Margin="442,280,1046,126"
             Height="80"/>
         <TextBox materialDesign:HintAssist.Hint="Email" 
                  Name="email_txt"
                  Grid.Row="0"
                  Grid.Column="0"
                  TextWrapping="Wrap"
-                 Margin="477,332,1084,90"
+                 Margin="477,296,1084,126"
                  FontFamily="Montserrat"
                  FontSize="30"/>
 
         <Border CornerRadius="36"
             BorderThickness="1"
             BorderBrush="#707070"
-            Margin="910,301,578,74"
+            Margin="910,280,578,126"
             Height="80"/>
         <TextBox materialDesign:HintAssist.Hint="Phone Number" 
                  Name="phone_number_txt"
                  Canvas.Left="203"
                  TextWrapping="Wrap"
                  Canvas.Top="84" 
-                 Margin="947,332,615,90"
+                 Margin="947,296,615,126"
                  FontFamily="Montserrat" 
                  FontSize="30"/>
 
         <Border CornerRadius="36"
             BorderThickness="1"
             BorderBrush="#707070"
-            Margin="442,418,1046,-41"
+            Margin="442,396,1046,10"
             Height="80"/>
         <PasswordBox Name="password_txt"
                      materialDesign:HintAssist.Hint="Password"
@@ -102,12 +102,12 @@
                      Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                      Grid.Row="0"
                      Grid.Column="0"
-                     Margin="474,418,1075,-12" FontSize="30" FontFamily="Montserrat"/>
+                     Margin="474,382,1075,24" FontSize="30" FontFamily="Montserrat"/>
 
         <Border CornerRadius="36"
             BorderThickness="1"
             BorderBrush="#707070"
-            Margin="910,424,578,-35"
+            Margin="910,396,578,10"
             Height="80"/>
         <PasswordBox Name="passwordc_txt"
                      materialDesign:HintAssist.Hint="Confirm Password"
@@ -116,32 +116,32 @@
                      Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
                      Grid.Row="0"
                      Grid.Column="0"
-                     Margin="938,429,624,-12" FontFamily="Montserrat" FontSize="30"/>
+                     Margin="938,393,624,24" FontFamily="Montserrat" FontSize="30"/>
 
         <Border CornerRadius="36"
             BorderThickness="1"
             BorderBrush="#707070"
-            Margin="442,536,578,-221"/>
+            Margin="442,500,578,-185"/>
         <TextBox materialDesign:HintAssist.Hint="Address" 
                  Name="address_txt"
                  Canvas.Left="43"
                  TextWrapping="Wrap"
                  Canvas.Top="167"
-                 Margin="474,587,615,-221"
+                 Margin="474,551,615,-185"
                  FontFamily="Montserrat"
                  FontSize="30"/>
 
         <Border CornerRadius="36"
             BorderThickness="1"
             BorderBrush="#707070"
-            Margin="442,734,578,-329"
+            Margin="442,698,578,-292"
             Height="80"/>
         <TextBox materialDesign:HintAssist.Hint="Company Name" 
                  Name="company_name_txt"
                  Canvas.Left="42"
                  TextWrapping="Wrap"
                  Canvas.Top="216"
-                 Margin="482,753,622,-328"
+                 Margin="482,717,622,-292"
                  FontFamily="Montserrat"
                  FontSize="30"/>
 
@@ -150,10 +150,10 @@
 
 
 
-        <Button Name="register_btn"  Grid.Row="0" Grid.Column="0" Content="Register" Margin="442,871,578,-466" Height="Auto"/>
-        <Button Name="back_btn"  Grid.Row="0" Grid.Column="0" Content="Back" Margin="618,-267,717,670" Height="Auto" Click="back_btn_Click"/>
+        <Button Name="register_btn" FontSize="30" Grid.Row="0" Grid.Column="0" Content="Register" Margin="442,805,581,-400" Height="Auto"/>
+        <Button Name="back_btn" FontSize="30" Grid.Row="0" Grid.Column="0" Content="Back" Margin="438,918,579,-515" Height="Auto" Click="back_btn_Click"/>
         <TextBlock Name="status_field" HorizontalAlignment="Left" Margin="124,-331,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.045,0.512" Height="16"/>
-        
+
 
 
 

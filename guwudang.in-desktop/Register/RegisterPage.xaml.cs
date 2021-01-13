@@ -75,14 +75,14 @@ namespace guwudang.Register {
 
         }
 
-        public void toDummy()
+        public void toLogin()
         {
-            mainFrame.Navigate(new Dashboard.Dashboard());
+            mainFrame.Navigate(new LoginPage(mainFrame));
         }
 
         private void back_btn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            mainFrame.Navigate(new LoginPage(mainFrame));
+            toLogin();
         }
 
     }

@@ -5,7 +5,7 @@ using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
 using System.Windows.Controls;
 using System.Windows;
-
+using System;
 
 namespace guwudang.Product
 {
@@ -138,11 +138,20 @@ namespace guwudang.Product
         public void onClickDetailProduct(object sender, System.Windows.RoutedEventArgs e)
         {
             string id = (string)((Button)sender).Tag;
+            Console.WriteLine(id);
             Detail.Detail detail = new Detail.Detail(id);
             // secondFrame.Navigate(detail);
             Sidebar.secFrame.Navigate(detail);
         }
 
+        public void onClickUpdateProduct(object sender, System.Windows.RoutedEventArgs e)
+        {
+            string id = (string)((Button)sender).Tag;
+            Console.WriteLine(id);
+            Product.EditProductPage update = new Product.EditProductPage(id);
+            // secondFrame.Navigate(detail);
+            Sidebar.secFrame.Navigate(update);
+        }
 
     }
 

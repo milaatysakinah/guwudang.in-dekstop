@@ -42,7 +42,7 @@ namespace guwudang.Detail
             user_idTxtBlock = txtBlockBuilder.activate(this, "user_id");
             product_nameTxtBlock = txtBlockBuilder.activate(this, "product_name");
             priceTxtBlock = txtBlockBuilder.activate(this, "price");
-            //unitsTxtBlock = txtBlockBuilder.activate(this, "units");
+            unitsTxtBlock = txtBlockBuilder.activate(this, "units");
             descriptionTxtBlock = txtBlockBuilder.activate(this, "description");
             image = this.FindName("product_picture") as Image;
         }
@@ -67,7 +67,6 @@ namespace guwudang.Detail
         {
             this.Dispatcher.Invoke(() =>
             {
-                product_type_id.Text = products.product_type_id;
                 user_id.Text = products.user_id;
                 product_name.Text = products.product_name;
                 price.Text = products.price;
@@ -75,9 +74,62 @@ namespace guwudang.Detail
                 description.Text = products.description;
 
                 if (products.product_picture != null)
-                    image.Source = new BitmapImage(new Uri(utils.urls.BASE_URL + products.product_picture));
+                {
+                    try
+                    {
+                        image.Source = null;
+                        Console.WriteLine("Gambar : " + products.product_picture);
+                        Uri resourceUri = new Uri(products.product_picture);
+
+                        if (resourceUri != null)
+                        {
+                            var bi = new BitmapImage();
+                            bi.BeginInit();
+                            bi.UriSource = resourceUri;
+                            bi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                            bi.CacheOption = BitmapCacheOption.OnLoad;
+                            bi.EndInit();
+                            image.Source = bi;
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+
+                getProductType(products.product_type_id);
+                getUnits(products.units);
             });
         }
+
+        public void getProductType(String id)
+        {
+            getController().callMethod("getProductType", id);
+        }
+
+        public void setProductType(String productType)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                product_type_id.Text = productType;
+            });
+        }
+
+        public void getUnits(String id)
+        {
+            getController().callMethod("getUnit", id);
+        }
+
+        public void setUnit(String unitsName)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                units.Text = unitsName;
+            });
+        }
+
         public void setDetailproduct(List<guwudang.Model.ProductDetail> Detailproducts)
         {
             this.Dispatcher.Invoke(() =>
