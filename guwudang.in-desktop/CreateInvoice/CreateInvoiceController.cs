@@ -18,7 +18,7 @@ namespace guwudang.CreateInvoice
 
         public async void status()
         {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             User user = new User();
@@ -46,7 +46,7 @@ namespace guwudang.CreateInvoice
 
         public async void partner()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchPartnerByUserID/";
 
@@ -56,7 +56,7 @@ namespace guwudang.CreateInvoice
 
             //Console.WriteLine(_endpoint);
 
-            var client2 = new ApiClient("http://localhost:8000/");
+            var client2 = new ApiClient(utils.urls.BASE_URL);
             
             client2.setAuthorizationToken(token);
 
@@ -71,7 +71,7 @@ namespace guwudang.CreateInvoice
 
         public void searchPartner(string key)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchPartner/?id=:id&search=:search";
 
@@ -110,7 +110,7 @@ namespace guwudang.CreateInvoice
 
         public async void product()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchProductByUserID/";
 
@@ -121,7 +121,7 @@ namespace guwudang.CreateInvoice
             
             //Console.WriteLine(_endpoint);
 
-            var client2 = new ApiClient("http://localhost:8000/");
+            var client2 = new ApiClient(utils.urls.BASE_URL);
 
             client2.setAuthorizationToken(token);
 
@@ -145,7 +145,7 @@ namespace guwudang.CreateInvoice
 
         public async void createInvoice(string _idPartner, string _idStatus)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchPartnerByUserID/?id=:id";
 

@@ -19,7 +19,7 @@ namespace guwudang.DetailPartner
 
         public async void partner(string id)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/partner/1?id=:idUser";
 

@@ -18,7 +18,7 @@ namespace guwudang.DetailInvoice
         public async void Detailinvoice(string _idInvoice)
         {
             this.id_invoice = _idInvoice;
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/detail_invoice/?id=:idUser&detail_invoice=:idInvoice";
 
@@ -37,7 +37,7 @@ namespace guwudang.DetailInvoice
 
         public async void Detailorder(string _idInvoice)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/detail_order/?id=:idUser&id_invoice=:idInvoice";
 
@@ -76,7 +76,7 @@ namespace guwudang.DetailInvoice
 
         public async void delOrder(string id_order)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             string _endpoint = "api/orderitem/" + id_order;

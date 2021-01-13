@@ -17,7 +17,7 @@ namespace guwudang.Product
 
         public async void product()
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             string token = user.getToken();
@@ -40,7 +40,7 @@ namespace guwudang.Product
 
             _endpoint = _endpoint.Replace(":id", id);
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             User user = new User();
@@ -57,7 +57,7 @@ namespace guwudang.Product
 
         public void searchProduct(string key)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/searchProduct/?id=:id&search=:search";
 
@@ -78,7 +78,7 @@ namespace guwudang.Product
 
         public async void deleteProduct(List<string> selectedItemsID)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             foreach (string item in selectedItemsID)
             {

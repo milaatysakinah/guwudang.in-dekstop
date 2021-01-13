@@ -21,7 +21,7 @@ namespace guwudang.CreateOrderItems
             string _endpoint = "api/searchProductByUserID";
             string token = user.getToken();
 
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             client.setAuthorizationToken(token);
@@ -79,7 +79,7 @@ namespace guwudang.CreateOrderItems
 
         public async void createOrderItem(string _idProduct, string _idType, string _orderQty, string _idInvoice)
         {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
             string _endpoint = "api/orderitem/";
 

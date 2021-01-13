@@ -18,7 +18,7 @@ namespace guwudang.Register {
             string _companyName,
             string _password, 
             string _passwordc) {
-            var client = new ApiClient("http://localhost:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
                 //string token = "";
