@@ -66,7 +66,7 @@
                     </ListViewItem>
 
                 </ListView>
-                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" Margin="0,50,0,0" Height="141">
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" Margin="0,50,0,0" Height="222">
                     <ListViewItem Height="70" Selected="partner_btn_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="AccountSupervisor" Width="38" Height="51" Margin="40,10,0,0" VerticalAlignment="Center"/>
@@ -77,6 +77,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Account" Width="38" Height="51" Margin="40,10,0,0" VerticalAlignment="Center"/>
                             <TextBlock Text="Account" VerticalAlignment="Center" Margin="20,10,0,0" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="70" Selected="about_btn_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Account" Width="38" Height="51" Margin="40,10,0,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="About" VerticalAlignment="Center" Margin="20,10,0,0" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
@@ -98,5 +104,6 @@
         <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,450,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="invoice_btn_Click"/>
         <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,608,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="partner_btn_Click"/>
         <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,681,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="account_btn_Click"/>
+        <Button Content="" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,751,0,0" VerticalAlignment="Top" Width="405" RenderTransformOrigin="-0.62,-0.75" Height="68" Click="about_btn_Click"/>
     </Grid>
 </basic1:MyPage>

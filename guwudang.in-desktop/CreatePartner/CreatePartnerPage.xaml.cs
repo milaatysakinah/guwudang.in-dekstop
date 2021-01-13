@@ -38,7 +38,7 @@ namespace guwudang.CreatePartner
         private void initUIElements()
         {
             createButton = buttonBuilder
-                .activate(this, "create_btn")
+                .activate(this, "createBtn")
                 .addOnClick(this, "onCreateButtonClick");
             companyNameTxtBox = txtBoxBuilder.activate(this, "companyName_tb");
             emailTxtBox = txtBoxBuilder.activate(this, "email_tb");

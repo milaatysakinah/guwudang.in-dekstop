@@ -22,7 +22,7 @@
             </Canvas.Background>
             <TextBlock Canvas.Left="813" TextWrapping="Wrap" Canvas.Top="101" Height="166" Width="714" FontFamily="Montserrat" FontSize="72" FontWeight="Bold" TextAlignment="Center" Foreground="#FF070D59"><Run Text="Welcome"/><LineBreak/><Run Text="to Guwudang.in"/></TextBlock>
         </Canvas>
-        
+
         <Border CornerRadius="35" BorderThickness="20" Margin="690,374,694,-474" >
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
@@ -35,7 +35,7 @@
             </Border.BorderBrush>
 
 
-            <Grid Margin="0,1,0,0">
+            <Grid Margin="0,-10,0,0" Height="555" VerticalAlignment="Top">
                 <Grid.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="#FFFFFF" Offset="0.0"/>
@@ -48,7 +48,7 @@
         </Border>
 
         <TextBlock Canvas.Left="38" TextWrapping="Wrap" Text="Don't Have an Account ?" Canvas.Top="77" Margin="740,731,739,-304" FontSize="20" FontFamily="Montserrat"/>
-        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="LOGIN" Margin="681,0,781,116" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49" Height="54" FontSize="30" FontWeight="Bold"   />
+        <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="LOGIN" Margin="730,0,732,-365" Click="loginButton_btn_Click" RenderTransformOrigin="0.508,1.49" Height="54" FontSize="30" FontWeight="Bold"   />
 
         <Border CornerRadius="28" BorderThickness="1" BorderBrush="#707070" Margin="730,547,728,-141" Height="59" Width="459"/>
         <TextBox Text="kucing1@gmail.com" materialDesign:HintAssist.Hint="Username" Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="46" TextWrapping="Wrap" Margin="758,570,755,-132" IsEnabled="True" FontFamily="Montserrat" FontSize="20" SelectionOpacity="-1" AllowDrop="True" FontWeight="Medium" IsUndoEnabled="False" />

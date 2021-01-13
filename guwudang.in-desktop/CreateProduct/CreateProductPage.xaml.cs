@@ -52,7 +52,7 @@ namespace guwudang.CreateProduct
         private void initUIElements()
         {
             uploadButton = buttonBuilder
-                .activate(this, "upload_btn")
+                .activate(this, "picture_btn")
                 .addOnClick(this, "onPictureButtonClick");
             createButton = buttonBuilder
                 .activate(this, "create_btn")

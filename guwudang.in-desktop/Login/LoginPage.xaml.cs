@@ -25,6 +25,7 @@ namespace guwudang.Login {
         private IMyPasswordBox passwordTxtBox;
         private IMyTextBlock loginStatusTxtBlock;
         private MyPage registerPage;
+        private MyPage aboutPage;
         private MyPage dashboardPage;
         private Frame mainFrame;
 
@@ -38,6 +39,7 @@ namespace guwudang.Login {
             email_txt.Focus();
 
             registerPage = new RegisterPage(mainFrame);
+            aboutPage = new AboutPage.AboutPage();
             //dashboardPage = new Dashboard.Dashboard();
         }
 
@@ -74,7 +76,6 @@ namespace guwudang.Login {
             mainFrame.Navigate(registerPage);
 
         }
-
         private void loginButton_btn_Click(object sender, RoutedEventArgs e)
         {
             getController().callMethod("login",

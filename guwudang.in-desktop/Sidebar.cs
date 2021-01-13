@@ -100,6 +100,11 @@ namespace guwudang
             secondFrame.Navigate(PageManagement.getPage(EPages.listAccountPage));
         }
 
+        private void about_btn_Click(object sender, RoutedEventArgs e)
+        {
+            secondFrame.Navigate(PageManagement.getPage(EPages.aboutPage));
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             PageManagement.initPages();
