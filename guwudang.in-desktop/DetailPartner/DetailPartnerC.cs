@@ -12,6 +12,7 @@ namespace guwudang.DetailPartner
 {
     public class DetailPartnerC : MyController
     {
+        private string id_patner;
         public DetailPartnerC(IMyView _myView) : base(_myView)
         {
 
@@ -19,9 +20,10 @@ namespace guwudang.DetailPartner
 
         public async void partner(string id)
         {
+            this.id_patner = id;
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/partner/1?id=:idUser";
+            string _endpoint = "api/partner/" + id_patner + "?id=:idUser";
 
             utils.User user = new utils.User();
             string token = user.getToken();
