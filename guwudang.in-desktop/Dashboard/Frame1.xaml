@@ -4,19 +4,21 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:guwudang.Dashboard"
-      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"        
-      mc:Ignorable="d" 
-      d:DesignHeight="189" d:DesignWidth="448"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+              mc:Ignorable="d" 
+      d:DesignHeight="389" d:DesignWidth="648"
       Title="Page1">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="32,131,0,0" TextWrapping="Wrap" Text="Total Customers
-                   " VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846" Width="89"/>
-        <TextBlock HorizontalAlignment="Left" Margin="169,131,0,0" TextWrapping="Wrap" Text="Total Invoice Created" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842"/>
-        <TextBlock HorizontalAlignment="Left" Margin="328,131,0,0" TextWrapping="Wrap" Text="Total Shipping" VerticalAlignment="Top"/>
-        <TextBlock Name="totalCustomers_txt" HorizontalAlignment="Left" Margin="49,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846"/>
-        <TextBlock Name="totalInvoice_txt" HorizontalAlignment="Left" Margin="199,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842"/>
-        <TextBlock Name="totalShipping_txt" HorizontalAlignment="Left" Margin="342,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17,244,0,0" TextWrapping="Wrap" Text="Total Customers" FontSize="25" VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846" Width="179" Height="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="256,244,0,0" TextWrapping="Wrap" Text="Total Invoice" FontSize="25" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842" Height="31" Width="143"/>
+        <TextBlock HorizontalAlignment="Left" Margin="473,244,0,0" TextWrapping="Wrap" Text="Total Shipping" FontSize="25" VerticalAlignment="Top" Height="39" Width="160"/>
+        <materialDesign:PackIcon Kind="AccountSupervisor" Width="76" Height="102" Margin="64,70,0,217" VerticalAlignment="Center"/>
+        <TextBlock Name="totalCustomers_txt" FontSize="25" HorizontalAlignment="Left" Margin="93,188,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="-0.128,0.846" Height="30" Width="17"/>
+        <TextBlock Name="totalInvoice_txt" FontSize="25" HorizontalAlignment="Left" Margin="319,190,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="1.538,-0.842" Height="30" Width="17"/>
+        <TextBlock Name="totalShipping_txt" FontSize="25" HorizontalAlignment="Left" Margin="543,190,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Height="35" Width="18"/>
+        <materialDesign:PackIcon Kind="AccountSupervisor" Width="76" Height="102" Margin="291,73,0,214" VerticalAlignment="Center"/>
+        <materialDesign:PackIcon Kind="AccountSupervisor" Width="76" Height="102" Margin="509,75,0,212" VerticalAlignment="Center"/>
 
     </Grid>
 </basic:MyPage>

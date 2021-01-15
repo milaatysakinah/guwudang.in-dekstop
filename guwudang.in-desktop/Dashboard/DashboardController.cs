@@ -13,51 +13,19 @@ namespace guwudang.Dashboard
 {
     public class DashboardController : MyController
     {
-        private static string id;
         public DashboardController(IMyView _myView) : base(_myView)
         {
             //setUserID();
         }
 
-        public async Task SetUserID()
-        {
-            var client = new ApiClient(utils.urls.BASE_URL);
-            var request = new ApiRequestBuilder();
-
-            User user = new User();
-            string token = user.getToken();
-            client.setAuthorizationToken(token);
-            Console.WriteLine("Dashboard : " + token);
-
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-            client.setOnFailedRequest(setFailedAuthorization);
-            var response = await client.sendRequest(reqAccount.getApiRequestBundle());
-
-            try
-            {
-                id = response.getJObject()["user"]["id"].ToString();
-                Console.WriteLine("frame1 ID : " + id);
-            }
-            catch (Exception e)
-            {
-                //await SetUserID();
-            }
-            
-        }
-
+        
         public async void totalCostumers()
         {
-            while(id == null)
-                await SetUserID();
-
+            
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchPartnerByUserID/?id=:id";
-            _endpoint = _endpoint.Replace(":id", id);
-
+            string _endpoint = "api/searchPartnerByUserID/";
+            
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
@@ -82,13 +50,9 @@ namespace guwudang.Dashboard
 
         public async void weeklyOrder(String type)
         {
-            while (id == null)
-                await SetUserID();
-
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/weeklyOrderItem/?id=:id&type=:type";
-            _endpoint = _endpoint.Replace(":id", id);
+            string _endpoint = "api/weeklyOrderItem/?type=:type";
             _endpoint = _endpoint.Replace(":type", type);
 
             User user = new User();
@@ -154,13 +118,11 @@ namespace guwudang.Dashboard
 
         public async void totalInvoices()
         {
-            while (id == null)
-                await SetUserID();
-
+            
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchInvoiceByUserID/?id=:id";
-            _endpoint = _endpoint.Replace(":id", id);
+            string _endpoint = "api/searchInvoiceByUserID";
+            //_endpoint = _endpoint.Replace(":id", id);
 
             User user = new User();
             string token = user.getToken();
@@ -176,14 +138,10 @@ namespace guwudang.Dashboard
 
         public async void totalShipping()
         {
-            while (id == null)
-                await SetUserID();
-
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchOrderItemByUserID/?id=:id";
-            _endpoint = _endpoint.Replace(":id", id);
-
+            string _endpoint = "api/searchOrderItemByUserID/";
+            
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
@@ -198,14 +156,10 @@ namespace guwudang.Dashboard
 
         public async void totalProducts()
         {
-            while (id == null)
-                await SetUserID();
-
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchProductByUserID/?id=:id";
-            _endpoint = _endpoint.Replace(":id", id);
-
+            string _endpoint = "api/searchProductByUserID";
+            
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
@@ -220,14 +174,10 @@ namespace guwudang.Dashboard
 
         public async void totalOrderIN()
         {
-            while (id == null)
-                await SetUserID();
-
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/orderItemIN/?id=:id";
-            _endpoint = _endpoint.Replace(":id", id);
-
+            string _endpoint = "api/orderItemIN/";
+            
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
@@ -252,14 +202,11 @@ namespace guwudang.Dashboard
 
         public async void totalOrderOUT()
         {
-            while (id == null)
-                await SetUserID();
-
+            
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/orderItemOUT/?id=:id";
-            _endpoint = _endpoint.Replace(":id", id);
-
+            string _endpoint = "api/orderItemOUT/";
+            
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);

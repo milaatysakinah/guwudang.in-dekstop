@@ -6,20 +6,16 @@
       xmlns:local="clr-namespace:guwudang.Dashboard"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d" 
-      d:DesignHeight="189" d:DesignWidth="257"
+      d:DesignHeight="289" d:DesignWidth="357"
       Title="Page1">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="11*"/>
-            <RowDefinition Height="16*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Name="totalProducts_txt" HorizontalAlignment="Left" Margin="17,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Total Product : " VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,61,0,0" TextWrapping="Wrap" Text="Total IN : " VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,46,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Total OUT : " VerticalAlignment="Top"/>
-        <TextBlock Name = "totalOrderIN_txt" HorizontalAlignment="Left" Margin="17,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBlock Name = "totalOrderOUT_txt" HorizontalAlignment="Left" Margin="16,67,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.048,-0.333"/>
+        <TextBlock FontSize="25" Name="totalProducts_txt" HorizontalAlignment="Left" Margin="19,60,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="14,35,0,229" TextWrapping="Wrap" Text="Total Product : "/>
+        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="20,201,0,0" TextWrapping="Wrap" Text="Total IN : " VerticalAlignment="Top"/>
+        <TextBlock FontSize="20" HorizontalAlignment="Left" Margin="18,115,0,0" TextWrapping="Wrap" Text="Total OUT : " VerticalAlignment="Top" RenderTransformOrigin="0.113,1.9"/>
+        <TextBlock FontSize="25" Name = "totalOrderIN_txt" HorizontalAlignment="Left" Margin="20,228,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock FontSize="25" Name = "totalOrderOUT_txt" HorizontalAlignment="Left" Margin="20,142,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" RenderTransformOrigin="0.048,-0.333"/>
 
     </Grid>
 </basic:MyPage>

@@ -6,9 +6,8 @@
       xmlns:local="clr-namespace:guwudang.Dashboard"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
       mc:Ignorable="d" 
-      d:DesignHeight="187" d:DesignWidth="280
-              "
-      Title="Page1">
+      d:DesignHeight="187"
+      Title="Page1" Width="315.809">
 
     <Grid>
 
@@ -19,8 +18,8 @@
             <ColumnDefinition Width="250"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0"  Padding="0" Margin="0,1,-29,3" HorizontalAlignment="Right" Width="280">
-            <ListView Name = "lvPartner"  ItemsSource="{Binding}" BorderThickness="0" Margin="-2,-1,-1,0" RenderTransformOrigin="0.5,0.5" >
+        <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="0,3,0,0"  Padding="0" Margin="0,1,-66,3" HorizontalAlignment="Right" Width="317">
+            <ListView Name = "lvPartner"  ItemsSource="{Binding}" BorderThickness="0" Margin="-2,-1,2,-9" RenderTransformOrigin="0.5,0.5" >
                 <ListView.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
