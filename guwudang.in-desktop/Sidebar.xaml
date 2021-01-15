@@ -81,7 +81,7 @@
                     </ListViewItem>
                     <ListViewItem Height="70" Selected="about_btn_Click">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Account" Width="38" Height="51" Margin="40,10,0,0" VerticalAlignment="Center"/>
+                            <materialDesign:PackIcon Kind="Information" Width="38" Height="51" Margin="40,10,0,0" VerticalAlignment="Center"/>
                             <TextBlock Text="About" VerticalAlignment="Center" Margin="20,10,0,0" FontFamily="Montserrat" FontSize="25" FontWeight="SemiBold"/>
                         </StackPanel>
                     </ListViewItem>

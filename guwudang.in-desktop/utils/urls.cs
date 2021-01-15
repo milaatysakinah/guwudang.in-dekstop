@@ -8,6 +8,6 @@ namespace guwudang.utils
 {
     public class urls
     {
-        public static string BASE_URL = "http://127.0.0.1:8000/";
+        public static string BASE_URL = "http://api.guwudangin.me/";
     }
 }
