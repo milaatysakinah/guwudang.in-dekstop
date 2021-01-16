@@ -6,29 +6,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:guwudang.Detail"
         mc:Ignorable="d"
-        Title="Detail" Height="450" Width="800">
+        Title="Detail" 
+               d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="210" Margin="50,52,0,0" VerticalAlignment="Top" Width="696">
-            <TextBlock Name="product_name" HorizontalAlignment="Left" Height="20" Margin="382,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="181"/>
-            <TextBlock Name="user_id" HorizontalAlignment="Left" Margin="382,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
-            <TextBlock Name="description" HorizontalAlignment="Left" Margin="382,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="71"/>
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="382,128,0,0" TextWrapping="Wrap" Text="IDR" VerticalAlignment="Top" Width="27"/>
-            <TextBlock Name="price" HorizontalAlignment="Left" Height="20" Margin="409,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57"/>
-            <TextBlock HorizontalAlignment="Left" Height="23" Margin="382,156,0,0" TextWrapping="Wrap" Text="Type : " VerticalAlignment="Top" Width="31"/>
-            <TextBlock Name="product_type_id" HorizontalAlignment="Left" Margin="413,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="52"/>
-            <Image Name="product_picture" HorizontalAlignment="Left" Height="149" Margin="46,30,0,0" VerticalAlignment="Top" Width="192"/>
-            <TextBlock HorizontalAlignment="Left" Height="23" Margin="381,183,0,0" TextWrapping="Wrap" Text="Unit : " VerticalAlignment="Top" Width="31"/>
-            <TextBlock x:Name="units" HorizontalAlignment="Left" Margin="413,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="52"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FFF4F4F5" Margin="61,66,60,52" RadiusY="51.75" RadiusX="51.75" Stroke="Black" Grid.ColumnSpan="2"/>
+        <Image x:Name="product_picture" HorizontalAlignment="Left" Height="149"  VerticalAlignment="Top" Width="192" Grid.Column="1" Margin="108,160,0,0"/>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="product_name" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Margin="800,111,0,0" FontSize="40" FontFamily="Montserrat"/>
+            <TextBlock x:Name="user_id" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="25" FontFamily="Montserrat" Margin="810,10,0,0"/>
+            <TextBlock x:Name="description"  TextWrapping="Wrap" Grid.Row="2" Grid.Column="1" FontSize="20" FontFamily="Montserrat" Margin="610,100,0,0" Width="500"/>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1">
+                <TextBlock  TextWrapping="Wrap" Text="IDR" FontSize="25" FontFamily="Montserrat" Margin="810,150,0,0"/>
+                <TextBlock x:Name="price" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="25" FontFamily="Montserrat" Margin="15,150,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1">
+                <TextBlock TextWrapping="Wrap" Text="Type : " FontSize="25" FontFamily="Montserrat" Margin="810,20,0,0"/>
+                <TextBlock x:Name="product_type_id" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="25" FontFamily="Montserrat" Margin="0,20,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1">
+                <TextBlock TextWrapping="Wrap" Text="Unit : " FontSize="25" FontFamily="Montserrat" Margin="810,20,0,0"/>
+                <TextBlock x:Name="units" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="25" FontFamily="Montserrat" Margin="0,20,0,0"/>
+            </StackPanel>
+
+            <ListView x:Name="lvDetailproduct" ItemsSource="{Binding}"  
+                  SelectionChanged="lvDetailproduct_SelectionChanged" HorizontalAlignment="Left" Width="400" Grid.Row="6" Grid.ColumnSpan="2" Margin="800,70,0,100">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding product_quantity}"  Header="Stock"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding in_date}"  Header="Expired Date"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding exp_date}"  Header="In Date"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBlock HorizontalAlignment="Left" Height="51" Margin="50,10,0,0" TextWrapping="Wrap" Text="Detail Product" VerticalAlignment="Top" Width="300" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59" Grid.ColumnSpan="2"/>
         </Grid>
-        <ListView Name="lvDetailproduct" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="173" Margin="364,267,0,0" VerticalAlignment="Top" Width="426" 
-                  SelectionChanged="lvDetailproduct_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding product_quantity}"  Header="Stock"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding in_date}"  Header="Expired Date"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding exp_date}"  Header="In Date"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
     </Grid>
 </basic:MyPage>
