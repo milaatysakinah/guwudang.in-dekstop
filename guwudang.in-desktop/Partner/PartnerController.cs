@@ -21,23 +21,11 @@ namespace guwudang.Partner
         {
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchPartnerByUserID/?id=:id";
+            string _endpoint = "api/searchPartnerByUserID/";
 
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
-
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-
-            var response1 = await client.sendRequest(request.getApiRequestBundle());
-            client.setOnFailedRequest(setFailedAuthorization);
-            Console.WriteLine(response1.getHttpResponseMessage().Content);
-            id = response1.getJObject()["user"]["id"].ToString();
-            _endpoint = _endpoint.Replace(":id", id);
-            //Console.WriteLine(_endpoint);
 
             var client2 = new ApiClient(utils.urls.BASE_URL);
             var request2 = new ApiRequestBuilder();
@@ -79,7 +67,7 @@ namespace guwudang.Partner
             var request = new ApiRequestBuilder();
             foreach (string item in selectedItemsID)
             {
-                //Console.WriteLine(item);
+                Console.WriteLine("Delete Partner : " + item);
                 string _endpoint = "api/partner/:id";
 
                 _endpoint = _endpoint.Replace(":id", item);
@@ -94,7 +82,7 @@ namespace guwudang.Partner
                     .setRequestMethod(HttpMethod.Delete);
                 var response = client.sendRequest(request.getApiRequestBundle());
             }
-            partner();
+            getView().callMethod("createSuccess");
         }
 
         private void setViewPartnerData(HttpResponseBundle _response)

@@ -33,7 +33,7 @@
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox Tag="{Binding id}"
+                                    <CheckBox Tag="{Binding id}" Unchecked="chkSelected_Checked" Checked="chkSelected_Checked"
                                               IsChecked="{Binding RelativeSource={RelativeSource AncestorType=ListViewItem}, Path=IsSelected}" />
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

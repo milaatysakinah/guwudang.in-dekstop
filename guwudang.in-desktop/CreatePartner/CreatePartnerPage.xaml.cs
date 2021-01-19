@@ -57,5 +57,14 @@ namespace guwudang.CreatePartner
             getController().callMethod("createPartner", partner);
         }
 
+        public void createSuccess()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                utils.PageManagement.initPages();
+                Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.listPartnerPage));
+            });
+        }
+
     }
 }

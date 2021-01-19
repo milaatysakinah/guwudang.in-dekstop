@@ -21,27 +21,12 @@ namespace guwudang.Invoice
         {
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
-            string _endpoint = "api/searchInvoiceByUserID/?id=:id";
+            string _endpoint = "api/searchInvoiceByUserID/";
 
             User user = new User();
             string token = user.getToken();
             client.setAuthorizationToken(token);
             
-            var reqAccount = request
-                .buildHttpRequest()
-                .setEndpoint("api/authUser")
-                .setRequestMethod(HttpMethod.Get);
-
-            var response1 = await client.sendRequest(request.getApiRequestBundle());
-            client.setOnFailedRequest(setFailedAuthorization);
-            Console.WriteLine(response1.getHttpResponseMessage().Content);
-
-
-            id = response1.getJObject()["user"]["id"].ToString();
-
-            _endpoint = _endpoint.Replace(":id", id);
-            //Console.WriteLine(_endpoint);
-
             var client2 = new ApiClient(utils.urls.BASE_URL);
             var request2 = new ApiRequestBuilder();
 
@@ -102,7 +87,7 @@ namespace guwudang.Invoice
             var request = new ApiRequestBuilder();
             foreach (string item in selectedItemsID)
             {
-                Console.WriteLine(item);
+                Console.WriteLine("Delete Invoice : " + item);
                 string _endpoint = "api/invoice/:id";
 
                 _endpoint = _endpoint.Replace(":id", item);
@@ -118,7 +103,7 @@ namespace guwudang.Invoice
                 //client.setOnSuccessRequest(setViewInvoiceData);
                 var response = client.sendRequest(request.getApiRequestBundle());
             }
-            listInvoice();
+            getView().callMethod("createSuccess");
         }
     }
 }

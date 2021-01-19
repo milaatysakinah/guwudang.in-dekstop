@@ -45,7 +45,7 @@ namespace guwudang.CreateOrderItems
 
         public async void type()
         {
-            var client = new ApiClient("http://127.0.0.1:8000/");
+            var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
             string token = user.getToken();

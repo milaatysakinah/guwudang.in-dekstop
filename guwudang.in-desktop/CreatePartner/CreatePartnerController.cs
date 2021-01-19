@@ -19,15 +19,29 @@ namespace guwudang.CreatePartner
             var client = new ApiClient(utils.urls.BASE_URL);
             var request = new ApiRequestBuilder();
 
+            utils.User user = new utils.User();
+            string token = user.getToken();
+            client.setAuthorizationToken(token);
+
             var req = request
                 .buildHttpRequest()
-                .addParameters("companyName", partner.name)
+                .addParameters("name", partner.name)
                 .addParameters("email", partner.email)
-                .addParameters("phone", partner.phone_number)
+                .addParameters("phone_number", partner.phone_number)
                 .addParameters("address", partner.address)
-                .setEndpoint("api/partner/create")
-                .setRequestMethod(HttpMethod.Get);
+                .setEndpoint("api/partner/")
+                .setRequestMethod(HttpMethod.Post);
+
+            client.setOnSuccessRequest(setViewSuccess);
             var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
+        private void setViewSuccess(HttpResponseBundle _response)
+        {
+            if (_response.getHttpResponseMessage().Content != null)
+            {
+                getView().callMethod("createSuccess");
+            }
         }
     }
 }

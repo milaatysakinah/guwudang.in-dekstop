@@ -65,6 +65,8 @@ namespace guwudang.CreateOrderItems
             {
                 case MessageBoxResult.Yes:
                     // Action SUkses
+                    utils.PageManagement.initPages();
+                    Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.listInvoicePage));
                     break;
                 case MessageBoxResult.No:
                     // No Action

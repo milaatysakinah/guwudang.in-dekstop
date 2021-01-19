@@ -5,7 +5,7 @@ using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
 using System.Windows;
 using System.Windows.Controls;
-
+using System;
 
 namespace guwudang.Partner
 {
@@ -75,7 +75,7 @@ namespace guwudang.Partner
 
         private void lvPartner_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (guwudang.Model.Partner item in e.RemovedItems)
+            /*foreach (guwudang.Model.Partner item in e.RemovedItems)
             {
                 listPartnerID.Remove(item.id);
             }
@@ -83,7 +83,7 @@ namespace guwudang.Partner
             foreach (guwudang.Model.Partner item in e.AddedItems)
             {
                 listPartnerID.Add(item.id);
-            }
+            }*/
         }
 
         public void onClickBtnDelete()
@@ -102,15 +102,17 @@ namespace guwudang.Partner
             MessageBoxButton button = MessageBoxButton.YesNo;
             MessageBoxResult result = MessageBox.Show(msgtext, txt, button);
 
-            switch (result)
-            {
-                case MessageBoxResult.Yes:
-                    if (listPartnerID.Count > 0) { delPartner(); }
-                    break;
-                case MessageBoxResult.No:
-                    // No Action
-                    break;
-            }
+            if(msgtext != "Anda belum memilih data untuk dihapus.")
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        //if (listPartnerID.Count > 0) { delPartner(); }
+                        delPartner();
+                        break;
+                    case MessageBoxResult.No:
+                        // No Action
+                        break;
+                }
         }
 
         private void delPartner()
@@ -134,6 +136,30 @@ namespace guwudang.Partner
         {
             new MainWindow().Show();
             this.KeepAlive = false;
+        }
+
+        public void createSuccess()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                utils.PageManagement.initPages();
+                Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.listPartnerPage));
+            });
+        }
+
+        private void chkSelected_Checked(object sender, System.Windows.RoutedEventArgs e)
+        {
+            CheckBox chk = (CheckBox)sender;
+            string newVal = chk.Tag.ToString();
+            Console.WriteLine("Clicked");
+            if (chk.IsChecked.HasValue && chk.IsChecked.Value)
+            {
+                listPartnerID.Add(newVal);
+            }
+            else
+            {
+                listPartnerID.Remove(newVal);
+            }
         }
     }
 }

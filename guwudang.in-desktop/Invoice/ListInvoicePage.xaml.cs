@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
@@ -53,7 +54,6 @@ namespace guwudang.Invoice
         private void InitUIElements()
         {
             newInvoiceButton = buttonBuilder.activate(this, "newInvoiceBtn").addOnClick(this, "onClick_newInvoice");
-            //deleteInvoiceButton = buttonBuilder.activate(this, "deleteInvoiceBtn").addOnClick(this, "");
             searchInvoiceTxtBox = txtBoxBuilder.activate(this, "searchInvoiceTxt");
         }
 
@@ -90,8 +90,18 @@ namespace guwudang.Invoice
         private void deleteInvoiceBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             //Console.WriteLine(i);
-            getController().callMethod("deleteInvoice", selectedItemsID);
-
+            string txt = "Konfirmasi";
+            String msgtext = "";
+            if (selectedItemsID.Count > 0)
+            {
+                getController().callMethod("deleteInvoice", selectedItemsID);
+            }
+            else
+            {
+                msgtext = "Anda belum memilih data untuk dihapus.";
+                MessageBoxButton button = MessageBoxButton.YesNo;
+                MessageBoxResult result = MessageBox.Show(msgtext, txt, button);
+            }
         }
 
         private void chkSelected_Checked(object sender, System.Windows.RoutedEventArgs e)
@@ -108,6 +118,16 @@ namespace guwudang.Invoice
                 selectedItemsID.Remove(newVal);
             }
         }
+
+        public void createSuccess()
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                utils.PageManagement.initPages();
+                Sidebar.secFrame.Navigate(utils.PageManagement.getPage(utils.EPages.listInvoicePage));
+            });
+        }
+
     }
 
     //public class Product
