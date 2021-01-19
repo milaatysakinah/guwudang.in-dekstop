@@ -18,7 +18,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Create Invoice" VerticalAlignment="Top" Height="auto" Width="auto" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,20,0,0" TextWrapping="Wrap" Text="Detail Invoice" VerticalAlignment="Top" Height="auto" Width="auto" FontFamily="Montserrat" FontWeight="SemiBold" FontSize="38" Foreground="#FF070D59"/>
         <Border CornerRadius="35" BorderThickness="20" Margin="20,100,20,0" >
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="2"/>
